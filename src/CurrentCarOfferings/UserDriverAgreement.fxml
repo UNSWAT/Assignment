@@ -12,17 +12,17 @@
    <children>
       <ImageView fitHeight="96.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../userLogin/Image/Bar3.jpg" />
+            <Image url="@Image/Bar.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="96.0" fitWidth="806.0" layoutX="733.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../userLogin/Image/Bar3.jpg" />
+            <Image url="@Image/Bar.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="96.0" fitWidth="108.0" layoutX="715.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../userLogin/Image/SUBER.png" />
+            <Image url="@Image/SUBER.png" />
          </image>
       </ImageView>
       <Text fill="#1d9fa1" layoutX="231.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trip Title &quot;From x to y&quot;" wrappingWidth="410.36534118652344">
