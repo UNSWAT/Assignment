@@ -7,7 +7,6 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Button?>
 
 <FlowPane prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -28,7 +27,7 @@
                   <Image url="@Image/SUBER.png" />
                </image>
             </ImageView>
-            <Text fill="#4ac0be" fontSmoothingType="LCD" layoutX="24.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF WORK DESK">
+            <Text fill="#4ac0be" fontSmoothingType="LCD" layoutX="251.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber System" wrappingWidth="192.15489196777344">
                <font>
                   <Font size="28.0" />
                </font>
@@ -42,42 +41,22 @@
                   <MenuItem mnemonicParsing="false" text="Log Out" />
                </items>
             </MenuButton>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="88.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/Conference-100.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="388.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/Contacts.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="688.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="247.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Image/Meeting-100.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="988.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/MySpace.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="68.0" layoutY="580.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #4ec0be;" text="Corporate Customer" textFill="WHITE">
+            <Button layoutX="800.0" layoutY="250.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Seek" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="368.0" layoutY="580.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #4ec0be;" text="Individual Customer" textFill="WHITE">
+            <Button layoutX="800.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Offer" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="688.0" layoutY="580.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #4ec0be;" text="sUber System" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button layoutX="988.0" layoutY="580.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #4ec0be;" text="Staff " textFill="WHITE">
+            <Button layoutX="800.0" layoutY="500.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Agreement" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
