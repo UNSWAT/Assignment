@@ -35,6 +35,38 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
         stage.show();
         };
     
+    @FXML
+    private void clickIndividualCustomer(ActionEvent event)throws IOException{
+        
+        System.out.println("going to Individual Customer");
+        Parent root = FXMLLoader.load(getClass().getResource("ClickIndividualCustomer.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = PageAfterStaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    @FXML
+    private void clickSuberSystem(ActionEvent event)throws IOException{
+        
+        System.out.println("going to sUber System");
+        Parent root = FXMLLoader.load(getClass().getResource("ClickSuberSystem.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = PageAfterStaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    @FXML
+    private void clickStaff(ActionEvent event)throws IOException{
+        
+        System.out.println("going to Staff");
+        Parent root = FXMLLoader.load(getClass().getResource("ClickStaff.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = PageAfterStaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
