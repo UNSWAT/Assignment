@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -7,32 +8,18 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.Glow?>
 
-<FlowPane prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PageAfterStaffLogin.ClickSuberSystemController">
+<FlowPane prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PageAfterStaffLogin.ClickSuberSystemController">
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1280.0">
          <children>
-            <ImageView fitHeight="96.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/1.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="96.0" fitWidth="813.0" layoutX="487.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/1.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="96.0" fitWidth="107.0" layoutX="596.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/SUBER.png" />
-               </image>
-            </ImageView>
-            <Text fill="#4ac0be" fontSmoothingType="LCD" layoutX="251.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber System" wrappingWidth="192.15489196777344">
+            <Text fontSmoothingType="LCD" layoutX="251.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber System" wrappingWidth="192.15489196777344">
                <font>
                   <Font size="28.0" />
                </font>
             </Text>
-            <MenuButton layoutX="1166.0" layoutY="43.0" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-border-color: ;" text="My Account" textFill="WHITE">
+            <MenuButton layoutX="1166.0" layoutY="43.0" mnemonicParsing="false" text="My Account" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -41,27 +28,48 @@
                   <MenuItem mnemonicParsing="false" text="Log Out" />
                </items>
             </MenuButton>
+            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0">
+            <image>
+                 <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+            </image>
+            <effect>
+               <Glow level="0.67" />
+            </effect>
+            </ImageView>
+            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+                <font>
+                   <Font name="Tahoma" size="58.0" />
+                </font>
+                <effect>
+                   <Glow level="1.0" />
+                </effect>
+            </Text>
+            <ImageView fitHeight="119.0" fitWidth="1289.0" layoutX="-8.0" layoutY="-8.0">
+                <image>
+                   <Image url="@Image/background3.jpg" />
+                </image>
+            </ImageView>
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="247.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Image/Meeting-100.png" />
                </image>
             </ImageView>
-            <Button layoutX="800.0" layoutY="250.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Seek" textFill="WHITE">
+            <Button layoutX="800.0" layoutY="250.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" text="View Seek" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="800.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Offer" textFill="WHITE">
+            <Button layoutX="800.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" text="View Offer" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="800.0" layoutY="500.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4ec0be;" text="View Agreement" textFill="WHITE">
+            <Button layoutX="800.0" layoutY="500.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" text="View Agreement" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="1.0" layoutY="34.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="40.0" prefWidth="213.0" style="-fx-background-color: #4ec0be;" text="Back to Work Desk" textFill="WHITE">
+            <Button layoutX="1.0" layoutY="34.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="40.0" prefWidth="213.0" text="Back to Work Desk" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
