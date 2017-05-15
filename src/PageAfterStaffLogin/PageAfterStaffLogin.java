@@ -5,11 +5,15 @@
  */
 package PageAfterStaffLogin;
 
+import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -18,14 +22,25 @@ import javafx.stage.Stage;
  */
 public class PageAfterStaffLogin extends Application {
     
+    private static Stage stage;
+    
+    static Stage getStage(){
+        return stage;
+    }
+    
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/PageAfterStaffLogin/PageAfterStaffLoginFXML.fxml"));
+    public void start(Stage primaryStage) throws IOException {
         
-        Scene scene = new Scene(root);
+        this.stage = primaryStage;  
+        Parent root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
         
-        stage.setScene(scene);
-        stage.show();
+        Scene scene = new Scene(root, 1280, 768);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
+        primaryStage.setTitle("Suber");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**
