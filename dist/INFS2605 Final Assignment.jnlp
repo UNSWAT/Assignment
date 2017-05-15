@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="INFS2605_Final_Assignment.jar" size="583178" download="eager" />
+    <jar href="INFS2605_Final_Assignment.jar" size="4954030" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="INFS2605 Final Assignment" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="signup.Signup"  name="INFS2605 Final Assignment" />
+  <jfx:javafx-desc  width="800" height="600" main-class="signup.Register"  name="INFS2605 Final Assignment" />
   <update check="always"/>
 </jnlp>
