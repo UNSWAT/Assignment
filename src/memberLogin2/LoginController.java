@@ -83,7 +83,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void clickRegister(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/signup/signupFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/signup/RegisterPage.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

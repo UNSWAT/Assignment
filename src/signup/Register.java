@@ -20,11 +20,11 @@ import javafx.stage.Stage;
  *
  * @author MI-PC
  */
-public class Signup extends Application {
+public class Register extends Application {
     
      @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/signup/signupFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/signup/RegisterPage.fxml"));
         
         Scene scene = new Scene(root);
         
