@@ -4,35 +4,21 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signup.SignupFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signup.SignupFXMLController">
    <children>
-      <ImageView fitHeight="96.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/Bar.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="96.0" fitWidth="806.0" layoutX="733.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/Bar.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="96.0" fitWidth="108.0" layoutX="715.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/SUBER.png" />
-         </image>
-      </ImageView>
       <Text fill="#1d9fa1" layoutX="230.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Cars" wrappingWidth="187.27284240722656">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <TextField layoutX="229.0" layoutY="265.0" prefHeight="35.0" prefWidth="420.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
+      <TextField fx:id="address" layoutX="229.0" layoutY="265.0" prefHeight="35.0" prefWidth="420.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
       <Text layoutX="231.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <TextField layoutX="229.0" layoutY="325.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
       <TextField layoutX="379.0" layoutY="325.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
@@ -50,7 +36,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="963.0" layoutY="563.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="240.0" style="-fx-border-color: #4AC0BE; -fx-background-color: #4AC0BE;" text="Find a Driver" textFill="WHITE">
+      <Button layoutX="963.0" layoutY="563.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="240.0" text="Find a Driver" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -64,13 +50,34 @@
       <Text layoutX="389.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code" />
       <Text layoutX="539.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
       <Text layoutX="824.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pickup date" />
-      <DatePicker layoutX="819.0" layoutY="264.0" prefHeight="35.0" prefWidth="195.0" />
-      <TextField layoutX="1029.0" layoutY="264.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
+      <DatePicker fx:id="pickupDate" layoutX="819.0" layoutY="264.0" prefHeight="35.0" prefWidth="195.0" />
+      <TextField fx:id="pickupTime" layoutX="1029.0" layoutY="264.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #4AC0BE;" />
       <Text layoutX="1029.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pickup time" />
       <Text fill="#2cc2f8" layoutX="818.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your pickup details" wrappingWidth="249.93496704101562">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
+      <ImageView fitHeight="119.0" fitWidth="1289.0" layoutX="-5.0" layoutY="-8.0">
+         <image>
+            <Image url="@../signup/Image/background3.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+         <font>
+            <Font name="Tahoma" size="58.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0">
+         <image>
+            <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+         </image>
+         <effect>
+            <Glow level="0.67" />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>
