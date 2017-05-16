@@ -20,7 +20,7 @@
           <children>
             <ImageView fitHeight="119.0" fitWidth="1289.0" layoutX="-5.0" layoutY="-8.0">
                <image>
-                  <Image url="@../signup/Image/background3.jpg" />
+                  <Image url="@Image/background3.jpg" />
                </image>
             </ImageView>
               <Button fx:id="signinbtn" layoutX="455.0" layoutY="498.0" onAction="#signin" prefHeight="45.0" prefWidth="370.0" text="SIGN IN" textFill="WHITE">

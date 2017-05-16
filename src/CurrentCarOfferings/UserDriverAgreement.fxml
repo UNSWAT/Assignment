@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="119.0" fitWidth="1289.0" layoutX="-5.0" layoutY="-8.0">
          <image>
-            <Image url="@../signup/Image/background3.jpg" />
+            <Image url="@Image/background3.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
