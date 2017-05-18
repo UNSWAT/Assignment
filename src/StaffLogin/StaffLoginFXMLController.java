@@ -86,6 +86,17 @@ public class StaffLoginFXMLController implements Initializable {
        Database.closeConnection();
     }
     
+    @FXML
+    private void clickSignIn(ActionEvent event)throws IOException{
+        
+        System.out.println("going to Staff");
+        Parent root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

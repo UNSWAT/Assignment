@@ -33,9 +33,40 @@ public class ClickSuberSystemController implements Initializable {
         stage.setScene(scene);
         stage.show();
         };
-    /**
-     * Initializes the controller class.
-     */
+    
+    @FXML
+    private void clickViewSeek(ActionEvent event)throws IOException{
+        
+        System.out.println("going to View Seek");
+        Parent root = FXMLLoader.load(getClass().getResource("ViewSeek.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    @FXML
+    private void clickViewOffer(ActionEvent event)throws IOException{
+        
+        System.out.println("going to View Offer");
+        Parent root = FXMLLoader.load(getClass().getResource("ViewOffer.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    @FXML
+    private void clickViewAgreement(ActionEvent event)throws IOException{
+        
+        System.out.println("going to View Agreement");
+        Parent root = FXMLLoader.load(getClass().getResource("ViewAgreement.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

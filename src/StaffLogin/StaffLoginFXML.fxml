@@ -28,7 +28,7 @@
                    <Image url="@Image/background3.jpg" />
                 </image>
             </ImageView>
-              <Button fx:id="signinbtn" layoutX="455.0" layoutY="498.0" onAction="#clickLogin" onMouseClicked="#clickLogin" prefHeight="45.0" prefWidth="370.0" text="SIGN IN" textFill="WHITE">
+              <Button fx:id="signinbtn" layoutX="455.0" layoutY="498.0" onAction="#clickSignIn" onMouseClicked="#clickSignIn" prefHeight="45.0" prefWidth="370.0" text="SIGN IN" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
