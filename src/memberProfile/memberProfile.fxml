@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.EditMemberProfileController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Image/background3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+               <font>
+                  <Font name="Tahoma" size="58.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="42.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <TabPane layoutX="70.0" layoutY="140.0" prefHeight="575.0" prefWidth="1136.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="My Details">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="50.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="270.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="50.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="50.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="50.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="190.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="50.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="330.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <TextField layoutX="50.0" layoutY="60.0" prefHeight="35.0" prefWidth="200.0" />
+                              <TextField layoutX="270.0" layoutY="60.0" prefHeight="35.0" prefWidth="200.0" />
+                              <TextField layoutX="50.0" layoutY="130.0" prefHeight="35.0" prefWidth="420.0" />
+                              <TextField layoutX="50.0" layoutY="200.0" prefHeight="35.0" prefWidth="420.0" />
+                              <TextField layoutX="50.0" layoutY="270.0" prefHeight="35.0" prefWidth="420.0" />
+                              <TextArea layoutX="50.0" layoutY="340.0" prefHeight="100.0" prefWidth="420.0" />
+                              <TextField layoutX="50.0" layoutY="480.0" prefHeight="35.0" prefWidth="120.0" />
+                              <TextField layoutX="190.0" layoutY="480.0" prefHeight="35.0" prefWidth="120.0" />
+                              <ComboBox layoutX="330.0" layoutY="480.0" prefHeight="35.0" prefWidth="120.0" />
+                              <Text layoutX="500.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="500.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Address">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="500.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Phone Number">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <TextField layoutX="500.0" layoutY="60.0" prefHeight="35.0" prefWidth="420.0" />
+                              <TextField layoutX="500.0" layoutY="130.0" prefHeight="35.0" prefWidth="420.0" />
+                              <TextArea layoutX="500.0" layoutY="200.0" prefHeight="100.0" prefWidth="420.0" />
+                              <TextField layoutX="500.0" layoutY="330.0" prefHeight="35.0" prefWidth="120.0" />
+                              <TextField layoutX="630.0" layoutY="330.0" prefHeight="35.0" prefWidth="120.0" />
+                              <ComboBox layoutX="760.0" layoutY="330.0" prefHeight="35.0" prefWidth="120.0" />
+                              <Text layoutX="760.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="500.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="630.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="830.0" layoutY="430.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" text="EDIT PROFILE" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="54.0" fitWidth="78.0" layoutX="770.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/Edit-64.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Trip History">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="50.0" layoutY="50.0" prefHeight="450.0" prefWidth="1050.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="TRIP_ID" />
+                                  <TableColumn prefWidth="127.97511291503906" text="TRIP_DATE" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</FlowPane>
