@@ -21,7 +21,7 @@
       </ImageView>
       <Pane layoutX="500.0" layoutY="230.0" prefHeight="262.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15 15 15 15;">
          <children>
-            <TextField fx:id="username" layoutX="24.0" layoutY="24.0" onAction="#username" prefHeight="45.0" prefWidth="253.0" promptText="Username">
+            <TextField fx:id="username" layoutX="24.0" layoutY="24.0" prefHeight="45.0" prefWidth="253.0" promptText="Username">
                <font>
                   <Font size="16.0" />
                </font>
@@ -74,7 +74,7 @@
             <Font name="Tahoma Bold" size="21.0" />
          </font>
       </Text>
-      <Button fx:id="register" layoutX="465.0" layoutY="555.0" onAction="#clickRegister" onMouseClicked="#clickRegister" prefHeight="45.0" prefWidth="370.0" text="Register Now" textFill="WHITE">
+      <Button fx:id="register" layoutX="465.0" layoutY="555.0" onAction="#clickRegister" prefHeight="45.0" prefWidth="370.0" text="Register Now" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
