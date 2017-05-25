@@ -41,8 +41,8 @@
             <Image url="@Image/waiting.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="379.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Driver" />
-      <Button layoutX="773.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Rider" />
+      <Button layoutX="379.0" layoutY="463.0" mnemonicParsing="false" onAction="#clickDriver" stylesheets="@../CSSfile.css" text="Driver" />
+      <Button layoutX="773.0" layoutY="463.0" mnemonicParsing="false" onAction="#clickRider" stylesheets="@../CSSfile.css" text="Rider" />
       <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome!">
          <font>
             <Font size="38.0" />

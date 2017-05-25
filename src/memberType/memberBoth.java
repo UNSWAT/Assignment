@@ -22,11 +22,12 @@ import javafx.stage.Stage;
  */
 public class memberBoth extends Application {
     
-    private static Stage stage;
+    public static Stage stage;
     
     static Stage getStage(){
         return stage;
     }
+          
           
      @Override
         public void start(Stage stage) throws Exception {
