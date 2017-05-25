@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  */
 public class memberRider extends Application {
     
-    private static Stage stage;
+    public static Stage stage;
     
     static Stage getStage(){
         return stage;

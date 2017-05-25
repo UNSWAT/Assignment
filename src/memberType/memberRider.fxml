@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -30,7 +31,7 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" onMouseEntered="#clickCreateSeek" onMouseMoved="#clickCreateSeek" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
@@ -45,25 +46,13 @@
             <Image url="@Image/car.PNG" />
          </image>
       </ImageView>
-      <Text layoutX="139.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Seek Posting">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="517.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Current Posting">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="927.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perform Vehicle Seek">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
       <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Seeking">
          <font>
             <Font size="38.0" />
          </font>
       </Text>
+      <Button layoutX="127.0" layoutY="463.0" mnemonicParsing="false" onAction="#clickCreateSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
+      <Button layoutX="510.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
+      <Button layoutX="911.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
    </children>
 </AnchorPane>
