@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.MemberDriverController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="memberType.MemberDriverController">
    <children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
@@ -29,6 +29,31 @@
          <effect>
             <Glow level="1.0" />
          </effect>
+      </Text>
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="347.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/seeking.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="735.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/current.PNG" />
+         </image>
+      </ImageView>
+      <Text layoutX="367.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Offer">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="721.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Current Offer">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Sharing">
+         <font>
+            <Font size="38.0" />
+         </font>
       </Text>
    </children>
 </AnchorPane>

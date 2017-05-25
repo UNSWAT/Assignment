@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.MemberRiderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.MemberRiderController">
    <children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
@@ -30,20 +30,40 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="122.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="568.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="548.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/current.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="178.0" fitWidth="247.0" layoutX="920.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="178.0" fitWidth="247.0" layoutX="920.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/car.PNG" />
          </image>
       </ImageView>
+      <Text layoutX="139.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Seek Posting">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="517.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Current Posting">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="927.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perform Vehicle Seek">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Seeking">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
