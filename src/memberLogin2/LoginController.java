@@ -28,6 +28,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -38,15 +39,17 @@ import javafx.scene.input.MouseEvent;
 public class LoginController implements Initializable {
 
    
-    private TextField password;
+    
     @FXML
     private Button signin;
     @FXML
     private Button register;
     @FXML
-    public static Label setLabel;
+    private Label setLabel;
     @FXML
     private TextField username;
+    @FXML
+    private PasswordField passWord;
 
     /**
      * Initializes the controller class.
@@ -62,10 +65,17 @@ public class LoginController implements Initializable {
        Database.openConnection();
        
         try {
+            
             String user = username.getText();
+            System.out.println(user);
+            String pass = passWord.getText();
+            System.out.println(pass);
             ps = con.prepareStatement("SELECT MEMBER_USERNAME,MEMBER_PASSWORD from PUBLIC.MEMBERS WHERE MEMBER_USERNAME = ? and MEMBER_PASSWORD = ?;");
-            ps.setString(1,username.getText());
-            ps.setString(2,password.getText());
+            
+            ps.setString(1,user);
+            
+            ps.setString(2,pass);
+            
             ResultSet result = ps.executeQuery();
             if(result.next()){
                 setLabel.setText("Login Successfully");

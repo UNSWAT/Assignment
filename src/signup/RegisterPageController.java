@@ -264,7 +264,10 @@ public class RegisterPageController implements Initializable {
                             insertMember.setString(20,membType);   
                             insertMember.execute();
                             insertMember.close(); 
-                            check =true;    
+                            check =true;
+                            
+                            
+                                  
                           }
                       
                     
@@ -279,6 +282,18 @@ public class RegisterPageController implements Initializable {
        } 
         
         Database.closeConnection();
+        try {
+                Parent root;
+                root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
         
     }
 
