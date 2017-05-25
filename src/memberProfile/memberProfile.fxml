@@ -139,12 +139,12 @@
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Button layoutX="830.0" layoutY="430.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" text="EDIT PROFILE" textFill="WHITE">
+                              <Button layoutX="1000.0" layoutY="28.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="130.0" text="EDIT" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="19.0" />
                                  </font>
                               </Button>
-                              <ImageView fitHeight="54.0" fitWidth="78.0" layoutX="770.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="54.0" fitWidth="78.0" layoutX="945.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@Image/Edit-64.png" />
                                  </image>

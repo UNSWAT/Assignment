@@ -26,6 +26,9 @@ import static Database.Database.con;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -34,9 +37,7 @@ import java.sql.SQLException;
  */
 public class LoginController implements Initializable {
 
-    @FXML
-    private TextField email;
-    @FXML
+   
     private TextField password;
     @FXML
     private Button signin;
@@ -44,6 +45,8 @@ public class LoginController implements Initializable {
     private Button register;
     @FXML
     private Label setLabel;
+    @FXML
+    private TextField username;
 
     /**
      * Initializes the controller class.
@@ -54,28 +57,43 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void emailAddress(ActionEvent event) {
-    }
-
-    @FXML
-    private void enterPassword(ActionEvent event) {
-    }
-
-    @FXML
-    private void clickLogin(ActionEvent event) throws SQLException {
+    private void clickLogin(ActionEvent event) {
        PreparedStatement ps;
        Database.openConnection();
-       ps = con.prepareStatement("SELECT USERNAME,PASSWORD from PUBLIC.USER WHERE USERNAME = ? and PASSWORD = ?;");
-       ps.setString(1,email.getText());
-       ps.setString(2,password.getText());
-       ResultSet result = ps.executeQuery();
-       if(result.next()){
-           setLabel.setText("Login Successfully");
-       }
-       else {
-           setLabel.setText("Invalid Username or Password");
-       }
-       Database.closeConnection();
+       
+        try {
+            String user = username.getText();
+            ps = con.prepareStatement("SELECT MEMBER_USERNAME,MEMBER_PASSWORD from PUBLIC.MEMBERS WHERE MEMBER_USERNAME = ? and MEMBER_PASSWORD = ?;");
+            ps.setString(1,username.getText());
+            ps.setString(2,password.getText());
+            ResultSet result = ps.executeQuery();
+            if(result.next()){
+                setLabel.setText("Login Successfully");
+                ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ? ");
+                ps.setString(1,user);
+                String membertype =null;
+                ResultSet member = ps.executeQuery();
+                if (member.next()){
+                    membertype = member.getString(1);
+                        if (membertype.toUpperCase().equals("RIDER")){
+                            //load Rider page here
+                        }
+                        else if (membertype.toUpperCase().equals("DRIVER")){
+                            //load driver page here
+                        }
+                        else if (membertype.toUpperCase().equals("BOTH")){
+                            //load both page here.
+                        }
+                }   
+           }
+            else {
+                 setLabel.setText("Invalid Username or Password");
+           }
+            } catch (SQLException ex) {
+                 System.out.println(ex);
+            }
+
+           Database.closeConnection();
        
         
     
@@ -89,6 +107,14 @@ public class LoginController implements Initializable {
         stage.setScene(scene);
         stage.show();
                
+    }
+
+    @FXML
+    private void username(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickRegister(MouseEvent event) {
     }
     
 }
