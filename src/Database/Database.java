@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class Database {
     
     public static Connection con;
-    public static String database = "jdbc:h2:./MainDatabase;create=true";
+    public static String database = "jdbc:h2:./INFS2605db;create=true";
     
     public static void setDatabase(String database){
         Database.database = database;
@@ -53,4 +53,5 @@ public class Database {
     
     }
     
+
 
