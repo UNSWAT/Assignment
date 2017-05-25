@@ -44,7 +44,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button register;
     @FXML
-    private Label setLabel;
+    public static Label setLabel;
     @FXML
     private TextField username;
 

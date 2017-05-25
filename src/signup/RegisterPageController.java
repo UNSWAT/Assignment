@@ -117,7 +117,7 @@ public class RegisterPageController implements Initializable {
     }    
 
     @FXML
-    private void createAccount(ActionEvent event) throws SQLException {
+    private void createAccount(ActionEvent event) throws SQLException, IOException {
         try {     
             boolean check = false;
             PreparedStatement insertMember = null;
@@ -168,7 +168,7 @@ public class RegisterPageController implements Initializable {
                  errorMessage.setText("Please enter a valid password");
                  check =true;
              }
-             else if (password2.equals("")){
+             else if (passwordConfirm.equals("")){
                  errorMessage.setText("Please confirm your password");
                  check =true;
              }
@@ -238,7 +238,15 @@ public class RegisterPageController implements Initializable {
                             insertMember.setString(20,membType);   
                             insertMember.execute();
                             insertMember.close(); 
-                            check =true;    
+                            check =true;  
+                            //change back to page login page.
+                            Parent root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+                            Scene scene = new Scene(root);
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(scene);
+                            stage.show();
+                            memberLogin2.LoginController.setLabel.setText("Registration Successful");
+               
                           }
                       
                     
