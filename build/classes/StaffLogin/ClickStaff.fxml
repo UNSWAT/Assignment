@@ -38,17 +38,12 @@
                   <Image url="@Image/MySpace.png" />
                </image>
             </ImageView>
-            <Button layoutX="750.0" layoutY="328.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" text="Add Staff Account" textFill="WHITE">
+            <Button layoutX="715.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickViewStaffList" onMouseClicked="#clickViewStaffList" prefHeight="50.0" prefWidth="400.0" text="View Staff Account" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="750.0" layoutY="478.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" text="Edit Staff Account" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button layoutY="120.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="59.0" prefWidth="245.0" text="Back to Work Desk" textFill="WHITE">
+            <Button layoutY="30.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="59.0" prefWidth="245.0" text="Back to Work Desk" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -69,6 +64,11 @@
                    <Glow level="1.0" />
                 </effect>
             </Text>
+            <Button layoutX="715.0" layoutY="450.0" mnemonicParsing="false" onAction="#clickPCorporateMemberList" onMouseClicked="#clickPCorporateMemberList" prefHeight="50.0" prefWidth="400.0" text="Add Staff Account" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swagich.company.Main.Admin.Login.MainView.Employees;
+package vehicleSeek;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -24,7 +24,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import swagich.company.DBConnection.DBConnection;
 
 /**
  * FXML Controller class
@@ -70,7 +69,7 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            con = DBConnection.connect();
+   //         con = DBConnection.connect();
             data = FXCollections.observableArrayList();
             ResultSet rs = con.createStatement().executeQuery("select * from swagich_workers_form.employee_data");
             while (rs.next()) {
