@@ -46,7 +46,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="286.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+            <Text layoutX="286.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                <font>
                   <Font size="16.0" />
                </font>
@@ -56,26 +56,25 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="286.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+            <Text layoutX="286.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
             <TextField fx:id="firstName" layoutX="286.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
             <TextField fx:id="lastName" layoutX="642.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
-            <TextField fx:id="username" layoutX="286.0" layoutY="396.0" prefHeight="50.0" prefWidth="660.0" />
-            <TextField fx:id="password" layoutX="286.0" layoutY="503.0" prefHeight="50.0" prefWidth="660.0" />
+            <TextField fx:id="username" layoutX="286.0" layoutY="365.0" prefHeight="50.0" prefWidth="660.0" />
             <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateStaff" onMouseClicked="#CancelCreateStaff" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
+            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <MenuButton layoutX="1170.0" layoutY="43.0" mnemonicParsing="false" text="My Account" textFill="WHITE">
+            <MenuButton layoutX="1170.0" layoutY="43.0" mnemonicParsing="false" text="My Account">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -92,6 +91,18 @@
                   <Glow level="1.0" />
                </effect>
             </Text>
+             <Label fx:id="errorMessage" layoutX="390.0" layoutY="150.0" prefHeight="32.0" prefWidth="428.0" style="-fx-text-fill: #FF0000;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="286.0" layoutY="462.0" prefHeight="50.0" prefWidth="660.0" />
+            <Text layoutX="286.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password2" layoutX="286.0" layoutY="550.0" prefHeight="50.0" prefWidth="660.0" />
          </children>
       </AnchorPane>
    </children>
