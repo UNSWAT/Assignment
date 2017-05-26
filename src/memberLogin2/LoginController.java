@@ -30,6 +30,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import memberType.MemberDriverController;
 
 /**
  * FXML Controller class
@@ -104,15 +106,23 @@ public class LoginController implements Initializable {
                         }
                         else if (membertype.toUpperCase().equals("SHARER")){
                             //load driver page here
-                            try {
-                                Parent root;
-                                root = FXMLLoader.load(getClass().getResource("/memberType/memberDriver.fxml"));
-                                Scene scene = new Scene(root);
+                            try{
+                               
+                                Pane root;
+                                                    
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
+                                
                                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                                stage.setScene(scene);
-                                stage.show();
+                                stage.setScene(new Scene((Pane)loader.load()));
+                                        
+                                                              
+                                MemberDriverController controller = loader.<MemberDriverController>getController();
+                                controller.getUser(username.getText());
+                                stage.show();                                
+                                
                             } catch (IOException ex) {
-                                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                                System.out.println("Error with code");
+                                System.out.println(ex);
                             }    
                         }
                         else if (membertype.toUpperCase().equals("BOTH")){
