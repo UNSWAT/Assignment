@@ -53,8 +53,8 @@
       <Label fx:id="userlabel" layoutX="89.0" layoutY="63.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE" />
       <ButtonBar layoutX="898.0" layoutY="34.0" prefHeight="59.0" prefWidth="364.0">
         <buttons>
-          <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="164.0" text="My Profile" />
-            <Button mnemonicParsing="false" text="Log out" />
+          <Button mnemonicParsing="false" onAction="#myprofile" prefHeight="59.0" prefWidth="164.0" text="My Profile" />
+            <Button mnemonicParsing="false" onAction="#logout" text="Log out" />
         </buttons>
       </ButtonBar>
       <Text layoutX="405.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to do today?" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="324.02880859375">

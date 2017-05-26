@@ -12,9 +12,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -38,27 +40,45 @@ public class MemberBothController implements Initializable {
     @FXML
     private void clickRider(ActionEvent event)throws IOException{
         
-        System.out.println("Member Type: Rider");
-        Parent root = FXMLLoader.load(getClass().getResource("/memberType/riderForBoth.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberBoth.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+         Pane root;
+                                                    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/riderForBoth.fxml"));
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene((Pane)loader.load()));
+
+
+        riderForBothController controller = loader.<riderForBothController>getController();
+        controller.getUser(userlabel.getText());
+        stage.show(); 
+    }
     
         @FXML
         private void clickDriver(ActionEvent event)throws IOException{
         
-        System.out.println("Member Type: Driver");
-        Parent root = FXMLLoader.load(getClass().getResource("/memberType/driverForBoth.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberBoth.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+         Pane root;
+                                                    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/driverForBoth.fxml"));
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene((Pane)loader.load()));
+
+
+        driverForBothController controller = loader.<driverForBothController>getController();
+        controller.getUser(userlabel.getText());
+        stage.show(); 
+    }
         
         public void getUser(String user){
         userlabel.setText(user);
+    }
+
+    @FXML
+    private void myprofile(ActionEvent event) {
+    }
+
+    @FXML
+    private void logout(ActionEvent event) {
     }
     
 }

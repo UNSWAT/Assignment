@@ -50,5 +50,17 @@ public class MemberRiderController implements Initializable {
     public void getUser(String user){
         userlabel.setText(user);
     }
+
+    @FXML
+    private void clickCreateSeek(MouseEvent event) {
+    }
+
+    @FXML
+    private void back(ActionEvent event) {
+    }
+
+    @FXML
+    private void myprofile(ActionEvent event) {
+    }
     
 }
