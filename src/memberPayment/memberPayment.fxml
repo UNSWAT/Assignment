@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberPayment.MemberPaymentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberPayment.MemberPaymentController">
    <children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
@@ -48,7 +49,7 @@
             <Image url="@Image/visa.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="933.0" layoutY="664.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Confirm" />
+      <Button layoutX="449.0" layoutY="648.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Confirm Payment" />
       <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
          <font>
             <Font size="38.0" />
@@ -62,7 +63,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="87.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount you should pay:" wrappingWidth="199.99999809265137">
+      <Text layoutX="87.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount to pay:" wrappingWidth="199.99999809265137">
          <font>
             <Font size="16.0" />
          </font>
@@ -83,54 +84,47 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="327.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expire Date" wrappingWidth="200.0">
+      <Text layoutX="327.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date" wrappingWidth="200.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="327.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="200.0">
+      <Text layoutX="327.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="200.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="327.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="200.0">
+      <Text layoutX="327.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="200.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="327.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billing Address" wrappingWidth="200.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="327.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" wrappingWidth="200.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="327.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" wrappingWidth="200.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="327.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code" wrappingWidth="200.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="327.0" layoutY="670.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="200.0">
+      <Text layoutX="327.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="200.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
       <TextField layoutX="497.0" layoutY="372.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="403.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="438.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="473.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="508.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="543.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="578.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="613.0" prefHeight="27.0" prefWidth="318.0" />
-      <TextField layoutX="497.0" layoutY="648.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="454.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="489.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="559.0" prefHeight="27.0" prefWidth="318.0" />
+      <ComboBox layoutX="498.0" layoutY="409.0" prefHeight="35.0" prefWidth="120.0" promptText="Month" />
+      <ComboBox layoutX="623.0" layoutY="409.0" prefHeight="35.0" prefWidth="120.0" promptText="Year" />
+      <Text layoutX="327.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV2/CVC2" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField layoutX="497.0" layoutY="524.0" prefHeight="27.0" prefWidth="318.0" />
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../creditCardInterface/Image/Lock-64.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="231.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a secure 128-bit SSL Encrypted payment. You're safe.">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
