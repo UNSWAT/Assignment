@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package memberType;
+package memberProfile;
 
+import memberType.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
  *
  * @author MI-PC
  */
-public class MemberBothController implements Initializable {
+public class memberProfile2Controller implements Initializable {
 
     @FXML
     private Label userlabel;
