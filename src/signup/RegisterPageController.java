@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package signup;
 
 import java.io.IOException;
@@ -105,6 +100,7 @@ public class RegisterPageController implements Initializable {
         homeState.setItems(states);
         consultancy.setValue("Yes");
         consultancy.setItems(CompanyConsultancy);
+        workState.setValue("");
         workState.setItems(states);
         ccMonth.setValue("01");
         ccYear.setValue("17");
@@ -123,29 +119,52 @@ public class RegisterPageController implements Initializable {
             PreparedStatement insertMember = null;
             PreparedStatement usernameCheck= null;
             Database.openConnection();
+            
             String fname = firstName.getText(); 
+            
             String lname = lastName.getText();
+            
             String userName = username.getText();
+            
             String emailAddress = email.getText();
+            
             String mobileNumber = mobileNo.getText();
-            String creditNumber = creditNo.getText();
+            
+            String creditNumber = creditNo.getText(); 
             
             String password1 = password.getText();
+            
             String passwordConfirm = password2.getText();
+            
             String homeAdd = homeAddress.getText();
+            
             String homeSub = homeSuburb.getText();
+            
             String homePC = homePostCode.getText();
+            
             String homestate = homeState.getSelectionModel().getSelectedItem().toString();
+            
             String CreditCardback = ccCCV.getText();
+            
             String workAdd = workAddress.getText();
+            
             String workSub = workSuburb.getText();
+            
             String workPC = workPostcode.getText();
+            
             String consult = consultancy.getSelectionModel().getSelectedItem().toString();
+            
             String expiryMon = ccMonth.getSelectionModel().getSelectedItem().toString();
+            
             String expiryYr = ccYear.getSelectionModel().getSelectedItem().toString();
+           
             String companyN = companyName.getText();
-            String workSte = workState.getSelectionModel().getSelectedItem().toString();   
-            String membType = memberType.getSelectionModel().getSelectedItem().toString();      
+            
+            String workSte = workState.getSelectionModel().getSelectedItem().toString();  
+            
+            
+            String membType = memberType.getSelectionModel().getSelectedItem().toString(); 
+            
                              
              while (check == false) {
                  if (userName.equals("")){
@@ -207,6 +226,7 @@ public class RegisterPageController implements Initializable {
                   ResultSet allUsername = usernameCheck.executeQuery();
                   if (allUsername.next()){
                       errorMessage.setText("That username has already been taken. Please choose another one");
+                      check = true;
                   }
                   
                   else {              
@@ -215,7 +235,13 @@ public class RegisterPageController implements Initializable {
                             long ccNo = Long.parseLong(creditNumber);
                             int expYr = Integer.parseInt(expiryYr);
                             int homepostcode = Integer.parseInt(homePC);
-                            int workpostcode = Integer.parseInt(workPC);
+                            int workpostcode;
+                            if (workPC.equals("")){
+                                workpostcode = 0;
+                            }
+                            else {
+                                workpostcode = Integer.parseInt(workPC);
+                            }                            
                             insertMember.setString(1, userName);
                             insertMember.setString(2, password1);
                             insertMember.setString(3,fname);
@@ -238,7 +264,10 @@ public class RegisterPageController implements Initializable {
                             insertMember.setString(20,membType);   
                             insertMember.execute();
                             insertMember.close(); 
-                            check =true;    
+                            check =true;
+                            
+                            
+                                  
                           }
                       
                     
@@ -253,6 +282,18 @@ public class RegisterPageController implements Initializable {
        } 
         
         Database.closeConnection();
+        try {
+                Parent root;
+                root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
         
     }
 
@@ -266,9 +307,3 @@ public class RegisterPageController implements Initializable {
                
 }
 }
-
-
-    
-
-    
-

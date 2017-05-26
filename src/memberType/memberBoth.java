@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package memberLogin2;
+package memberType;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -18,20 +18,21 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Preet
+ * @author Yu Bernice
  */
-public class memberLogin2 extends Application {
+public class memberBoth extends Application {
     
-    private static Stage stage;
+    public static Stage stage;
     
     static Stage getStage(){
         return stage;
     }
           
+          
      @Override
         public void start(Stage stage) throws Exception {
         this.stage = stage;
-        Parent root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

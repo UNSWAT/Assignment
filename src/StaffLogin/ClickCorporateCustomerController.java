@@ -33,6 +33,30 @@ public class ClickCorporateCustomerController implements Initializable {
         stage.setScene(scene);
         stage.show();
         };
+    
+    @FXML
+    private void clickCorporateMemberList(ActionEvent event)throws IOException{
+        
+        System.out.println("going to CorporateMember List");
+        Parent root = FXMLLoader.load(getClass().getResource("CorporateMemberList.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    @FXML
+    private void clickPCorporateMemberList(ActionEvent event)throws IOException{
+        
+        System.out.println("going to Pentential CorporateMember List");
+        Parent root = FXMLLoader.load(getClass().getResource("PCorporateMemberList.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = StaffLogin.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
+    
+    
     /**
      * Initializes the controller class.
      */

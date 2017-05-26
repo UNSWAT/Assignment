@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.MemberRiderController">
+   <children>
+      <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@Image/background3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="566.0" layoutY="27.0">
+         <image>
+            <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+         </image>
+         <effect>
+            <Glow level="0.67" />
+         </effect>
+      </ImageView>
+      <Text fill="WHITE" layoutX="650.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+         <font>
+            <Font name="Tahoma" size="58.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" onMouseEntered="#clickCreateSeek" onMouseMoved="#clickCreateSeek" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/seeking.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="548.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/current.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="178.0" fitWidth="247.0" layoutX="920.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/car.PNG" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Seeking">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <Button layoutX="127.0" layoutY="463.0" mnemonicParsing="false" onAction="#clickCreateSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
+      <Button layoutX="510.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
+      <Button layoutX="911.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
+   </children>
+</AnchorPane>

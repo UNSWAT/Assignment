@@ -28,6 +28,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -38,7 +39,7 @@ import javafx.scene.input.MouseEvent;
 public class LoginController implements Initializable {
 
    
-    private TextField password;
+    
     @FXML
     private Button signin;
     @FXML
@@ -47,6 +48,8 @@ public class LoginController implements Initializable {
     private Label setLabel;
     @FXML
     private TextField username;
+    @FXML
+    private PasswordField passWord;
 
     /**
      * Initializes the controller class.
@@ -62,27 +65,68 @@ public class LoginController implements Initializable {
        Database.openConnection();
        
         try {
+            
+            
             String user = username.getText();
+            
+            String pass = passWord.getText();
+            User userlogin = new User(user);
+            System.out.println(userlogin.getUsername());
+            
             ps = con.prepareStatement("SELECT MEMBER_USERNAME,MEMBER_PASSWORD from PUBLIC.MEMBERS WHERE MEMBER_USERNAME = ? and MEMBER_PASSWORD = ?;");
-            ps.setString(1,username.getText());
-            ps.setString(2,password.getText());
+            
+            ps.setString(1,user);
+            
+            ps.setString(2,pass);
+            
             ResultSet result = ps.executeQuery();
             if(result.next()){
-                setLabel.setText("Login Successfully");
-                ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ? ");
-                ps.setString(1,user);
+                setLabel.setText("Login Successfully");                
                 String membertype =null;
+                ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ? ");
+                ps.setString(1,user);                
                 ResultSet member = ps.executeQuery();
                 if (member.next()){
-                    membertype = member.getString(1);
+                    membertype = member.getString(1);                    
                         if (membertype.toUpperCase().equals("RIDER")){
-                            //load Rider page here
+                            //load Rider page here                            
+                        try {
+                            Parent root;
+                            root = FXMLLoader.load(getClass().getResource("/memberType/memberRider.fxml"));
+                            Scene scene = new Scene(root);
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(scene);
+                            stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }                         
+               
                         }
-                        else if (membertype.toUpperCase().equals("DRIVER")){
+                        else if (membertype.toUpperCase().equals("SHARER")){
                             //load driver page here
+                            try {
+                                Parent root;
+                                root = FXMLLoader.load(getClass().getResource("/memberType/memberDriver.fxml"));
+                                Scene scene = new Scene(root);
+                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                stage.setScene(scene);
+                                stage.show();
+                            } catch (IOException ex) {
+                                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                            }    
                         }
                         else if (membertype.toUpperCase().equals("BOTH")){
                             //load both page here.
+                            try {
+                                Parent root;
+                                root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
+                                Scene scene = new Scene(root);
+                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                stage.setScene(scene);
+                                stage.show();
+                            } catch (IOException ex) {
+                                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                            } 
                         }
                 }   
            }
@@ -109,12 +153,5 @@ public class LoginController implements Initializable {
                
     }
 
-    @FXML
-    private void username(ActionEvent event) {
-    }
-
-    @FXML
-    private void clickRegister(MouseEvent event) {
-    }
     
 }
