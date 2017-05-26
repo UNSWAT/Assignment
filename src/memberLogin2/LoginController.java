@@ -31,7 +31,9 @@ import java.util.logging.Logger;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import memberType.MemberBothController;
 import memberType.MemberDriverController;
+import memberType.MemberRiderController;
 
 /**
  * FXML Controller class
@@ -101,7 +103,7 @@ public class LoginController implements Initializable {
                                 stage.setScene(new Scene((Pane)loader.load()));
                                         
                                                               
-                                MemberDriverController controller = loader.<MemberDriverController>getController();
+                                MemberRiderController controller = loader.<MemberRiderController>getController();
                                 controller.getUser(username.getText());
                                 stage.show(); 
                         } catch (IOException ex) {
@@ -141,7 +143,7 @@ public class LoginController implements Initializable {
                                 stage.setScene(new Scene((Pane)loader.load()));
                                         
                                                               
-                                MemberDriverController controller = loader.<MemberDriverController>getController();
+                                MemberBothController controller = loader.<MemberBothController>getController();
                                 controller.getUser(username.getText());
                                 stage.show(); 
                             } catch (IOException ex) {
