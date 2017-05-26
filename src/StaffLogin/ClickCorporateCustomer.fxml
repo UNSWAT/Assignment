@@ -38,12 +38,12 @@
                   <Image url="@Image/Conference-100.png" />
                </image>
             </ImageView>
-            <Button layoutX="750.0" layoutY="250.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="420.0" text="View Corporate Member List" textFill="WHITE">
+            <Button layoutX="750.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickCorporateMemberList" onMouseClicked="#clickCorporateMemberList" prefHeight="50.0" prefWidth="420.0" text="View Corporate Member List" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="750.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="420.0" text="View Potential Corporate Member List" textFill="WHITE">
+            <Button layoutX="750.0" layoutY="375.0" mnemonicParsing="false" onAction="#clickPCorporateMemberList" onMouseClicked="#clickPCorporateMemberList" prefHeight="50.0" prefWidth="420.0" text="View Potential Corporate Member List" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

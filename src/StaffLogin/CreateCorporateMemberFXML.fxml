@@ -35,7 +35,7 @@
                    <Glow level="1.0" />
                 </effect>
             </Text>
-            <Text layoutX="14.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff --&gt;Corporate Member --&gt; Create corporate member" wrappingWidth="364.4689025878906">
+            <Text layoutX="14.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create corporate member" wrappingWidth="364.4689025878906">
                <font>
                   <Font size="23.0" />
                </font>
@@ -124,7 +124,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
+            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateCorporateMember" onMouseClicked="#CancelCreateCorporateMember" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
                <font>
                   <Font size="19.0" />
                </font>

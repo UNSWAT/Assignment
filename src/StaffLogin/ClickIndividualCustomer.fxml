@@ -38,17 +38,17 @@
                   <Image url="@Image/Contacts.png" />
                </image>
             </ImageView>
-            <Button layoutX="750.0" layoutY="336.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" text="View Individual Member List" textFill="WHITE">
+            <Button layoutX="750.0" layoutY="336.0" mnemonicParsing="false" onAction="#clickMemberList" onMouseClicked="#clickMemberList" prefHeight="50.0" prefWidth="400.0" text="View Individual Member List" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="750.0" layoutY="486.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" text="View Potential Member List" textFill="WHITE">
+            <Button layoutX="750.0" layoutY="486.0" mnemonicParsing="false" onAction="#clickPMemberList" onMouseClicked="#clickPMemberList" prefHeight="50.0" prefWidth="400.0" text="View Potential Member List" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutY="120.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="59.0" prefWidth="247.0" text="Back to Work Desk" textFill="WHITE">
+            <Button layoutX="-1.0" layoutY="29.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="59.0" prefWidth="247.0" text="Back to Work Desk" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

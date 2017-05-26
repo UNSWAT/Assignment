@@ -32,7 +32,7 @@
                   <Glow level="1.0" />
                </effect>
             </Text>
-            <Text layoutX="22.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff --&gt;Potential corporate customer --&gt; Create potential corporate customer" wrappingWidth="469.4910888671875">
+            <Text layoutX="22.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create potential corporate customer" wrappingWidth="469.4910888671875">
                <font>
                   <Font size="23.0" />
                </font>
@@ -121,12 +121,12 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
+            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreatePCorporateMember" onMouseClicked="#CancelCreatePCorporateMember" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
+            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreatePCorporateMember" onMouseClicked="#CancelCreatePCorporateMember" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
