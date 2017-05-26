@@ -116,7 +116,7 @@
          </font>
       </Text>
       <TextField layoutX="497.0" layoutY="524.0" prefHeight="27.0" prefWidth="318.0" />
-      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="201.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../creditCardInterface/Image/Lock-64.png" />
          </image>
