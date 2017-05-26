@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberPayment.MemberPaymentController">
+   <children>
+      <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@Image/background3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="566.0" layoutY="27.0">
+         <image>
+            <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+         </image>
+         <effect>
+            <Glow level="0.67" />
+         </effect>
+      </ImageView>
+      <Text fill="WHITE" layoutX="650.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+         <font>
+            <Font name="Tahoma" size="58.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+      <ImageView fitHeight="35.0" fitWidth="64.0" layoutX="610.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/american.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="54.0" layoutX="682.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/mastercard.png" />
+         </image>
+      </ImageView>      
+      <ImageView fitHeight="45.0" fitWidth="64.0" layoutX="527.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/visa.PNG" />
+         </image>
+      </ImageView>
+      <Button layoutX="933.0" layoutY="664.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Confirm" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <RadioButton layoutX="628.0" layoutY="300.0" mnemonicParsing="false" />
+      <RadioButton layoutX="701.0" layoutY="300.0" mnemonicParsing="false" />
+      <RadioButton layoutX="549.0" layoutY="300.0" mnemonicParsing="false" />
+      <Text layoutX="87.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make a payment" wrappingWidth="136.99999809265137">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="87.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount you should pay:" wrappingWidth="199.99999809265137">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="231.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill in your credit information" wrappingWidth="317.99999809265137">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      
+      <Text layoutX="327.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Type" wrappingWidth="317.99999809265137">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Card Number" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expire Date" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billing Address" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="670.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="200.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField layoutX="497.0" layoutY="372.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="403.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="438.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="473.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="508.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="543.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="578.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="613.0" prefHeight="27.0" prefWidth="318.0" />
+      <TextField layoutX="497.0" layoutY="648.0" prefHeight="27.0" prefWidth="318.0" />
+   </children>
+</AnchorPane>
