@@ -55,12 +55,13 @@ public class MemberRiderController implements Initializable {
     private void clickCreateSeek(MouseEvent event) {
     }
 
-    @FXML
-    private void back(ActionEvent event) {
-    }
 
     @FXML
     private void myprofile(ActionEvent event) {
+    }
+
+    @FXML
+    private void logout(ActionEvent event) {
     }
     
 }

@@ -26,6 +26,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import memberLogin2.LoginController;
+import memberPayment.MemberPaymentController;
+import memberType.MemberRiderController;
 
 /**
  * FXML Controller class
@@ -48,10 +52,7 @@ public class RegisterPageController implements Initializable {
     private TextField lastName;
     @FXML
     private TextField mobileNo;
-    @FXML
-    private TextField creditNo;
-    @FXML
-    private Button createAccount;
+    
     @FXML
     private PasswordField password;
     @FXML
@@ -64,8 +65,7 @@ public class RegisterPageController implements Initializable {
     private TextField homePostCode;
     @FXML
     private ComboBox homeState;
-    @FXML
-    private TextField ccCCV;
+    
     @FXML
     private TextField workAddress;
     @FXML
@@ -80,12 +80,7 @@ public class RegisterPageController implements Initializable {
     private TextField companyName;
     @FXML
     private ComboBox workState;
-    @FXML
-    private Button goBack;
-    @FXML
-    private ComboBox ccMonth;
-    @FXML
-    private ComboBox ccYear;
+    
     @FXML
     private Label errorMessage;
     @FXML
@@ -102,17 +97,12 @@ public class RegisterPageController implements Initializable {
         consultancy.setItems(CompanyConsultancy);
         workState.setValue("");
         workState.setItems(states);
-        ccMonth.setValue("01");
-        ccYear.setValue("17");
-        ccMonth.setItems(ExpiryMonth);
-        ccYear.setItems(ExpiryYear);
         memberType.setValue("Rider");
         memberType.setItems(memType);
         
         
     }    
 
-    @FXML
     private void createAccount(ActionEvent event) throws SQLException {
         try {     
             boolean check = false;
@@ -130,8 +120,7 @@ public class RegisterPageController implements Initializable {
             
             String mobileNumber = mobileNo.getText();
             
-            String creditNumber = creditNo.getText(); 
-            
+                       
             String password1 = password.getText();
             
             String passwordConfirm = password2.getText();
@@ -144,8 +133,7 @@ public class RegisterPageController implements Initializable {
             
             String homestate = homeState.getSelectionModel().getSelectedItem().toString();
             
-            String CreditCardback = ccCCV.getText();
-            
+                        
             String workAdd = workAddress.getText();
             
             String workSub = workSuburb.getText();
@@ -154,10 +142,7 @@ public class RegisterPageController implements Initializable {
             
             String consult = consultancy.getSelectionModel().getSelectedItem().toString();
             
-            String expiryMon = ccMonth.getSelectionModel().getSelectedItem().toString();
-            
-            String expiryYr = ccYear.getSelectionModel().getSelectedItem().toString();
-           
+              
             String companyN = companyName.getText();
             
             String workSte = workState.getSelectionModel().getSelectedItem().toString();  
@@ -206,16 +191,8 @@ public class RegisterPageController implements Initializable {
              else if (homePC.equals("")){
                  errorMessage.setText("Please enter your postcode");
                  check =true;
-             }
-
-              else if (creditNumber.equals("")){
-                 errorMessage.setText("Please enter a valid credit card number");
-                 check =true;
-             }
-              else if (CreditCardback.equals("")){
-                  errorMessage.setText("Please enter a CCV number");
-                  check =true;
-              }
+             }          
+              
               else if (!password1.equals(passwordConfirm)){
                   errorMessage.setText("Your passwords are not identical. Please try again.");
                   check =true;
@@ -230,10 +207,7 @@ public class RegisterPageController implements Initializable {
                   }
                   
                   else {              
-                      insertMember = con.prepareStatement("INSERT INTO PUBLIC.MEMBERS(MEMBER_USERNAME,MEMBER_PASSWORD,FIRST_NAME,LAST_NAME,EMAIL_ADDRESS,MOBILE_NO,HOME_ADDRESS,HOME_SUBURB,HOME_POSTCODE,HOME_STATE,WORK_ADDRESS,WORK_SUBURB,WORK_POSTCODE,WORK_STATE,CC_NUMBER,CC_EXPIRY_MONTH,CC_EXPIRY_YEAR,CORPORATE_MEMBER,COMPANY_NAME,MEMBER_TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-                            int expMon = Integer.parseInt(expiryMon);
-                            long ccNo = Long.parseLong(creditNumber);
-                            int expYr = Integer.parseInt(expiryYr);
+                      insertMember = con.prepareStatement("INSERT INTO PUBLIC.MEMBERS(MEMBER_USERNAME,MEMBER_PASSWORD,FIRST_NAME,LAST_NAME,EMAIL_ADDRESS,MOBILE_NO,HOME_ADDRESS,HOME_SUBURB,HOME_POSTCODE,HOME_STATE,WORK_ADDRESS,WORK_SUBURB,WORK_POSTCODE,WORK_STATE,CORPORATE_MEMBER,COMPANY_NAME,MEMBER_TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                             int homepostcode = Integer.parseInt(homePC);
                             int workpostcode;
                             if (workPC.equals("")){
@@ -255,17 +229,26 @@ public class RegisterPageController implements Initializable {
                             insertMember.setString(11,workAdd);
                             insertMember.setString(12,workSub);
                             insertMember.setInt(13,workpostcode);
-                            insertMember.setString(14,workSte);
-                            insertMember.setLong(15,ccNo);
-                            insertMember.setInt(16,expMon);
-                            insertMember.setInt(17,expYr);
-                            insertMember.setString(18,consult);
-                            insertMember.setString(19, companyN);
-                            insertMember.setString(20,membType);   
+                            insertMember.setString(14,workSte);                            
+                            insertMember.setString(15,consult);
+                            insertMember.setString(16, companyN);
+                            insertMember.setString(17,membType);   
                             insertMember.execute();
                             insertMember.close(); 
                             check =true;
-                            
+                             Database.closeConnection();
+                            try {
+                                    Parent root;
+                                    root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+                                    Scene scene = new Scene(root);
+                                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                    stage.setScene(scene);
+                                    stage.show();
+
+                            } catch (IOException ex) {
+                                Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
                             
                                   
                           }
@@ -273,7 +256,7 @@ public class RegisterPageController implements Initializable {
                     
               }
                  
-             }
+         }
         
      
        } catch (SQLException ex) {
@@ -281,18 +264,7 @@ public class RegisterPageController implements Initializable {
            System.out.println("SQL error");
        } 
         
-        Database.closeConnection();
-        try {
-                Parent root;
-                root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
-                Scene scene = new Scene(root);
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+       
                 
         
     }
@@ -306,4 +278,173 @@ public class RegisterPageController implements Initializable {
          stage.show();
                
     }
+
+    @FXML
+    private void gotopayment(ActionEvent event) {
+        try {     
+            boolean check = false;
+            PreparedStatement insertMember = null;
+            PreparedStatement usernameCheck= null;
+            Database.openConnection();
+            
+            String fname = firstName.getText(); 
+            
+            String lname = lastName.getText();
+            
+            String userName = username.getText();
+            
+            String emailAddress = email.getText();
+            
+            String mobileNumber = mobileNo.getText();
+            
+                       
+            String password1 = password.getText();
+            
+            String passwordConfirm = password2.getText();
+            
+            String homeAdd = homeAddress.getText();
+            
+            String homeSub = homeSuburb.getText();
+            
+            String homePC = homePostCode.getText();
+            
+            String homestate = homeState.getSelectionModel().getSelectedItem().toString();
+            
+                        
+            String workAdd = workAddress.getText();
+            
+            String workSub = workSuburb.getText();
+            
+            String workPC = workPostcode.getText();
+            
+            String consult = consultancy.getSelectionModel().getSelectedItem().toString();
+            
+              
+            String companyN = companyName.getText();
+            
+            String workSte = workState.getSelectionModel().getSelectedItem().toString();  
+            
+            
+            String membType = memberType.getSelectionModel().getSelectedItem().toString(); 
+            
+                             
+             while (check == false) {
+                 if (userName.equals("")){
+                 errorMessage.setText("Please enter a username");
+                 check =true;
+             }             
+             else if (fname.equals("")){
+                 errorMessage.setText("Please enter your first name");
+                 check =true;
+             }
+             else if (lname.equals("")){
+                 errorMessage.setText("Please enter your last name");
+                 check =true;
+             }
+             else if (emailAddress.equals("")){
+                 errorMessage.setText("Please enter your email address");
+                 check =true;
+              }             
+             else if (password1.equals("")){
+                 errorMessage.setText("Please enter a valid password");
+                 check =true;
+             }
+             else if (password2.equals("")){
+                 errorMessage.setText("Please confirm your password");
+                 check =true;
+             }
+             else if (mobileNumber.equals("")){
+                 errorMessage.setText("Please enter your mobile number");
+                 check =true;
+             }      
+             else if (homeAdd.equals("")){
+                 errorMessage.setText("Please enter your home address");
+                 check =true;
+             }
+             else if (homeSub.equals("")){
+                 errorMessage.setText("Please enter your home suburb");
+                 check =true;
+             }
+             else if (homePC.equals("")){
+                 errorMessage.setText("Please enter your postcode");
+                 check =true;
+             }          
+              
+              else if (!password1.equals(passwordConfirm)){
+                  errorMessage.setText("Your passwords are not identical. Please try again.");
+                  check =true;
+              }              
+              else if (password1.equals(passwordConfirm)){
+                  usernameCheck =con.prepareStatement("SELECT MEMBER_USERNAME FROM PUBLIC.MEMBERS WHERE MEMBER_USERNAME = ?");
+                  usernameCheck.setString(1,userName);
+                  ResultSet allUsername = usernameCheck.executeQuery();
+                  if (allUsername.next()){
+                      errorMessage.setText("That username has already been taken. Please choose another one");
+                      check = true;
+                  }
+                  
+                  else {              
+                      insertMember = con.prepareStatement("INSERT INTO PUBLIC.MEMBERS(MEMBER_USERNAME,MEMBER_PASSWORD,FIRST_NAME,LAST_NAME,EMAIL_ADDRESS,MOBILE_NO,HOME_ADDRESS,HOME_SUBURB,HOME_POSTCODE,HOME_STATE,WORK_ADDRESS,WORK_SUBURB,WORK_POSTCODE,WORK_STATE,CORPORATE_MEMBER,COMPANY_NAME,MEMBER_TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                            int homepostcode = Integer.parseInt(homePC);
+                            int workpostcode;
+                            if (workPC.equals("")){
+                                workpostcode = 0;
+                            }
+                            else {
+                                workpostcode = Integer.parseInt(workPC);
+                            }                            
+                            insertMember.setString(1, userName);
+                            insertMember.setString(2, password1);
+                            insertMember.setString(3,fname);
+                            insertMember.setString(4, lname);
+                            insertMember.setString(5,emailAddress);
+                            insertMember.setString(6,mobileNumber);
+                            insertMember.setString(7,homeAdd);
+                            insertMember.setString(8,homeSub);
+                            insertMember.setInt(9,homepostcode);
+                            insertMember.setString(10,homestate);
+                            insertMember.setString(11,workAdd);
+                            insertMember.setString(12,workSub);
+                            insertMember.setInt(13,workpostcode);
+                            insertMember.setString(14,workSte);                            
+                            insertMember.setString(15,consult);
+                            insertMember.setString(16, companyN);
+                            insertMember.setString(17,membType);   
+                            insertMember.execute();
+                            insertMember.close(); 
+                            check =true;
+                             Database.closeConnection();
+                            try {
+                                    Pane root;
+
+                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberPayment/memberPayment.fxml"));
+
+                                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                    stage.setScene(new Scene((Pane)loader.load()));
+
+
+                                    MemberPaymentController controller = loader.<MemberPaymentController>getController();
+                                    controller.getUser(username.getText());
+                                    stage.show(); 
+
+                            } catch (IOException ex) {
+                                Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                            
+                                  
+                          }
+                      
+                    
+              }
+                 
+         }
+        
+     
+       } catch (SQLException ex) {
+           Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+           System.out.println("SQL error");
+       }
+        
+}
 }

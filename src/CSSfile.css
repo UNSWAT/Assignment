@@ -12,25 +12,33 @@ and open the template in the editor.
 }
 
 .button {
-    -fx-padding: 15px 32px;  
+    -fx-padding: 10px 20px;  
     -fx-text-align: center;
-    -fx-border-color: #000000;
+    
     -fx-border-width: 2;
     -fx-background-radius: 0;
     -fx-background-color: #d8d8d8;
-    -fx-font-family: "Tahoma";
-    -fx-font-size: 15pt;
-    -fx-text-fill: #000000;
+    -fx-border-color:#555555;   
+    -fx-text-fill:#000000;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
-}
+ }
+ 
+
 
 .button:hover {
-    -fx-background-color:#669999;
+    -fx-background-color:#555555;
+    -fx-text-fill: white;
+    padding-right: 25px;
 }
 
-.button:pressed, .button:default:hover:pressed {
-  -fx-background-color: white;
-  -fx-text-fill: #000000;
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:pressed,.button:default:hover:pressed {
+  -fx-background-color: #414342;
+  -fx-text-fill: white;
 }
 
 .label {

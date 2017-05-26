@@ -62,6 +62,10 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void setLabel(String message){
+        setLabel.setText(message);
+    }
 
     @FXML
     private void clickLogin(ActionEvent event) {
@@ -85,13 +89,20 @@ public class LoginController implements Initializable {
             
             ResultSet result = ps.executeQuery();
             if(result.next()){
-                setLabel.setText("Login Successfully");                
+                
+                setLabel.setText("Login Successfully");  
+                
                 String membertype =null;
+                
                 ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ? ");
-                ps.setString(1,user);                
+                
+                ps.setString(1,user);    
+                
                 ResultSet member = ps.executeQuery();
+                
                 if (member.next()){
-                    membertype = member.getString(1);                    
+                    membertype = member.getString(1); 
+                    System.out.println(membertype);
                         if (membertype.toUpperCase().equals("RIDER")){
                             //load Rider page here                            
                         try {
@@ -125,12 +136,10 @@ public class LoginController implements Initializable {
                                                               
                                 MemberDriverController controller = loader.<MemberDriverController>getController();
                                 controller.getUser(username.getText());
-                                stage.show();                                
-                                
+                                stage.show(); 
                             } catch (IOException ex) {
-                                System.out.println("Error with code");
-                                System.out.println(ex);
-                            }    
+                                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                            } 
                         }
                         else if (membertype.toUpperCase().equals("BOTH")){
                             //load both page here.
