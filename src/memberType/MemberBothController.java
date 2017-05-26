@@ -39,7 +39,7 @@ public class MemberBothController implements Initializable {
     private void clickRider(ActionEvent event)throws IOException{
         
         System.out.println("Member Type: Rider");
-        Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberRider.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/memberType/riderForBoth.fxml"));
         Scene scene = new Scene(root);
         Stage stage = memberBoth.getStage(); 
         stage.setScene(scene);
@@ -50,7 +50,7 @@ public class MemberBothController implements Initializable {
         private void clickDriver(ActionEvent event)throws IOException{
         
         System.out.println("Member Type: Driver");
-        Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberDriver.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/memberType/driverForBoth.fxml"));
         Scene scene = new Scene(root);
         Stage stage = memberBoth.getStage(); 
         stage.setScene(scene);
