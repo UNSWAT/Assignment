@@ -93,12 +93,17 @@ public class LoginController implements Initializable {
                         if (membertype.toUpperCase().equals("RIDER")){
                             //load Rider page here                            
                         try {
-                            Parent root;
-                            root = FXMLLoader.load(getClass().getResource("/memberType/memberRider.fxml"));
-                            Scene scene = new Scene(root);
-                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                            stage.setScene(scene);
-                            stage.show();
+                            Pane root;
+                                                    
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+                                
+                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                stage.setScene(new Scene((Pane)loader.load()));
+                                        
+                                                              
+                                MemberDriverController controller = loader.<MemberDriverController>getController();
+                                controller.getUser(username.getText());
+                                stage.show(); 
                         } catch (IOException ex) {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                         }                         
@@ -128,12 +133,17 @@ public class LoginController implements Initializable {
                         else if (membertype.toUpperCase().equals("BOTH")){
                             //load both page here.
                             try {
-                                Parent root;
-                                root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
-                                Scene scene = new Scene(root);
+                                Pane root;
+                                                    
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberBoth.fxml"));
+                                
                                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                                stage.setScene(scene);
-                                stage.show();
+                                stage.setScene(new Scene((Pane)loader.load()));
+                                        
+                                                              
+                                MemberDriverController controller = loader.<MemberDriverController>getController();
+                                controller.getUser(username.getText());
+                                stage.show(); 
                             } catch (IOException ex) {
                                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                             } 
@@ -160,7 +170,7 @@ public class LoginController implements Initializable {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-               
+           
     }
 
     

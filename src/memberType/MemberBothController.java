@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +24,9 @@ import javafx.stage.Stage;
  */
 public class MemberBothController implements Initializable {
 
+    @FXML
+    private Label userlabel;
+    
     /**
      * Initializes the controller class.
      */
@@ -51,6 +55,10 @@ public class MemberBothController implements Initializable {
         Stage stage = memberBoth.getStage(); 
         stage.setScene(scene);
         stage.show();
-        };    
+        };
+        
+        public void getUser(String user){
+        userlabel.setText(user);
+    }
     
 }

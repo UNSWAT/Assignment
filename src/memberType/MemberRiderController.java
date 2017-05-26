@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -26,6 +27,9 @@ import seekPosting.seekPosting;
  * @author MI-PC
  */
 public class MemberRiderController implements Initializable {
+    
+    @FXML
+    private Label userlabel;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,5 +46,9 @@ public class MemberRiderController implements Initializable {
         stage.setScene(scene);
         stage.show();
         };
+    
+    public void getUser(String user){
+        userlabel.setText(user);
+    }
     
 }
