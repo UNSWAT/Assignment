@@ -8,6 +8,8 @@ package StaffLogin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,14 +27,18 @@ import javafx.stage.Stage;
 public class PageAfterStaffLoginFXMLController implements Initializable {
 
     @FXML
-    private void clickCorporateCustomer(ActionEvent event)throws IOException{
+    private void clickCorporateCustomer(ActionEvent event){
         
-        System.out.println("going to Corporate Customer");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickCorporateCustomer.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
+        try {
+            System.out.println("going to Corporate Customer");
+            Parent root = FXMLLoader.load(getClass().getResource("ClickCorporateCustomer.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = StaffLogin.getStage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PageAfterStaffLoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         };
     
     @FXML
