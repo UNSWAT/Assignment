@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SeekTableView;
+package AgreementRider;
 
+import SeekTableView.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -34,17 +35,13 @@ import memberLogin2.User;
  *
  * @author Preet
  */
-public class SeekTableViewController implements Initializable {
+public class AgreementRiderController implements Initializable {
 
     @FXML
     private TableView<Offer> offers;
-    @FXML
     private TableColumn<Offer, String> memberUsername;
-    @FXML
     private TableColumn<Offer, String> TimeFrom;
-    @FXML
     private TableColumn<Offer, String> TimeTo;
-    @FXML
     private TableColumn<Offer, Integer> PostcodeFrom;
     @FXML
     private TableColumn<Offer, Integer> PostcodeTo;
@@ -71,8 +68,6 @@ public class SeekTableViewController implements Initializable {
 
     
     @FXML
-    private Label timefrom;
-    @FXML
     private Label timeto;
     @FXML
     private Label postcodefrom;
@@ -80,7 +75,6 @@ public class SeekTableViewController implements Initializable {
     private Label postcodeto;
     @FXML
     private Label quota;
-    @FXML
     private Label message;
     
     
@@ -161,7 +155,6 @@ public class SeekTableViewController implements Initializable {
     private void myOffers(ActionEvent event) {
     }
 
-    @FXML
     private void Accept(ActionEvent event) {        
             Offer currentOffer = (Offer)offers.getSelectionModel().getSelectedItem();
             int offerID = currentOffer.getOfferid();
@@ -189,7 +182,7 @@ public class SeekTableViewController implements Initializable {
             
             Database.closeConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(SeekTableViewController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AgreementRiderController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
