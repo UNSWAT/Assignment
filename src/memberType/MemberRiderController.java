@@ -18,9 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import seekPosting.SeekPostingController;
 import seekPosting.seekPosting;
 
 /**
@@ -39,38 +37,31 @@ public class MemberRiderController implements Initializable {
     }    
 
     @FXML
-    private void createSeek(ActionEvent event)throws IOException{
+    private void clickCreateSeek(ActionEvent event)throws IOException{
         
-         Pane root;
-                                                    
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/seekPosting/seekPosting.fxml"));
-
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene((Pane)loader.load()));
-
-
-        SeekPostingController controller = loader.<SeekPostingController>getController();
-        controller.getUser(userlabel.getText());
-        stage.show(); 
-    }
-    
+        System.out.println("going to create seek posting");
+        Parent root = FXMLLoader.load(getClass().getResource("/seekPosting/seekPosting.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = memberRider.getStage(); 
+        stage.setScene(scene);
+        stage.show();
+        };
     
     public void getUser(String user){
         userlabel.setText(user);
     }
 
+    @FXML
+    private void clickCreateSeek(MouseEvent event) {
+    }
 
 
     @FXML
-    private void clickMyProfile(ActionEvent event) {
+    private void myprofile(ActionEvent event) {
     }
 
     @FXML
-    private void clickMyAgreements(ActionEvent event) {
-    }
-
-    @FXML
-    private void clickLogout(ActionEvent event) {
+    private void logout(ActionEvent event) {
     }
     
 }

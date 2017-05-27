@@ -15,11 +15,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import seekPosting.SeekPostingController;
+import seekPosting.seekPosting;
 
 /**
  * FXML Controller class
@@ -36,28 +39,17 @@ public class riderForBothController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void createSeek(ActionEvent event) {
-        
-        try {
-            Pane root;
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/seekPosting/seekPosting.fxml"));
-            
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-            
-            
-            SeekPostingController controller = loader.<SeekPostingController>getController();
-            controller.getUser(userlabel.getText());
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void clickCreateSeek(ActionEvent event)throws IOException{
     }
+        
+       
     
     public void getUser(String user){
         userlabel.setText(user);
+    }
+
+    @FXML
+    private void clickCreateSeek(MouseEvent event) {
     }
 
     @FXML
@@ -78,13 +70,33 @@ public class riderForBothController implements Initializable {
             Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 
     @FXML
-    private void clickMyProfile(ActionEvent event) {
+    private void myprofile(ActionEvent event) {
     }
 
     @FXML
-    private void clickMyAgreements(ActionEvent event) {
+    private void createSeek(ActionEvent event) {
+        
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/seekPosting/seekPosting.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+            //riderForBothController controller = loader.<riderForBothController>getController();
+            //controller.getUser(userlabel.getText());
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     }
     
-}
+    
+

@@ -89,6 +89,9 @@ public class MemberBothController implements Initializable {
         userlabel.setText(user);
     }
 
+    @FXML
+    private void myprofile(ActionEvent event) {
+    }
 
     @FXML
     private void logout(ActionEvent event) {
