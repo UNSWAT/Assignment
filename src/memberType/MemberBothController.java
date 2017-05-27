@@ -126,6 +126,21 @@ public class MemberBothController implements Initializable {
 
     @FXML
     private void MyAgreements(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AgreementRider/AgreementRider.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+             
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }
     }
 
     @FXML

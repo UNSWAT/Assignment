@@ -21,6 +21,7 @@ import static java.lang.Integer.parseInt;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -37,36 +38,28 @@ import memberLogin2.User;
  */
 public class AgreementRiderController implements Initializable {
 
+    @FXML 
+    private TableView<Agreement> agreements;
     @FXML
-    private TableView<Offer> offers;
-    private TableColumn<Offer, String> memberUsername;
-    private TableColumn<Offer, String> TimeFrom;
-    private TableColumn<Offer, String> TimeTo;
-    private TableColumn<Offer, Integer> PostcodeFrom;
+    private TableColumn<Agreement, String> CarType;
     @FXML
-    private TableColumn<Offer, Integer> PostcodeTo;
+    private TableColumn<Agreement, String> PickupTime;
     @FXML
-    private TableColumn<Offer, String> CarType;
+    private TableColumn<Agreement, String> MemberDriver;
     @FXML
-    private TableColumn<Offer, Integer> Quota;
-    
+    private TableColumn<Agreement, Integer> AgreementId;
     @FXML
-    private TableColumn<Offer, Integer> OfferId;
+    private TableColumn<Agreement, Integer> Offerid;
+    @FXML
+    private TableColumn<Agreement, Integer> Postcodefrom;
+    @FXML
+    private TableColumn<Agreement, Date>AgreementDate;
     
-    
-    
-
-    /**
-     * Initializes the controller class.
-     */
-    
-   
-    private ObservableList<Offer> data;
-    private PreparedStatement getOffers;
+       
+    private ObservableList<Agreement> data;
+    private PreparedStatement getAgreements;
     @FXML
     private Label username;
-
-    
     @FXML
     private Label timeto;
     @FXML
@@ -75,28 +68,28 @@ public class AgreementRiderController implements Initializable {
     private Label postcodeto;
     @FXML
     private Label quota;
-    private Label message;
     
-    
-    
+   
+  
+
+     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         username.setText(User.getUsername());
+        String user = username.getText();
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE, OFFER_ID from OFFER WHERE STATUS = 'Pending' ");
-//            getOffers.setInt(1,OtherStaticVariables.getQuota() );
-//            getOffers.setString(2, username.getText());
-//            getOffers.setInt(3, OtherStaticVariables.getPostcodefrom());
-//            getOffers.setString(4, OtherStaticVariables.getTimefrom());
+            getAgreements = con.prepareStatement("SELECT a.AGREEMENT_ID, a.OFFER_ID,a.MEMBER_USERNAME,a.AGREEMENTDATE,b.POSTCODE_FROM,b.CARTYPE,b.TIME_FROM from AGREEMENT a INNER JOIN OFFER b ON a.OFFER_ID = b.OFFER_ID WHERE b.MEMBER_USERNAME = ?");
+            getAgreements.setString(1, user);
+            getAgreements.executeQuery();
            
-            ResultSet rs = getOffers.executeQuery();
+            ResultSet rs = getAgreements.executeQuery();
             
             while(rs.next()){
-                data.add(new Offer(rs.getString("MEMBER_USERNAME"),rs.getString("TIME_FROM"),rs.getString("TIME_TO"),rs.getString("CARTYPE"),rs.getInt("POSTCODE_FROM"),rs.getInt("POSTCODE_TO"),rs.getInt("QUOTA"),rs.getInt("OFFER_ID")));
+                data.add(new Agreement(rs.getString("CARTYPE"),rs.getString("TIME_FROM"),rs.getString("MEMBER_USERNAME"),rs.getInt("AGREEMENT_ID"),rs.getInt("OFFER_ID"),rs.getInt("POSTCODE_FROM"),rs.getDate("AGREEMENTDATE")));
             }
             
 //            ResultSet result = getOffers.executeQuery();
@@ -114,17 +107,20 @@ public class AgreementRiderController implements Initializable {
 //                data.add(offer);
            //}
            
-            memberUsername.setCellValueFactory(new PropertyValueFactory<>("memberUsername"));
-            TimeFrom.setCellValueFactory(new PropertyValueFactory<>("timefrom"));
-            TimeTo.setCellValueFactory(new PropertyValueFactory<>("timeto"));
-            PostcodeFrom.setCellValueFactory(new PropertyValueFactory<>("postcodefrom"));
-            PostcodeTo.setCellValueFactory(new PropertyValueFactory<>("postcodeto"));
-            CarType.setCellValueFactory(new PropertyValueFactory<>("cartype"));
-            Quota.setCellValueFactory(new PropertyValueFactory<>("quota"));
-            OfferId.setCellValueFactory(new PropertyValueFactory<>("Offerid"));
+           
+           
+           CarType.setCellValueFactory(new PropertyValueFactory<>("carType"));
+           PickupTime.setCellValueFactory(new PropertyValueFactory<>("pickupTime"));
+           MemberDriver.setCellValueFactory(new PropertyValueFactory<>("memberDriver")); 
+           AgreementId.setCellValueFactory(new PropertyValueFactory<>("agreementId")); 
+           Offerid.setCellValueFactory(new PropertyValueFactory<>("offerid")); 
+           Postcodefrom.setCellValueFactory(new PropertyValueFactory<>("postcodefrom")); 
+           AgreementDate.setCellValueFactory(new PropertyValueFactory<>("agreementDate")); 
+              
+           
             
-            offers.setItems(null);
-            offers.setItems(data);
+            agreements.setItems(null);
+            agreements.setItems(data);
             
                     
             
@@ -155,36 +151,7 @@ public class AgreementRiderController implements Initializable {
     private void myOffers(ActionEvent event) {
     }
 
-    private void Accept(ActionEvent event) {        
-            Offer currentOffer = (Offer)offers.getSelectionModel().getSelectedItem();
-            int offerID = currentOffer.getOfferid();
-            String memberName = currentOffer.getmemberUsername();
-            System.out.println(offerID);
-            PreparedStatement ps;
-            Database.openConnection();
-        try {
-             ps=con.prepareStatement("UPDATE OFFER SET STATUS = 'Accepted' WHERE OFFER_ID = ?;");
-             ps.setInt(1, offerID);
-             ps.execute();
-             message.setText("Successfully Accepted. Please click on 'My Agreements' to see your agreements.");
-             java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); 
-             ps = con.prepareStatement("INSERT INTO AGREEMENT(OFFER_ID, MEMBER_USERNAME, AGREEMENTDATE)VALUES (?,?,?);");
-             ps.setInt(1, offerID);
-             ps.setString(2,memberName);
-             ps.setTimestamp(3, date);
-             ps.execute();
-             ps = con.prepareStatement("INSERT INTO AGREEMENT2(OFFER_ID,MEMBER_USERNAME,AGREEMENTDATE) VALUES(?,?,?);");
-             ps.setInt(1, offerID);
-             ps.setString(2, User.getUsername());
-             ps.setTimestamp(3, date);
-             ps.execute();            
-            
-            
-            Database.closeConnection();
-        } catch (SQLException ex) {
-            Logger.getLogger(AgreementRiderController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
     
     
 }
