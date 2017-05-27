@@ -19,10 +19,10 @@ public class Offer {
 
     
     private SimpleStringProperty memberUsername, timefrom,timeto,cartype;
-    private SimpleIntegerProperty postcodefrom, postcodeto,Quota;
+    private SimpleIntegerProperty postcodefrom, postcodeto,Quota, Offerid;
     
     
-    public Offer(String memberUsername, String timefrom, String timeto, String cartype, int postcodefrom, int postcodeto, int Quota) {
+    public Offer(String memberUsername, String timefrom, String timeto, String cartype, int postcodefrom, int postcodeto, int Quota, int Offerid) {
         this.memberUsername = new SimpleStringProperty(memberUsername);
         this.timefrom = new SimpleStringProperty(timefrom);
         this.timeto = new SimpleStringProperty(timeto);
@@ -30,7 +30,16 @@ public class Offer {
         this.postcodefrom = new SimpleIntegerProperty(postcodefrom);
         this.postcodeto = new SimpleIntegerProperty(postcodeto);
         this.Quota = new SimpleIntegerProperty(Quota);
+        this.Offerid = new SimpleIntegerProperty(Offerid);
         
+    }
+    
+    public int getOfferid(){
+        return Offerid.get();
+    }
+    
+    public void setOfferid(int value){
+        Offerid.set(value);
     }
     
     public String getmemberUsername(){
@@ -117,6 +126,9 @@ public class Offer {
         return Quota;
     }
 
+    public IntegerProperty OfferidProperty(){
+        return Offerid;
+    }
     
 
 

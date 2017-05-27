@@ -20,6 +20,8 @@ import static java.lang.Integer.parseInt;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -50,6 +52,9 @@ public class SeekTableViewController implements Initializable {
     private TableColumn<Offer, String> CarType;
     @FXML
     private TableColumn<Offer, Integer> Quota;
+    
+    @FXML
+    private TableColumn<Offer, Integer> OfferId;
     
     
     
@@ -86,15 +91,16 @@ public class SeekTableViewController implements Initializable {
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE from OFFER WHERE QUOTA <= ? AND STATUS = 'Pending' AND MEMBER_USERNAME != ?");
-            System.out.println(OtherStaticVariables.getQuota());
-            getOffers.setInt(1,OtherStaticVariables.getQuota() );
-            getOffers.setString(2, username.getText());
-            //getOffers.setInt(2, OtherStaticVariables.getPostcodefrom());
-            //getOffers.setString(3, OtherStaticVariables.getTimefrom() );
+            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE, OFFER_ID from OFFER ");
+//            getOffers.setInt(1,OtherStaticVariables.getQuota() );
+//            getOffers.setString(2, username.getText());
+//            getOffers.setInt(3, OtherStaticVariables.getPostcodefrom());
+//            getOffers.setString(4, OtherStaticVariables.getTimefrom());
+           
             ResultSet rs = getOffers.executeQuery();
+            
             while(rs.next()){
-                data.add(new Offer(rs.getString("MEMBER_USERNAME"),rs.getString("TIME_FROM"),rs.getString("TIME_TO"),rs.getString("CARTYPE"),rs.getInt("POSTCODE_FROM"),rs.getInt("POSTCODE_TO"),rs.getInt("QUOTA")));
+                data.add(new Offer(rs.getString("MEMBER_USERNAME"),rs.getString("TIME_FROM"),rs.getString("TIME_TO"),rs.getString("CARTYPE"),rs.getInt("POSTCODE_FROM"),rs.getInt("POSTCODE_TO"),rs.getInt("QUOTA"),rs.getInt("OFFER_ID")));
             }
             
 //            ResultSet result = getOffers.executeQuery();
@@ -119,6 +125,7 @@ public class SeekTableViewController implements Initializable {
             PostcodeTo.setCellValueFactory(new PropertyValueFactory<>("postcodeto"));
             CarType.setCellValueFactory(new PropertyValueFactory<>("cartype"));
             Quota.setCellValueFactory(new PropertyValueFactory<>("quota"));
+            OfferId.setCellValueFactory(new PropertyValueFactory<>("Offerid"));
             
             offers.setItems(null);
             offers.setItems(data);
@@ -150,6 +157,29 @@ public class SeekTableViewController implements Initializable {
 
     @FXML
     private void myOffers(ActionEvent event) {
+    }
+
+    @FXML
+    private void Accept(ActionEvent event) {        
+            Offer currentOffer = (Offer)offers.getSelectionModel().getSelectedItem();
+            int offerID = currentOffer.getOfferid();
+            PreparedStatement ps;
+            Database.openConnection();
+        try {
+             ps=con.prepareStatement("UPDATE OFFER SET STATUS = 'Accepted' WHERE OFFER_ID = ?;");
+             ps.setInt(offerID, 1);
+             
+            
+            
+            
+            
+            
+            
+            
+            Database.closeConnection();
+        } catch (SQLException ex) {
+            Logger.getLogger(SeekTableViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
