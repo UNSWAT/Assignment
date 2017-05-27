@@ -17,17 +17,17 @@
             <Image url="@Image/background3.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="566.0" layoutY="27.0">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="12.0">
          <image>
-            <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+            <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
          </image>
          <effect>
             <Glow level="0.67" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="650.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+      <Text fill="WHITE" layoutX="73.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="81.03564453125">
          <font>
-            <Font name="Tahoma" size="58.0" />
+            <Font name="Tahoma" size="31.0" />
          </font>
          <effect>
             <Glow level="1.0" />
@@ -45,22 +45,23 @@
       </ImageView>
       <Button layoutX="406.0" layoutY="489.0" mnemonicParsing="false" onAction="#clickDriver" stylesheets="@../CSSfile.css" text="Driver" AnchorPane.topAnchor="489.0" />
       <Button layoutX="794.0" layoutY="489.0" mnemonicParsing="false" onAction="#clickRider" stylesheets="@../CSSfile.css" text="Rider" AnchorPane.topAnchor="489.0" />
-      <Text fill="WHITE" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+      <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Label fx:id="userlabel" layoutX="89.0" layoutY="63.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE" />
-      <ButtonBar layoutX="898.0" layoutY="34.0" prefHeight="59.0" prefWidth="364.0">
-        <buttons>
-          <Button mnemonicParsing="false" onAction="#clickMyProfile" prefHeight="59.0" prefWidth="164.0" text="My Profile" />
-            <Button mnemonicParsing="false" onAction="#logout" text="Log out" />
-        </buttons>
-      </ButtonBar>
+      <Label fx:id="username" layoutX="1131.0" layoutY="54.0" prefHeight="27.0" prefWidth="126.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="898.0" layoutY="34.0" prefHeight="59.0" prefWidth="364.0" />
       <Text layoutX="405.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to do today?" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="324.02880859375">
          <font>
             <Font name="Tahoma" size="37.0" />
          </font>
       </Text>
+    <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickMyProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
+      <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="120.0" text="Log out" />
    </children>
 </AnchorPane>

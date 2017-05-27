@@ -9,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
 <children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@Image/background3.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="26.0" layoutY="3.0">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="12.0">
          <image>
             <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
          </image>
@@ -24,9 +24,9 @@
             <Glow level="0.67" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="96.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="157.4072265625">
+      <Text fill="WHITE" layoutX="73.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="81.03564453125">
          <font>
-            <Font name="Tahoma" size="58.0" />
+            <Font name="Tahoma" size="31.0" />
          </font>
          <effect>
             <Glow level="1.0" />
@@ -55,18 +55,19 @@
       <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
       <Button layoutX="563.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
       <Button layoutX="961.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
-      <Text fill="WHITE" layoutX="1071.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+      <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Label fx:id="userlabel" layoutX="1152.0" layoutY="79.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE">
+      <Label fx:id="username" layoutX="1131.0" layoutY="54.0" prefHeight="27.0" prefWidth="126.0" text="Label" textFill="WHITE">
          <font>
             <Font size="18.0" />
-         </font></Label>
-            <Button layoutX="26.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyProfile" stylesheets="@../CSSfile.css" text="My Profile" />
-            <Button layoutX="135.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyAgreements" stylesheets="@../CSSfile.css" text="My Agreements" />
-            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" onAction="#back" stylesheets="@../CSSfile.css" text="Back" />
+         </font>
+      </Label>
+            <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickMyProfile" prefHeight="40.0" prefWidth="126.0" stylesheets="@../CSSfile.css" text="My Profile" />
+            <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickMyAgreements" prefHeight="40.0" prefWidth="142.0" stylesheets="@../CSSfile.css" text="My Agreements" />
+            <Button layoutX="282.0" layoutY="69.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="120.0" stylesheets="@../CSSfile.css" text="Back" />
       <Label fx:id="seekSuccess" layoutX="285.0" layoutY="569.0" prefHeight="31.0" prefWidth="706.0" textAlignment="CENTER">
          <font>
             <Font size="21.0" />
