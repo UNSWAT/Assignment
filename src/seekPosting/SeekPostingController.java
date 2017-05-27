@@ -22,6 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Database.Database;
 import static Database.Database.con;
+import SeekTableView.SeekTableView;
+import SeekTableView.SeekTableViewController;
 import static java.lang.Integer.parseInt;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -130,15 +132,19 @@ public class SeekPostingController implements Initializable {
                     try {
                         Pane root;
 
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/riderForBoth.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SeekTableView/SeekTableView.fxml"));
 
                         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                         stage.setScene(new Scene((Pane)loader.load()));
 
 
-                        riderForBothController controller = loader.<riderForBothController>getController();
+                        SeekTableViewController controller = loader.<SeekTableViewController>getController();
                         controller.getUser(userlabel.getText());
-                        controller.setLabel("You have successfully entered a seek request.");
+                        controller.setQuota(quota);
+                        controller.setPostCodeFrom(pcstart);
+                        controller.setPostCodeTo(pcend);
+                        controller.setTimeTo(TIMETO);
+                        controller.setTimefrom(TIMEFROM);
                         stage.show(); 
 
                         } catch (IOException ex) {

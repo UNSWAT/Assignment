@@ -108,7 +108,7 @@ public class memberOfferController implements Initializable {
                     int endpc = Integer.parseInt(endPC.getText());
                     int quota = Integer.parseInt(noPassenger.getSelectionModel().getSelectedItem().toString());
                     java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); 
-                    insertOffer=con.prepareStatement("INSERT INTO OFFER(MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO,TIME_FROM,TIME_TO,QUOTA,CARTYPE,DATE_OFFER) VALUES (?,?,?,?,?,?,?,?)");
+                    insertOffer=con.prepareStatement("INSERT INTO OFFER(MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO,TIME_FROM,TIME_TO,QUOTA,CARTYPE,DATE_OFFER,STATUS) VALUES (?,?,?,?,?,?,?,?,?)");
                     insertOffer.setString(1,username.getText());
                     insertOffer.setInt(2,startpc);
                     insertOffer.setInt(3,endpc);
@@ -117,6 +117,7 @@ public class memberOfferController implements Initializable {
                     insertOffer.setInt(6,quota);   
                     insertOffer.setString(7,vehicleType.getSelectionModel().getSelectedItem().toString());
                     insertOffer.setTimestamp(8, date);
+                    insertOffer.setString(9,"Pending");
                     insertOffer.execute();
                     insertOffer.close();
 
