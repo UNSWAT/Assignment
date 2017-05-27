@@ -33,7 +33,6 @@ public class EditMemberProfileController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    @FXML
     private void Home(ActionEvent event) {
         try {
             Pane root;
@@ -50,7 +49,6 @@ public class EditMemberProfileController implements Initializable {
         }
     }
 
-    @FXML
     private void logOut(ActionEvent event) {
         try {
             Pane root;
