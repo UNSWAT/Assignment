@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
-   <children>
+<children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@Image/background3.jpg" />
@@ -47,7 +47,7 @@
             <Image url="@Image/car.PNG" />
          </image>
       </ImageView>
-      <Text layoutX="551.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Seeking">
+      <Text layoutX="327.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Need a ride? Select any option below">
          <font>
             <Font name="Tahoma" size="37.0" />
          </font>
@@ -66,6 +66,6 @@
          </font></Label>
             <Button layoutX="26.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#clickMyProfile" text="My Profile" />
             <Button layoutX="135.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#clickMyAgreements" text="My Agreements" />
-            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css"onAction="#back"  text="Back" />
+            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#back" text="Back" />
    </children>
 </AnchorPane>

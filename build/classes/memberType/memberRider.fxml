@@ -64,9 +64,8 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-            <Button layoutX="25.0" layoutY="73.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
-            <Button layoutX="175.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickMyProfile" text="My Profile" />
-            <Button layoutX="284.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickMyAgreements" text="My Agreements" />
-            <Button layoutX="421.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickLogout" text="Logout" />
+            <Button layoutX="26.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyProfile" text="My Profile" />
+            <Button layoutX="135.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyAgreements" text="My Agreements" />
+            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickLogout" text="Logout" />
    </children>
 </AnchorPane>

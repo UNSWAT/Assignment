@@ -47,7 +47,7 @@
             <ComboBox fx:id="timeto" layoutX="272.0" layoutY="109.0" prefWidth="150.0" />
             <TextField fx:id="endPC" layoutX="272.0" layoutY="230.0" prefHeight="25.0" prefWidth="105.0" />
             <Button layoutX="201.0" layoutY="378.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
-            <TextField fx:id="endPC1" layoutX="272.0" layoutY="267.0" prefHeight="25.0" prefWidth="105.0" />
+            <ComboBox fx:id="quota" layoutX="272.0" layoutY="267.0" prefHeight="27.0" prefWidth="105.0" />
          </children>
       </Pane>
       <Line endX="200.0" layoutX="654.0" layoutY="183.0" opacity="0.85" startX="-200.0" stroke="#726f6f" />
