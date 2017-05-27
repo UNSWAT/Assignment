@@ -24,7 +24,7 @@ public class memberLogin extends Application {
     
     private static Stage stage;
     
-    static Stage getStage(){
+    public static Stage getStage(){
         return stage;
     }
           

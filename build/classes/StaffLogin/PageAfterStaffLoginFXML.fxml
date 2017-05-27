@@ -53,7 +53,7 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <MenuButton layoutX="1166.0" layoutY="43.0" mnemonicParsing="false" style="-fx-border-color: ;" text="My Account" textFill="WHITE">
+            <MenuButton layoutX="1166.0" layoutY="43.0" mnemonicParsing="false" text="My Account">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

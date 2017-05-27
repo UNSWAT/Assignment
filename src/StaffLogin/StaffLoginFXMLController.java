@@ -55,7 +55,7 @@ public class StaffLoginFXMLController implements Initializable {
     }
      
     @FXML
-    private void clickSignIn(ActionEvent event)throws IOException{
+    private void clickSignIn(ActionEvent event){
         
         PreparedStatement ps;
        Database.openConnection();
@@ -77,7 +77,7 @@ public class StaffLoginFXMLController implements Initializable {
                 setLabel.setText("Login Successfully");
                 try {
                             Parent root;
-                            root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
+                            root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
                             Scene scene = new Scene(root);
                             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                             stage.setScene(scene);
@@ -109,10 +109,6 @@ public class StaffLoginFXMLController implements Initializable {
             System.out.println("Page Error");
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    @FXML
-    private void clickSignIn(MouseEvent event) {
     }
 
     

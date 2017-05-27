@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -27,9 +28,9 @@ public class ClickSuberSystemController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -38,9 +39,9 @@ public class ClickSuberSystemController implements Initializable {
     private void clickViewSeek(ActionEvent event)throws IOException{
         
         System.out.println("going to View Seek");
-        Parent root = FXMLLoader.load(getClass().getResource("ViewSeek.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewSeek.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -49,9 +50,9 @@ public class ClickSuberSystemController implements Initializable {
     private void clickViewOffer(ActionEvent event)throws IOException{
         
         System.out.println("going to View Offer");
-        Parent root = FXMLLoader.load(getClass().getResource("ViewOffer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -60,9 +61,9 @@ public class ClickSuberSystemController implements Initializable {
     private void clickViewAgreement(ActionEvent event)throws IOException{
         
         System.out.println("going to View Agreement");
-        Parent root = FXMLLoader.load(getClass().getResource("ViewAgreement.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewAgreement.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

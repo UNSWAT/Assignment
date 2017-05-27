@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -27,9 +28,9 @@ public class ClickIndividualCustomerController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -38,9 +39,9 @@ public class ClickIndividualCustomerController implements Initializable {
     private void clickMemberList(ActionEvent event)throws IOException{
         
         System.out.println("going to Member List");
-        Parent root = FXMLLoader.load(getClass().getResource("MemberList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/MemberList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -49,9 +50,9 @@ public class ClickIndividualCustomerController implements Initializable {
     private void clickPMemberList(ActionEvent event)throws IOException{
         
         System.out.println("going to PMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("PMemberList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PMemberList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

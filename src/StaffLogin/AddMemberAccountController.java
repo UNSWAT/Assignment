@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -28,9 +29,9 @@ public class AddMemberAccountController implements Initializable {
     private void CancelCreateIndividualMember(ActionEvent event)throws IOException{
         
         System.out.println("Cancel Create a individualMember");
-        Parent root = FXMLLoader.load(getClass().getResource("MemberList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/MemberList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

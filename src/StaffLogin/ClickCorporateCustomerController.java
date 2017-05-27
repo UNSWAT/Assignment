@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -27,9 +28,9 @@ public class ClickCorporateCustomerController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("PageAfterStaffLoginFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -38,9 +39,9 @@ public class ClickCorporateCustomerController implements Initializable {
     private void clickCorporateMemberList(ActionEvent event)throws IOException{
         
         System.out.println("going to CorporateMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("CorporateMemberList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/CorporateMemberList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -49,9 +50,9 @@ public class ClickCorporateCustomerController implements Initializable {
     private void clickPCorporateMemberList(ActionEvent event)throws IOException{
         
         System.out.println("going to Pentential CorporateMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("PCorporateMemberList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PCorporateMemberList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -27,9 +28,9 @@ public class ViewOfferController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickSuberSystem.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

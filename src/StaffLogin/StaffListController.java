@@ -33,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import Database.Database;
 import static Database.Database.con;
+import memberLogin2.memberLogin;
 /**
  * FXML Controller class
  *
@@ -41,11 +42,11 @@ import static Database.Database.con;
 public class StaffListController implements Initializable {
     
     @FXML
-    TableView personTable;
+    private TableView<StaffData> personTable;
     @FXML
-    private TableColumn firstNameColumn;
+    private TableColumn<StaffData,String> firstNameColumn;
     @FXML
-    private TableColumn lastNameColumn;
+    private TableColumn<StaffData,String> lastNameColumn;
     @FXML
     private Label firstNameLabel;
     @FXML
@@ -58,26 +59,34 @@ public class StaffListController implements Initializable {
     private static Statement stmt;
     private ObservableList<StaffData> data;
     
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb){
         try{
         PreparedStatement ps;
                 Database.openConnection();
                 data=FXCollections.observableArrayList();
-        ps = con.prepareStatement("SELECT First_name,last_name from STAFF WHERE FIRST_NAME = ? and LAST_NAME =?");
+        ps = con.prepareStatement("SELECT FIRST_NAME,LAST_NAME FROM PUBLIC.STAFF;");
         ResultSet result = ps.executeQuery();        
-
+        
         while (result.next()){
-            data.add(new StaffData(result.getString("first_name"),result.getString("Last_name")));
-           
+            //System.out.println(result.getString("FIRST_NAME"));
+            //firstNameLabel.setText(result.getString("FIRST_NAME"));
+            data.add(new StaffData(result.getString("FIRST_NAME"),result.getString("LAST_NAME")));
+            System.out.println("sth3");
         }
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory("First_Name"));
-        lastNameColumn.setCellValueFactory(new PropertyValueFactory("Last_Name"));
-
+        firstNameColumn.setCellValueFactory(new PropertyValueFactory<StaffData,String>("FIRST_NAME"));
+        lastNameColumn.setCellValueFactory(new PropertyValueFactory<StaffData,String>("LAST_NAME"));
+            System.out.println("sth4");
         personTable.setItems(null);
+            System.out.println("sth5");
         personTable.setItems(data);
+            System.out.println("sth6");
         
-        
+            //personTable.getColumns().addAll(firstNameColumn, lastNameColumn);
+            result.close();
+            ps.close();
         }catch(SQLException se){
+            System.out.println(se.getMessage());
+            System.out.println(se.getErrorCode());
             System.out.println("Error connecting to database !");
         }
 
@@ -85,18 +94,18 @@ public class StaffListController implements Initializable {
         }   
     
     public static class StaffData {
-        private StringProperty firstNameColumn;
-        private StringProperty lastNameColumn;
+        private SimpleStringProperty firstNameColumn;
+        private SimpleStringProperty lastNameColumn;
 
         private StaffData(String first_name, String last_name) {
             this.firstNameColumn=new SimpleStringProperty(first_name);
             this.lastNameColumn=new SimpleStringProperty(last_name);
             
         }
-        public StringProperty fist_nameProperty(){
+        public StringProperty getFirst_nameProperty(){
             return firstNameColumn;
         }
-        public StringProperty last_nameProperty(){
+        public StringProperty getlast_nameProperty(){
             return lastNameColumn;
         }
     }
@@ -106,9 +115,9 @@ public class StaffListController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickStaff.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -117,9 +126,9 @@ public class StaffListController implements Initializable {
     private void clickNewinStaffList(ActionEvent event)throws IOException{
         
         System.out.println("going to Create a Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("AddStaffAccount.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/AddStaffAccount.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 
 /**
@@ -31,9 +32,9 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
         
         try {
             System.out.println("going to Corporate Customer");
-            Parent root = FXMLLoader.load(getClass().getResource("ClickCorporateCustomer.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickCorporateCustomer.fxml"));
             Scene scene = new Scene(root);
-            Stage stage = StaffLogin.getStage();
+            Stage stage = memberLogin.getStage();
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -45,9 +46,9 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
     private void clickIndividualCustomer(ActionEvent event)throws IOException{
         
         System.out.println("going to Individual Customer");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickIndividualCustomer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -56,9 +57,9 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
     private void clickSuberSystem(ActionEvent event)throws IOException{
         
         System.out.println("going to sUber System");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickSuberSystem.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -67,9 +68,9 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
     private void clickStaff(ActionEvent event)throws IOException{
         
         System.out.println("going to Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickStaff.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

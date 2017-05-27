@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -27,9 +28,9 @@ public class PMemberListController implements Initializable {
     private void clickBackToWorkDesk(ActionEvent event)throws IOException{
         
         System.out.println("going to Potential Individual Member");
-        Parent root = FXMLLoader.load(getClass().getResource("ClickIndividualCustomer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };
@@ -38,9 +39,9 @@ public class PMemberListController implements Initializable {
     private void clickNewinPMemberList(ActionEvent event)throws IOException{
         
         System.out.println("going to Create a Potential Individual Member");
-        Parent root = FXMLLoader.load(getClass().getResource("AddPMemberAccount.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/AddPMemberAccount.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
         };

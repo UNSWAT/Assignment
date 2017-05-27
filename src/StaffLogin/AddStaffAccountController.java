@@ -27,6 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import memberLogin2.memberLogin;
 
 
 /**
@@ -124,7 +125,7 @@ public class AddStaffAccountController implements Initializable {
                             Database.closeConnection();
                             try {
                                 Parent root;
-                                root = FXMLLoader.load(getClass().getResource("StaffList.fxml"));
+                                root = FXMLLoader.load(getClass().getResource("/StaffLogin/StaffList.fxml"));
                                 Scene scene = new Scene(root);
                                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                                 stage.setScene(scene);
@@ -148,9 +149,9 @@ public class AddStaffAccountController implements Initializable {
     private void CancelCreateStaff(ActionEvent event)throws IOException{
         
         System.out.println("Cancel Create a Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("StaffList.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/StaffList.fxml"));
         Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
+        Stage stage = memberLogin.getStage(); 
         stage.setScene(scene);
         stage.show();
     }
