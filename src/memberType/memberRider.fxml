@@ -52,9 +52,9 @@
             <Font name="Tahoma" size="37.0" />
          </font>
       </Text>
-      <Button layoutX="127.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
-      <Button layoutX="510.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
-      <Button layoutX="911.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
+      <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
+      <Button layoutX="563.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
+      <Button layoutX="961.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
       <Text fill="WHITE" layoutX="1071.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
             <Font size="18.0" />
@@ -64,9 +64,8 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-            <Button layoutX="25.0" layoutY="73.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
-            <Button layoutX="175.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickMyProfile" text="My Profile" />
-            <Button layoutX="284.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickMyAgreements" text="My Agreements" />
-            <Button layoutX="421.0" layoutY="73.0" mnemonicParsing="false" onAction="#clickLogout" text="Logout" />
+            <Button layoutX="26.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyProfile" text="My Profile" />
+            <Button layoutX="135.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickMyAgreements" text="My Agreements" />
+            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" onAction="#clickLogout" text="Logout" />
    </children>
 </AnchorPane>

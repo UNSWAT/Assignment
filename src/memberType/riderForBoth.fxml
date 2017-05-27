@@ -10,21 +10,21 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
-   <children>
+<children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@Image/background3.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="549.0" layoutY="27.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="26.0" layoutY="3.0">
          <image>
-            <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+            <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
          </image>
          <effect>
             <Glow level="0.67" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="637.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+      <Text fill="WHITE" layoutX="96.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="157.4072265625">
          <font>
             <Font name="Tahoma" size="58.0" />
          </font>
@@ -47,7 +47,7 @@
             <Image url="@Image/car.PNG" />
          </image>
       </ImageView>
-      <Text layoutX="551.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Seeking">
+      <Text layoutX="327.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Need a ride? Select any option below">
          <font>
             <Font name="Tahoma" size="37.0" />
          </font>
@@ -55,13 +55,17 @@
       <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
       <Button layoutX="563.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
       <Button layoutX="961.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
-      <Button layoutX="1135.0" layoutY="33.0" mnemonicParsing="false" onAction="#back" stylesheets="@../CSSfile.css" text="Back" />
-      <Button layoutX="962.0" layoutY="33.0" mnemonicParsing="false" onAction="#myprofile" stylesheets="@../CSSfile.css" text="My Profile" />
-      <Text fill="WHITE" layoutX="44.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+      <Text fill="WHITE" layoutX="1071.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Label fx:id="userlabel" layoutX="119.0" layoutY="66.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE" />
+      <Label fx:id="userlabel" layoutX="1152.0" layoutY="79.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+            <Button layoutX="26.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#clickMyProfile" text="My Profile" />
+            <Button layoutX="135.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#clickMyAgreements" text="My Agreements" />
+            <Button layoutX="272.0" layoutY="71.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" onAction="#back" text="Back" />
    </children>
 </AnchorPane>

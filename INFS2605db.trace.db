@@ -2177,3 +2177,104 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/yU/
 	at org.h2.mvstore.FileStore.open(FileStore.java:173)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
 	... 78 more
+2017-05-27 14:29:34 jdbc[8]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at sqlclient.database.DatabaseConnection.openConnection(DatabaseConnection.java:44)
+	at sqlclient.database.DatabaseConnection.execute(DatabaseConnection.java:67)
+	at sqlclient.view.MainController.executeQueries(MainController.java:206)
+	at sqlclient.view.MainController.handleRunButton(MainController.java:196)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(Unknown Source)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(Unknown Source)
+	at com.sun.javafx.event.EventUtil.fireEvent(Unknown Source)
+	at javafx.event.Event.fireEvent(Unknown Source)
+	at javafx.scene.Node.fireEvent(Unknown Source)
+	at javafx.scene.control.Button.fire(Unknown Source)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(Unknown Source)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(Unknown Source)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(Unknown Source)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Unknown Source)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(Unknown Source)
+	at com.sun.javafx.event.EventUtil.fireEvent(Unknown Source)
+	at javafx.event.Event.fireEvent(Unknown Source)
+	at javafx.scene.Scene$MouseHandler.process(Unknown Source)
+	at javafx.scene.Scene$MouseHandler.access$1500(Unknown Source)
+	at javafx.scene.Scene.impl_processMouseEvent(Unknown Source)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Unknown Source)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(Unknown Source)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(Unknown Source)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(Unknown Source)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(Unknown Source)
+	at com.sun.glass.ui.View.handleMouseEvent(Unknown Source)
+	at com.sun.glass.ui.View.notifyMouse(Unknown Source)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 75 more
+2017-05-27 14:29:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SEEKS" not found; SQL statement:
+SELECT * FROM seeks [42102-195]
+2017-05-27 15:47:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
+2017-05-27 15:47:15 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
+2017-05-27 15:47:18 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
+2017-05-27 15:47:20 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
+2017-05-27 15:47:20 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
+2017-05-27 15:47:21 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO SEEK VALUES MEMBER_USERNAME[*] = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  "; expected "("; SQL statement:
+INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?   [42001-195]
