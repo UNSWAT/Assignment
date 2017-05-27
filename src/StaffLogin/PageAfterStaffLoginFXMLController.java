@@ -30,59 +30,71 @@ public class PageAfterStaffLoginFXMLController implements Initializable {
 
     @FXML
     private void clickCorporateCustomer(ActionEvent event) {
-
         try {
-            System.out.println("going to Corporate Customer");
-            Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickCorporateCustomer.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = memberLogin.getStage();
-            stage.setScene(scene);
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickCorporateCustomer.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
             stage.show();
+
         } catch (IOException ex) {
             Logger.getLogger(PageAfterStaffLoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    ;
     
     @FXML
     private void clickIndividualCustomer(ActionEvent event) throws IOException {
+        try {
+            Pane root;
 
-        System.out.println("going to Individual Customer");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(PageAfterStaffLoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    ;
     
     @FXML
     private void clickSuberSystem(ActionEvent event) throws IOException {
+        try {
+            Pane root;
 
-        System.out.println("going to sUber System");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(PageAfterStaffLoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    ;
     
     @FXML
     private void clickStaff(ActionEvent event) throws IOException {
+        try {
+            Pane root;
 
-        System.out.println("going to Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(PageAfterStaffLoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    ;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

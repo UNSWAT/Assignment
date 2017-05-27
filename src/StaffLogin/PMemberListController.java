@@ -30,25 +30,37 @@ public class PMemberListController implements Initializable {
 
     @FXML
     private void Back(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Potential Individual Member");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickIndividualCustomer.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(PMemberListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
     private void clickNewinPMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Create a Potential Individual Member");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/AddPMemberAccount.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/AddPMemberAccount.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(PMemberListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Initializes the controller class.
      */

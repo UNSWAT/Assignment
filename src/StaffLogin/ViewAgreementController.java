@@ -30,14 +30,20 @@ public class ViewAgreementController implements Initializable {
 
     @FXML
     private void Back(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickSuberSystem.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ViewAgreementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     /**
      * Initializes the controller class.

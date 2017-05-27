@@ -30,14 +30,20 @@ public class CreatePCorporateCustomerController implements Initializable {
 
     @FXML
     private void CancelCreatePCorporateMember(ActionEvent event)throws IOException{
-        
-        System.out.println("Cancel Create a PCorporateMember");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PCorporateMemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PCorporateMemberList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(CreatePCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Initializes the controller class.
      */

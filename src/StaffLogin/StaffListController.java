@@ -33,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import Database.Database;
 import static Database.Database.con;
+import Suber.Models.Staff;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import memberLogin2.memberLogin;
@@ -43,12 +44,12 @@ import memberLogin2.memberLogin;
  */
 public class StaffListController implements Initializable {
     
+   @FXML
+    private TableView<Staff> staff;
     @FXML
-    private TableView<StaffData> personTable;
+    private TableColumn<Staff,String> FirstName;
     @FXML
-    private TableColumn<StaffData,String> firstNameColumn;
-    @FXML
-    private TableColumn<StaffData,String> lastNameColumn;
+    private TableColumn<Staff,String> LastName;
     @FXML
     private Label firstNameLabel;
     @FXML
@@ -58,58 +59,27 @@ public class StaffListController implements Initializable {
     @FXML
     private Label passwordLabel;
     
-    private static Statement stmt;
-    private ObservableList<StaffData> data;
+    private ObservableList<Staff> data;
+    private PreparedStatement getStaff;
     
-    public void initialize(URL url, ResourceBundle rb){
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         try{
-        PreparedStatement ps;
-                Database.openConnection();
-                data=FXCollections.observableArrayList();
-        ps = con.prepareStatement("SELECT FIRST_NAME,LAST_NAME FROM PUBLIC.STAFF;");
-        ResultSet result = ps.executeQuery();        
-        
-        while (result.next()){
-            //System.out.println(result.getString("FIRST_NAME"));
-            //firstNameLabel.setText(result.getString("FIRST_NAME"));
-            data.add(new StaffData(result.getString("FIRST_NAME"),result.getString("LAST_NAME")));
-            System.out.println("sth3");
-        }
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<StaffData,String>("FIRST_NAME"));
-        lastNameColumn.setCellValueFactory(new PropertyValueFactory<StaffData,String>("LAST_NAME"));
-            System.out.println("sth4");
-        personTable.setItems(null);
-            System.out.println("sth5");
-        personTable.setItems(data);
-            System.out.println("sth6");
-        
-            //personTable.getColumns().addAll(firstNameColumn, lastNameColumn);
-            result.close();
-            ps.close();
-        }catch(SQLException se){
-            System.out.println(se.getMessage());
-            System.out.println(se.getErrorCode());
-            System.out.println("Error connecting to database !");
-        }
-
-	Database.closeConnection();
-        }   
-    
-    public static class StaffData {
-        private SimpleStringProperty firstNameColumn;
-        private SimpleStringProperty lastNameColumn;
-
-        private StaffData(String first_name, String last_name) {
-            this.firstNameColumn=new SimpleStringProperty(first_name);
-            this.lastNameColumn=new SimpleStringProperty(last_name);
+            Database.openConnection();
+            data=FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("select FIRST_NAME,LAST_NAME from STAFF" );
+            while(rs.next()){
+                data.add(new Staff(rs.getString("FIRST_NAME"),rs.getString("LAST_NAME")));
+            }
+            FirstName.setCellValueFactory(new PropertyValueFactory<>("FIRST_NAME"));
+            LastName.setCellValueFactory(new PropertyValueFactory<>("LAST_NAME"));
             
+            staff.setItems(null);
+            staff.setItems(data);
+        }catch(SQLException se){
+            System.out.println(se);
         }
-        public StringProperty getFirst_nameProperty(){
-            return firstNameColumn;
-        }
-        public StringProperty getlast_nameProperty(){
-            return lastNameColumn;
-        }
+        Database.closeConnection();
     }
     
 
