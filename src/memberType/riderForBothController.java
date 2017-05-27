@@ -30,11 +30,17 @@ public class riderForBothController implements Initializable {
     
     @FXML
     private Label userlabel;
+    @FXML
+    private Label seekSuccess;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
+    public void setLabel(String success){
+        seekSuccess.setText(success);
+    }
 
     @FXML
     private void createSeek(ActionEvent event) {

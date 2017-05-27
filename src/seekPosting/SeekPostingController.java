@@ -22,12 +22,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Database.Database;
 import static Database.Database.con;
+import static java.lang.Integer.parseInt;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import memberPayment.MemberPaymentController;
 import memberType.MemberBothController;
+import memberType.riderForBothController;
+import signup.RegisterPageController;
 
 /**
  * FXML Controller class
@@ -97,47 +102,50 @@ public class SeekPostingController implements Initializable {
             String QUOTA = quota.getSelectionModel().getSelectedItem().toString();
 
             while (check == false) {
-                if (timeto.equals("")) {
-                    errorMessage.setText("Please enter a starting time");
-                    check = true;
-                } else if (timeFrom.equals("")) {
-                    errorMessage.setText("Please enter a ending time");
-                    check = true;
-                } else if (startPC.equals("")) {
+                if (POSTCODE.equals("")) {
                     errorMessage.setText("Please enter your starting location postcode");
                     check = true;
-                } else if (endPC.equals("")) {
+                } else if (POSTCODEDESTINATION.equals("")) {
                     errorMessage.setText("Please enter your denstination postcode");
                     check = true;
-                } else if (quota.equals("")) {
-                    errorMessage.setText("Please enter a valid password");
-                    check = true;
-
-                } else {
-                    insertSeek = con.prepareStatement("INSERT INTO SEEK VALUES MEMBER_USERNAME = ?,TIME_TO = ?, TIME_FROM = ?, POSTCODE =? , POSTCODE_DESTINATION=?, QUOTA =?  ");
+                } else if (!POSTCODE.equals("")&&!POSTCODEDESTINATION.equals("")){
+                    int pcstart = parseInt(POSTCODE);
+                    int pcend = parseInt(POSTCODEDESTINATION);
+                    int quota = parseInt(QUOTA);
+                    insertSeek = con.prepareStatement("INSERT INTO SEEK(MEMBER_USERNAME,TIME_TO,TIME_FROM,POSTCODE,POSTCODE_DESTINATION,QUOTA) VALUES(?,?,?,?,?,?)");
                     insertSeek.setString(1, MEMBERUSERNAME);
                     insertSeek.setString(2, TIMETO);
                     insertSeek.setString(3, TIMEFROM);
-                    insertSeek.setString(4, POSTCODE);
-                    insertSeek.setString(5, POSTCODEDESTINATION);
-                    insertSeek.setString(6, QUOTA);
-
+                    insertSeek.setInt(4, pcstart);
+                    insertSeek.setInt(5, pcend);
+                    insertSeek.setInt(6, quota);
+                    insertSeek.execute();
+                    insertSeek.close();
                     check = true;
                     Database.closeConnection();
                     try {
-                        Parent root;
-                        root = FXMLLoader.load(getClass().getResource("/memberType/riderForBoth.fxml"));
-                        Scene scene = new Scene(root);
-                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        stage.setScene(scene);
-                        stage.show();
+                        Pane root;
 
-                    } catch (IOException ex) {
-                        Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/riderForBoth.fxml"));
 
-                }
-            }
+                        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene((Pane)loader.load()));
+
+
+                        riderForBothController controller = loader.<riderForBothController>getController();
+                        controller.getUser(userlabel.getText());
+                        controller.setLabel("You have successfully entered a seek request.");
+                        stage.show(); 
+
+                        } catch (IOException ex) {
+                            Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                } 
+                    
+                } 
+                    
+            
         } catch (SQLException ex) {
             Logger.getLogger(SeekPostingController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("SQL error");
