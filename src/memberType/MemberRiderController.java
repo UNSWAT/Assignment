@@ -8,6 +8,8 @@ package memberType;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import memberLogin2.User;
 import seekPosting.SeekPostingController;
 import seekPosting.seekPosting;
 
@@ -30,12 +33,14 @@ import seekPosting.seekPosting;
  */
 public class MemberRiderController implements Initializable {
     
+    
     @FXML
-    private Label userlabel;
+    private Label username;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        username.setText(User.getUsername());
     }    
 
     @FXML
@@ -49,28 +54,61 @@ public class MemberRiderController implements Initializable {
         stage.setScene(new Scene((Pane)loader.load()));
 
 
-        SeekPostingController controller = loader.<SeekPostingController>getController();
-        controller.getUser(userlabel.getText());
+        
         stage.show(); 
     }
     
     
-    public void getUser(String user){
-        userlabel.setText(user);
-    }
-
-
+   
 
     @FXML
-    private void clickMyProfile(ActionEvent event) {
+    private void Home(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+             
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }
     }
 
     @FXML
-    private void clickMyAgreements(ActionEvent event) {
+    private void myProfile(ActionEvent event) {
     }
 
     @FXML
-    private void clickLogout(ActionEvent event) {
+    private void MyAgreements(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOut(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberLogin2/Login.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+             
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }
+    }
+
+    @FXML
+    private void myOffers(ActionEvent event) {
     }
     
 }

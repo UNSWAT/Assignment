@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import offerPosting.Offer;
 import Database.Database;
 import static Database.Database.con;
+import Database.OtherStaticVariables;
 import static java.lang.Integer.parseInt;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +25,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
+import memberLogin2.User;
 
 /**
  * FXML Controller class
@@ -80,14 +82,17 @@ public class SeekTableViewController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        username.setText(User.getUsername());
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            //getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE from OFFER");
-            //getOffers.setInt(1, Integer.parseInt(quota.getText()));
-            //getOffers.setInt(2, Integer.parseInt(postcodefrom.getText()));
-            //getOffers.setString(3, timefrom.getText());
-            ResultSet rs = con.createStatement().executeQuery("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE from OFFER" );
+            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE from OFFER WHERE QUOTA <= ? AND STATUS = 'Pending' AND MEMBER_USERNAME != ?");
+            System.out.println(OtherStaticVariables.getQuota());
+            getOffers.setInt(1,OtherStaticVariables.getQuota() );
+            getOffers.setString(2, username.getText());
+            //getOffers.setInt(2, OtherStaticVariables.getPostcodefrom());
+            //getOffers.setString(3, OtherStaticVariables.getTimefrom() );
+            ResultSet rs = getOffers.executeQuery();
             while(rs.next()){
                 data.add(new Offer(rs.getString("MEMBER_USERNAME"),rs.getString("TIME_FROM"),rs.getString("TIME_TO"),rs.getString("CARTYPE"),rs.getInt("POSTCODE_FROM"),rs.getInt("POSTCODE_TO"),rs.getInt("QUOTA")));
             }
@@ -125,30 +130,7 @@ public class SeekTableViewController implements Initializable {
         }
         Database.closeConnection();
     }  
-    
-    public void setTimefrom(String timeFrom){
-        timefrom.setText(timeFrom);
-    }
-    
-    public void setTimeTo(String TimeTo){
-        timeto.setText(TimeTo);
-    }
-    
-    public void setPostCodeFrom(int postcodeFrom){
-        postcodefrom.setText(Integer.toString(postcodeFrom));
-    }
-    
-    public void setPostCodeTo(int postCodeTo){
-        postcodeto.setText(Integer.toString(postCodeTo));
-    }
-    
-    public void setQuota(int Quota){
-        quota.setText(Integer.toString(Quota));
-    }
-
-    public void getUser(String user){
-        username.setText(user);
-    }
+  
 
     @FXML
     private void Home(ActionEvent event) {

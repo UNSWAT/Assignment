@@ -48,8 +48,7 @@ public class memberProfile2Controller implements Initializable {
         stage.setScene(new Scene((Pane)loader.load()));
 
 
-        riderForBothController controller = loader.<riderForBothController>getController();
-        controller.getUser(username.getText());
+        
         stage.show(); 
     }
     
@@ -63,8 +62,7 @@ public class memberProfile2Controller implements Initializable {
         stage.setScene(new Scene((Pane)loader.load()));
 
 
-        driverForBothController controller = loader.<driverForBothController>getController();
-        controller.getUser(username.getText());
+        
         stage.show(); 
     }
         
@@ -78,14 +76,11 @@ public class memberProfile2Controller implements Initializable {
         stage.setScene(new Scene((Pane)loader.load()));
 
 
-        //driverForBothController controller = loader.<driverForBothController>getController();
-        //controller.getUser(userlabel.getText());
+        
         stage.show(); 
     }
         
-    public void getUser(String user){
-        username.setText(user);
-    }
+   
 
     @FXML
     private void Home(ActionEvent event) {

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seekPosting.SeekPostingController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seekPosting.SeekPostingController">
    <children>
       <Pane layoutX="384.0" layoutY="215.0" prefHeight="478.0" prefWidth="540.0" style="-fx-background-color: #ecebe8;" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="356.0">
          <children>
@@ -43,11 +43,12 @@
                </font>
             </Text>
             <TextField fx:id="startPC" layoutX="272.0" layoutY="190.0" prefHeight="25.0" prefWidth="105.0" />
-            <ComboBox fx:id="timeFrom" layoutX="272.0" layoutY="150.0" prefWidth="150.0" />
-            <ComboBox fx:id="timeto" layoutX="272.0" layoutY="109.0" prefWidth="150.0" />
+            <ComboBox fx:id="timeFrom" layoutX="272.0" layoutY="109.0" prefWidth="150.0" />
+            <ComboBox fx:id="timeto" layoutX="272.0" layoutY="150.0" prefWidth="150.0" />
             <TextField fx:id="endPC" layoutX="272.0" layoutY="230.0" prefHeight="25.0" prefWidth="105.0" />
-            <Button layoutX="201.0" layoutY="378.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
+            <Button layoutX="347.0" layoutY="371.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
             <ComboBox fx:id="quota" layoutX="272.0" layoutY="267.0" prefHeight="27.0" prefWidth="105.0" />
+            <Button layoutX="43.0" layoutY="371.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="141.0" text="Back" />
          </children>
       </Pane>
       <Line endX="200.0" layoutX="654.0" layoutY="183.0" opacity="0.85" startX="-200.0" stroke="#726f6f" />
@@ -87,9 +88,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#createPost" text="Create my posting" />
-      <Button layoutX="156.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickMyProfile" prefHeight="41.0" prefWidth="105.0" text="My Profile" />
-      <Button layoutX="261.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickMyAgreements" text="My Agreements" />
-      <Button layoutX="389.0" layoutY="69.0" mnemonicParsing="false" onAction="#clickLogout" text="Logout" />
+      <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
+      <Button layoutX="140.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
+      <Button layoutX="266.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
+      <Button layoutX="528.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
+      <Button layoutX="408.0" layoutY="68.0" mnemonicParsing="false" onAction="#myOffers" prefHeight="40.0" prefWidth="120.0" text="My Offers" />
    </children>
 </AnchorPane>

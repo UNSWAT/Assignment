@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="offerPosting.memberOfferController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="offerPosting.memberOfferController">
    <children>
       <Pane layoutX="378.0" layoutY="224.0" prefHeight="478.0" prefWidth="540.0" style="-fx-background-color: #ecebe8;" AnchorPane.leftAnchor="378.0" AnchorPane.rightAnchor="362.0">
          <children>
@@ -43,8 +43,8 @@
                </font>
             </Text>
             <TextField fx:id="startPC" layoutX="272.0" layoutY="190.0" prefHeight="25.0" prefWidth="105.0" />
-            <ComboBox fx:id="timeFrom" layoutX="272.0" layoutY="150.0" prefWidth="150.0" />
-            <ComboBox fx:id="timeto" layoutX="272.0" layoutY="109.0" prefWidth="150.0" />
+            <ComboBox fx:id="timeFrom" layoutX="272.0" layoutY="109.0" prefWidth="150.0" />
+            <ComboBox fx:id="timeto" layoutX="272.0" layoutY="150.0" prefWidth="150.0" />
             <TextField fx:id="endPC" layoutX="272.0" layoutY="230.0" prefHeight="25.0" prefWidth="105.0" />
             <Text layoutX="134.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Type:" wrappingWidth="120.40723013877869">
                <font>
@@ -52,7 +52,7 @@
                </font>
             </Text>
             <ComboBox fx:id="vehicleType" layoutX="272.0" layoutY="309.0" prefWidth="150.0" />
-            <Button layoutX="209.0" layoutY="379.0" mnemonicParsing="false" onAction="#createOffer" text="Create my offer" />
+            <Button layoutX="347.0" layoutY="382.0" mnemonicParsing="false" onAction="#createOffer" text="Create my offer" />
             <Label fx:id="setMessage" layoutX="140.0" layoutY="30.0" prefHeight="35.0" prefWidth="292.0" textFill="RED">
                <font>
                   <Font size="17.0" />
@@ -60,6 +60,7 @@
             </Label>
             <ComboBox fx:id="noPassenger" layoutX="271.0" layoutY="267.0" prefWidth="150.0" />
             <Label fx:id="offerComplete" layoutX="152.0" layoutY="430.0" prefHeight="41.0" prefWidth="269.0" textAlignment="CENTER" />
+            <Button layoutX="86.0" layoutY="382.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="126.0" text="Back" />
          </children>
       </Pane>
       <Line endX="200.0" layoutX="647.0" layoutY="185.0" opacity="0.85" startX="-200.0" stroke="#726f6f" />

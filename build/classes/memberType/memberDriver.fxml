@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
@@ -17,17 +16,17 @@
             <Image url="@Image/background3.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="566.0" layoutY="27.0">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="12.0">
          <image>
-            <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+            <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
          </image>
          <effect>
             <Glow level="0.67" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="650.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+      <Text fill="WHITE" layoutX="73.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="81.03564453125">
          <font>
-            <Font name="Tahoma" size="58.0" />
+            <Font name="Tahoma" size="31.0" />
          </font>
          <effect>
             <Glow level="1.0" />
@@ -43,24 +42,27 @@
             <Image url="@Image/current.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="347.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Create New Offer" />
-      <Button layoutX="730.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
+      <Button layoutX="390.0" layoutY="462.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Create New Offer" />
+      <Button layoutX="785.0" layoutY="462.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
       <Text layoutX="360.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready to ride? Select an option below.">
          <font>
             <Font name="Tahoma" size="37.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="24.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+      <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Label fx:id="userlabel" layoutX="99.0" layoutY="65.0" prefHeight="13.0" prefWidth="101.0" text="Label" textFill="WHITE" />
-      <ButtonBar layoutX="908.0" layoutY="41.0" prefHeight="59.0" prefWidth="364.0">
-         <buttons>
-            <Button mnemonicParsing="false" onAction="#myprofile" prefHeight="59.0" prefWidth="164.0" text="My Profile" />
-            <Button mnemonicParsing="false" onAction="#logout" text="Log out" />
-         </buttons>
-      </ButtonBar>
+      <Label fx:id="username" layoutX="1131.0" layoutY="54.0" prefHeight="27.0" prefWidth="126.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
+      <Button layoutX="140.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
+      <Button layoutX="266.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
+      <Button layoutX="528.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
+      <Button layoutX="408.0" layoutY="68.0" mnemonicParsing="false" onAction="#myOffers" prefHeight="40.0" prefWidth="120.0" text="My Offers" />
    </children>
 </AnchorPane>

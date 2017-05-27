@@ -30,6 +30,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import memberPayment.MemberPaymentController;
 import signup.RegisterPageController;
+import memberLogin2.User;
 
 /**
  * FXML Controller class
@@ -76,12 +77,9 @@ public class memberOfferController implements Initializable {
         vehicleType.setItems(vehicle);
         noPassenger.setValue("1");
         noPassenger.setItems(passengers);
+        username.setText(User.getUsername());
+        
     }    
-    
-    public void setUser(String user){
-        username.setText(user);
-    }
-
     
 
     @FXML
@@ -127,7 +125,7 @@ public class memberOfferController implements Initializable {
                     insertCar.execute();
                     insertCar.close();
                     check=true;
-                    offerComplete.setText("Your offer has been successfully entered. Please click on my offers to see your current offers.");
+                    offerComplete.setText("Your offer has been successfully entered.");
             
                 }
             }
@@ -173,6 +171,24 @@ public class memberOfferController implements Initializable {
 
     @FXML
     private void myOffers(ActionEvent event) {
+    }
+
+    @FXML
+    private void back(ActionEvent event) {
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+          
+            stage.show(); 
+
+        } catch (IOException ex) {
+            Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     

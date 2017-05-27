@@ -91,7 +91,7 @@ public class LoginController implements Initializable {
             
             ResultSet result = ps.executeQuery();
             if(result.next()){
-                
+                User.setUsername(user);
                 setLabel.setText("Login Successfully");  
                 
                 String membertype =null;
@@ -116,8 +116,7 @@ public class LoginController implements Initializable {
                                 stage.setScene(new Scene((Pane)loader.load()));
                                         
                                                               
-                                MemberRiderController controller = loader.<MemberRiderController>getController();
-                                controller.getUser(username.getText());
+                                
                                 stage.show(); 
                         } catch (IOException ex) {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -135,9 +134,8 @@ public class LoginController implements Initializable {
                                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                                 stage.setScene(new Scene((Pane)loader.load()));
                                         
-                                                              
-                                MemberDriverController controller = loader.<MemberDriverController>getController();
-                                controller.getUser(username.getText());
+                                     
+                                
                                 stage.show(); 
                             } catch (IOException ex) {
                                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -146,20 +144,15 @@ public class LoginController implements Initializable {
                         else if (membertype.toUpperCase().equals("BOTH")){
                             //load both page here.
                             try {
-                                Pane root;
-                                                    
-                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberBoth.fxml"));
-                                
-                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                                stage.setScene(new Scene((Pane)loader.load()));
-                                        
-                                                              
-                                MemberBothController controller = loader.<MemberBothController>getController();
-                                controller.getUser(username.getText());
-                                stage.show(); 
-                            } catch (IOException ex) {
-                                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-                            } 
+                                    Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
+                                    Scene scene = new Scene(root);
+                                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                    stage.setScene(scene);
+                                    stage.show();
+                                } catch (IOException ex) {
+                                    System.out.println("Page Error");
+                                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                                }
                         }
                 }   
            }
