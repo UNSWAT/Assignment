@@ -80,7 +80,11 @@ public class riderForBothController implements Initializable {
     }
 
     @FXML
-    private void myprofile(ActionEvent event) {
+    private void clickMyProfile(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickMyAgreements(ActionEvent event) {
     }
     
 }

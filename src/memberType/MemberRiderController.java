@@ -59,9 +59,6 @@ public class MemberRiderController implements Initializable {
         userlabel.setText(user);
     }
 
-    @FXML
-    private void createPost(ActionEvent event) {
-    }
 
 
     @FXML
