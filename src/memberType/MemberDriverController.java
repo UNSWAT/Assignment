@@ -9,6 +9,7 @@ package memberType;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -34,6 +35,14 @@ public class MemberDriverController implements Initializable {
     
     public void getUser(String user){
         userlabel.setText(user);
+    }
+
+    @FXML
+    private void myprofile(ActionEvent event) {
+    }
+
+    @FXML
+    private void logout(ActionEvent event) {
     }
     
     

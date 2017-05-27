@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberType.riderForBothController">
    <children>
       <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
@@ -32,7 +32,7 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" onMouseEntered="#clickCreateSeek" onMouseMoved="#clickCreateSeek" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
@@ -52,9 +52,9 @@
             <Font name="Tahoma" size="37.0" />
          </font>
       </Text>
-      <Button layoutX="127.0" layoutY="463.0" mnemonicParsing="false" onAction="#clickCreateSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
-      <Button layoutX="510.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
-      <Button layoutX="911.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
+      <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
+      <Button layoutX="563.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
+      <Button layoutX="961.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
       <Button layoutX="1135.0" layoutY="33.0" mnemonicParsing="false" onAction="#back" stylesheets="@../CSSfile.css" text="Back" />
       <Button layoutX="962.0" layoutY="33.0" mnemonicParsing="false" onAction="#myprofile" stylesheets="@../CSSfile.css" text="My Profile" />
       <Text fill="WHITE" layoutX="44.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
