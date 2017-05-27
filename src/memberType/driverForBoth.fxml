@@ -43,8 +43,8 @@
             <Image url="@Image/current.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="382.0" layoutY="463.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
-      <Button layoutX="781.0" layoutY="463.0" mnemonicParsing="false" onAction="#ManageOffers" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
+      <Button layoutX="347.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Create New Offer" />
+      <Button layoutX="730.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
       <Text layoutX="389.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready to driver others? Start Now!">
          <font>
             <Font name="Tahoma" size="37.0" />
