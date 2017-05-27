@@ -38,12 +38,12 @@ public class MemberDriverController implements Initializable {
     }
 
     @FXML
-    private void myProfile(ActionEvent event) {
+    private void myprofile(ActionEvent event) {
     }
 
     @FXML
-    private void LogOut(ActionEvent event) {
+    private void logout(ActionEvent event) {
     }
-
+    
     
 }
