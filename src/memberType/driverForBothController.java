@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import offerPosting.memberOfferController;
 import seekPosting.seekPosting;
 
 /**
@@ -39,27 +40,13 @@ public class driverForBothController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    private void clickCreateSeek(ActionEvent event)throws IOException{
-        
-        System.out.println("going to create seek posting");
-        Parent root = FXMLLoader.load(getClass().getResource("/seekPosting/seekPosting.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberRider.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    
     
     public void getUser(String user){
         userlabel.setText(user);
     }
 
-    @FXML
-    private void myprofile(ActionEvent event) {
     
-    
-    }
-
     @FXML
     private void back(ActionEvent event) {
         try {
@@ -78,6 +65,34 @@ public class driverForBothController implements Initializable {
             Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+
+    @FXML
+    private void createOffer(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/offerPosting/memberOffer.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+            memberOfferController controller = loader.<memberOfferController>getController();
+            controller.setUser(userlabel.getText()); 
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void ManageOffers(ActionEvent event) {
+    }
+
+    @FXML
+    private void myprofile(ActionEvent event) {
     }
 
     
