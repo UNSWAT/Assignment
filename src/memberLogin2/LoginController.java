@@ -54,6 +54,8 @@ public class LoginController implements Initializable {
     private TextField username;
     @FXML
     private PasswordField passWord;
+    @FXML
+    private Button register1;
 
     /**
      * Initializes the controller class.
@@ -182,6 +184,20 @@ public class LoginController implements Initializable {
         stage.setScene(scene);
         stage.show();
            
+    }
+
+    @FXML
+    private void staffLogin(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/StaffLoginFXML.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println("Page Error");
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     

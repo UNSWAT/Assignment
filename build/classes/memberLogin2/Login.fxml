@@ -79,5 +79,10 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <Button layoutX="465.0" layoutY="622.0" onAction="#staffLogin" prefHeight="45.0" prefWidth="370.0" text="Staff Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

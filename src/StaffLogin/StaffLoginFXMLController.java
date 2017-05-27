@@ -29,6 +29,7 @@ import java.util.logging.Logger;
 import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.input.MouseEvent;
+import memberLogin2.LoginController;
 
 /**
  * FXML Controller class
@@ -96,23 +97,24 @@ public class StaffLoginFXMLController implements Initializable {
         }
     
     @FXML
-    private void clickMemberLogin(ActionEvent event)throws IOException{
+    private void clickMemberLogin(ActionEvent event){
         
-        System.out.println("going to Member Login Page");
-        Parent root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = StaffLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println("Page Error");
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     @FXML
     private void clickSignIn(MouseEvent event) {
     }
 
-    @FXML
-    private void clickMemberLogin(MouseEvent event) {
-    }
     
     
 }
