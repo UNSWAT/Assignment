@@ -31,16 +31,27 @@
                   <Image url="@Image/background3.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="44.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Member Account" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
+                    <image>
+                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+                    </image>
+                    <effect>
+                        <Glow level="0.67" />
+                    </effect>
+                </ImageView>
+                <Text fill="WHITE" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="125.99998474121094">
+                    <font>
+                        <Font name="Tahoma" size="36.0" />
+                    </font>
+                    <effect>
+                        <Glow level="1.0" />
+                    </effect>
+                </Text>
+                <Text layoutX="503.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Member Account" textAlignment="CENTER" wrappingWidth="360.0">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Text>
             <Text layoutX="226.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
                <font>
                   <Font size="16.0" />
@@ -141,23 +152,9 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <MenuButton layoutX="1170.0" layoutY="43.0" mnemonicParsing="false" text="My Account" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" text="My Profile" />
-                  <MenuItem mnemonicParsing="false" text="Log Out" />
-               </items>
-            </MenuButton>
-            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
-               <font>
-                  <Font name="Tahoma" size="58.0" />
-               </font>
-               <effect>
-                  <Glow level="1.0" />
-               </effect>
-            </Text>
+            <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
+            <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="126.0" text="Log Out" />
+            <Line endX="280.0" layoutX="593.0" layoutY="180.0" startX="-100.0" />
          </children>
       </AnchorPane>
    </children>

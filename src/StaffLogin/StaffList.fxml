@@ -29,38 +29,27 @@
                   <Image url="@Image/background3.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
-               </image>
-            </ImageView>
             <ListView editable="true" fixedCellSize="2.0" layoutY="194.0" prefHeight="571.0" prefWidth="1280.0" />
-            <Button layoutY="30.0" mnemonicParsing="false" onAction="#clickBackToWorkDesk" onMouseClicked="#clickBackToWorkDesk" prefHeight="59.0" prefWidth="312.0" text="Back to Staff " textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
             <Text layoutX="30.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff List">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <MenuButton layoutX="1171.0" layoutY="52.0" mnemonicParsing="false" text="My Account" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" text="My Profile" />
-                  <MenuItem mnemonicParsing="false" text="Log Out" />
-               </items>
-            </MenuButton>
-            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
-               <font>
-                  <Font name="Tahoma" size="58.0" />
-               </font>
-               <effect>
-                  <Glow level="1.0" />
-               </effect>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
+                <image>
+                    <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+                </image>
+                <effect>
+                    <Glow level="0.67" />
+                </effect>
+            </ImageView>
+            <Text fill="WHITE" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="125.99998474121094">
+                <font>
+                    <Font name="Tahoma" size="36.0" />
+                </font>
+                <effect>
+                    <Glow level="1.0" />
+                </effect>
             </Text>
              <SplitPane dividerPositions="0.3343915343915344" layoutX="133.0" layoutY="196.0" prefHeight="584.0" prefWidth="1280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="196.0">
               <items>
@@ -109,9 +98,13 @@
                   </AnchorPane>
               </items>
             </SplitPane>
-            <Button alignment="BOTTOM_RIGHT" layoutX="1139.0" layoutY="126.0" mnemonicParsing="false" prefWidth="130.0" text="Delete" />
-            <Button alignment="BASELINE_RIGHT" layoutX="1029.0" layoutY="126.0" mnemonicParsing="false" prefWidth="110.0" text="Edit" />
-            <Button alignment="BOTTOM_RIGHT" layoutX="919.0" layoutY="126.0" mnemonicParsing="false" onAction="#clickNewinStaffList" onMouseClicked="#clickNewinStaffList" prefWidth="110.0" text="New" />
+            <Button layoutX="1139.0" layoutY="126.0" mnemonicParsing="false" prefWidth="130.0" text="Delete" />
+            <Button layoutX="1029.0" layoutY="126.0" mnemonicParsing="false" prefWidth="110.0" text="Edit" />
+            <Button layoutX="919.0" layoutY="126.0" mnemonicParsing="false" onAction="#clickNewinStaffList" onMouseClicked="#clickNewinStaffList" prefWidth="110.0" text="New" />
+            <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#Back" onMouseClicked="#Back" prefHeight="41.0" prefWidth="126.0" text="Back " textFill="WHITE">
+            </Button>
+            <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
+            <Button layoutX="266.0" layoutY="69.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="126.0" text="Log Out" />
          </children>
       </AnchorPane>
    </children>

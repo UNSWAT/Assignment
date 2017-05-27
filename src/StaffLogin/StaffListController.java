@@ -33,6 +33,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import Database.Database;
 import static Database.Database.con;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 import memberLogin2.memberLogin;
 /**
  * FXML Controller class
@@ -112,7 +114,7 @@ public class StaffListController implements Initializable {
     
 
     @FXML
-    private void clickBackToWorkDesk(ActionEvent event)throws IOException{
+    private void Back(ActionEvent event)throws IOException{
         
         System.out.println("going to Staff");
         Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
@@ -134,11 +136,38 @@ public class StaffListController implements Initializable {
         };
 
     @FXML
-    private void clickBackToWorkDesk(MouseEvent event) {
+    private void Home(ActionEvent event) {
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(StaffListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
-    private void clickNewinStaffList(MouseEvent event) {
-    }
+    private void logOut(ActionEvent event) {
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/StaffLoginFXML.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(StaffListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    } 
     
 }
