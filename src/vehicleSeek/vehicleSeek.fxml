@@ -8,44 +8,60 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
 
-<FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vehicleSeek.vehicleSeekController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css">
-         <children>
-            <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
-               <image>
-                  <Image url="@Image/background3.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
-               <font>
-                  <Font name="Tahoma" size="58.0" />
-               </font>
-               <effect>
-                  <Glow level="1.0" />
-               </effect>
-            </Text>
-            <Text fill="WHITE" layoutX="42.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Seek" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <TableView layoutX="78.0" layoutY="169.0" prefHeight="200.0" prefWidth="881.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Car Type" />
-                  <TableColumn prefWidth="75.0" text="Member" />
-              </columns>
-            </TableView>
-            <Button layoutX="948.0" layoutY="627.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Confirm Selection" />
-         </children>
-      </AnchorPane>
-   </children>
+<FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vehicleSeek.vehicleSeekController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css">
+            <children>
+                <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@Image/background3.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="12.0">
+                    <image>
+                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+                    </image>
+                    <effect>
+                        <Glow level="0.67" />
+                    </effect>
+                </ImageView>
+                <Text fill="WHITE" layoutX="73.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="81.03564453125">
+                    <font>
+                        <Font name="Tahoma" size="31.0" />
+                    </font>
+                    <effect>
+                        <Glow level="1.0" />
+                    </effect>
+                </Text>
+                <Text layoutX="621.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Seek" textAlignment="CENTER">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <TableView layoutX="273.0" layoutY="259.0" prefHeight="200.0" prefWidth="881.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="Car Type" />
+                        <TableColumn prefWidth="75.0" text="Member" />
+                    </columns>
+                </TableView>
+                <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Label fx:id="username" layoutX="1131.0" layoutY="54.0" prefHeight="27.0" prefWidth="126.0" text="Label" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Button layoutX="948.0" layoutY="627.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Confirm Selection" />
+                <Line endX="200.0" layoutX="654.0" layoutY="183.0" startX="-100.0" strokeMiterLimit="20.0" />
+            </children>
+        </AnchorPane>
+    </children>
 </FlowPane>

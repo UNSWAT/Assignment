@@ -21,6 +21,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,28 +41,27 @@ public class vehicleSeekController implements Initializable {
     private static PreparedStatement prep;
     private static ObservableList<EmployeeData> data;
     
-    @FXML
     private TableView table;
-    @FXML
     TableColumn namec;
 
-    @FXML
     private TableColumn phonec;
 
-    @FXML
     private TableColumn idc;
 
-    @FXML
     private TableColumn authc;
 
-    @FXML
     private TableColumn datec;
 
-    @FXML
     private TableColumn timec;
 
-    @FXML
     private TableColumn emailc;
+    
+    @FXML
+    private Label username;
+    
+    public void getUser(String user){
+        username.setText(user);
+    }
     
     //AdminView is the table view containing the employee details
     //admin controller populates the table view AdminView

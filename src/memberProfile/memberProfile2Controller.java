@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 public class memberProfile2Controller implements Initializable {
 
     @FXML
-    private Label userlabel;
+    private Label username;
     
     /**
      * Initializes the controller class.
@@ -38,7 +38,6 @@ public class memberProfile2Controller implements Initializable {
         // TODO
     }    
     
-    @FXML
     private void clickRider(ActionEvent event)throws IOException{
         
          Pane root;
@@ -50,11 +49,10 @@ public class memberProfile2Controller implements Initializable {
 
 
         riderForBothController controller = loader.<riderForBothController>getController();
-        controller.getUser(userlabel.getText());
+        controller.getUser(username.getText());
         stage.show(); 
     }
     
-        @FXML
         private void clickDriver(ActionEvent event)throws IOException{
         
          Pane root;
@@ -66,11 +64,10 @@ public class memberProfile2Controller implements Initializable {
 
 
         driverForBothController controller = loader.<driverForBothController>getController();
-        controller.getUser(userlabel.getText());
+        controller.getUser(username.getText());
         stage.show(); 
     }
         
-        @FXML
         private void clickMyProfile(ActionEvent event)throws IOException{
         
          Pane root;
@@ -86,16 +83,16 @@ public class memberProfile2Controller implements Initializable {
         stage.show(); 
     }
         
-        public void getUser(String user){
-        userlabel.setText(user);
+    public void getUser(String user){
+        username.setText(user);
     }
 
     @FXML
-    private void myprofile(ActionEvent event) {
+    private void Home(ActionEvent event) {
     }
 
     @FXML
-    private void logout(ActionEvent event) {
+    private void myProfile(ActionEvent event) {
     }
     
 }

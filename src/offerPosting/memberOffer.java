@@ -19,20 +19,18 @@ public class memberOffer extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-       
+
         Parent root = FXMLLoader.load(getClass().getResource("/offerPosting/memberOffer.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public static void main(String[] args) {
         launch(args);
     }
-    
-    
-    
-    }
-    
+
+}
 
