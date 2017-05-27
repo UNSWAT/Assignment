@@ -66,32 +66,41 @@ public class CorporateMemberListController implements Initializable {
     private Label companySuburbLabel;
     @FXML
     private Label companyStateLabel;
+    
+    @FXML
+    private void clickNewCorporateMember(ActionEvent event){
+        try {
+            Pane root;
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/CreateCorporateMemberFXML.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(CorporateMemberListController .class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
-    private void Back(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Corporate Member");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickCorporateCustomer.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void Back(ActionEvent event) {
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickCorporateCustomer.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(CorporateMemberListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
-    @FXML
-    private void clickNewCorporateMember(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Create a CorporateMember");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/CreateCorporateMemberFXML.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -110,7 +119,7 @@ public class CorporateMemberListController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CorporateMemberListController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -127,7 +136,7 @@ public class CorporateMemberListController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CorporateMemberListController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

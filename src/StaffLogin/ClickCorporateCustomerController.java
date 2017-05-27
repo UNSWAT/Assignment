@@ -27,39 +27,40 @@ import memberLogin2.memberLogin;
  * @author sunyifei
  */
 public class ClickCorporateCustomerController implements Initializable {
+    
+    @FXML
+    private void clickCorporateMemberList(ActionEvent event){
+        try {
+            Pane root;
 
-    @FXML
-    private void clickBackToWorkDesk(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/CorporateMemberList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
-    private void clickCorporateMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to CorporateMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/CorporateMemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
-    
-    @FXML
-    private void clickPCorporateMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Pentential CorporateMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PCorporateMemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void clickPCorporateMemberList(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PCorporateMemberList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
     /**
@@ -83,7 +84,7 @@ public class ClickCorporateCustomerController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -100,7 +101,7 @@ public class ClickCorporateCustomerController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

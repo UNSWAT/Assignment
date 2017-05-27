@@ -31,115 +31,14 @@
                   <Image url="@Image/background3.jpg" />
                </image>
             </ImageView>
-                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
-                    <image>
-                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
-                    </image>
-                    <effect>
-                        <Glow level="0.67" />
-                    </effect>
-                </ImageView>
-                <Text fill="WHITE" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="125.99998474121094">
-                    <font>
-                        <Font name="Tahoma" size="36.0" />
-                    </font>
-                    <effect>
-                        <Glow level="1.0" />
-                    </effect>
-                </Text>
-                <Text layoutX="503.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Member Account" textAlignment="CENTER" wrappingWidth="360.0">
-                    <font>
-                        <Font size="28.0" />
-                    </font>
-                </Text>
-            <Text layoutX="226.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="44.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Member Account" textAlignment="CENTER">
                <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="226.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="446.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="226.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="226.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="226.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="376.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="226.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="526.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField layoutX="226.0" layoutY="238.0" prefHeight="35.0" prefWidth="200.0" />
-            <TextField layoutX="446.0" layoutY="238.0" prefHeight="35.0" prefWidth="200.0" />
-            <TextField layoutX="226.0" layoutY="303.0" prefHeight="35.0" prefWidth="420.0" />
-            <TextField layoutX="226.0" layoutY="366.0" prefHeight="35.0" prefWidth="420.0" />
-            <TextField layoutX="226.0" layoutY="435.0" prefHeight="35.0" prefWidth="420.0" />
-            <TextArea layoutX="226.0" layoutY="501.0" prefHeight="100.0" prefWidth="420.0" />
-            <TextField layoutX="226.0" layoutY="631.0" prefHeight="35.0" prefWidth="120.0" />
-            <TextField layoutX="376.0" layoutY="631.0" prefHeight="35.0" prefWidth="120.0" />
-            <ComboBox layoutX="526.0" layoutY="631.0" prefHeight="35.0" prefWidth="120.0" />
-            <Text layoutX="750.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="750.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Address">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="750.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Phone Number">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField layoutX="750.0" layoutY="238.0" prefHeight="35.0" prefWidth="420.0" />
-            <TextField layoutX="750.0" layoutY="303.0" prefHeight="35.0" prefWidth="420.0" />
-            <TextArea layoutX="750.0" layoutY="366.0" prefHeight="100.0" prefWidth="420.0" />
-            <TextField layoutX="750.0" layoutY="501.0" prefHeight="35.0" prefWidth="120.0" />
-            <TextField layoutX="900.0" layoutY="501.0" prefHeight="35.0" prefWidth="120.0" />
-            <ComboBox layoutX="1050.0" layoutY="501.0" prefHeight="35.0" prefWidth="120.0" />
-            <Text layoutX="1050.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="750.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="900.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code">
-               <font>
-                  <Font size="16.0" />
+                  <Font size="30.0" />
                </font>
             </Text>
             <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateIndividualMember" onMouseClicked="#CancelCreateIndividualMember" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
@@ -152,9 +51,69 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
-            <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="126.0" text="Log Out" />
-            <Line endX="280.0" layoutX="593.0" layoutY="180.0" startX="-100.0" />
+            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+               <font>
+                  <Font name="Tahoma" size="58.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <TextField fx:id="username" layoutX="126.0" layoutY="226.0" prefHeight="35.0" prefWidth="200.0" />
+            <TextField fx:id="firstName" layoutX="126.0" layoutY="280.0" prefHeight="35.0" prefWidth="200.0" />
+            <TextField fx:id="lastName" layoutX="345.0" layoutY="280.0" prefHeight="35.0" prefWidth="200.0" />
+            <TextField fx:id="email" layoutX="125.0" layoutY="337.0" prefHeight="35.0" prefWidth="420.0" />
+            <PasswordField fx:id="password" layoutX="124.0" layoutY="398.0" prefHeight="35.0" prefWidth="420.0" />
+            <PasswordField fx:id="password2" layoutX="124.0" layoutY="460.0" prefHeight="35.0" prefWidth="420.0" />
+            <TextField fx:id="mobileNo" layoutX="125.0" layoutY="519.0" prefHeight="35.0" prefWidth="420.0" />
+            <TextField fx:id="homeAddress" layoutX="124.0" layoutY="608.0" prefHeight="35.0" prefWidth="420.0" />
+            <TextField fx:id="homeSuburb" layoutX="124.0" layoutY="668.0" prefHeight="35.0" prefWidth="120.0" />
+            <TextField fx:id="homePostCode" layoutX="274.0" layoutY="668.0" prefHeight="35.0" prefWidth="120.0" />
+            <TextField fx:id="companyName" layoutX="760.0" layoutY="312.0" prefHeight="35.0" prefWidth="410.0" />
+            <TextField fx:id="workAddress" layoutX="760.0" layoutY="463.0" prefHeight="35.0" prefWidth="410.0" />
+            <TextField fx:id="workSuburb" layoutX="760.0" layoutY="522.0" prefHeight="35.0" prefWidth="120.0" />
+            <TextField fx:id="workPostcode" layoutX="906.0" layoutY="522.0" prefHeight="35.0" prefWidth="120.0" />
+            <Text layoutX="126.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+            <Text layoutX="345.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+            <Text layoutX="125.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" />
+            <Text layoutX="125.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="125.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
+            <Text layoutX="126.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number" />
+            <Text layoutX="126.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+            <ComboBox fx:id="homeState" layoutX="424.0" layoutY="668.0" prefHeight="35.0" prefWidth="120.0" />
+            <Text layoutX="126.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" />
+            <Text layoutX="274.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code" />
+            <Text layoutX="424.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
+            <Text layoutX="124.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Address" wrappingWidth="138.17254638671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="761.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+            <ComboBox fx:id="consultancy" layoutX="1053.0" layoutY="370.0" prefHeight="35.0" prefWidth="120.0" />
+            <Text layoutX="761.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" />
+            <Text layoutX="907.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code" />
+            <Text layoutX="1050.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
+            <Text layoutX="126.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="70.0" />
+            <Text layoutX="760.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work Details (Optional)" wrappingWidth="239.99999737739563">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="760.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" wrappingWidth="132.50034201145172" />
+            <Text layoutX="758.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultancy:" wrappingWidth="271.1725247949362">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="workState" layoutX="1049.0" layoutY="522.0" prefHeight="35.0" prefWidth="120.0" />
+            <Label fx:id="errorMessage" layoutX="301.0" layoutY="134.0" prefHeight="32.0" prefWidth="428.0" style="-fx-text-fill: #FF0000;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Text layoutX="760.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Type" wrappingWidth="420.0000242218375" />
+            <ComboBox fx:id="memberType" layoutX="760.0" layoutY="234.0" prefHeight="35.0" prefWidth="120.0" />
          </children>
       </AnchorPane>
    </children>

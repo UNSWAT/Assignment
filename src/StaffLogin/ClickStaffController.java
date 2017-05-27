@@ -29,38 +29,40 @@ import memberLogin2.memberLogin;
  */
 public class ClickStaffController implements Initializable {
 
-    @FXML
-    private void clickBackToWorkDesk(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
     
     @FXML
-    private void clickViewStaffList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Staff List");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/StaffList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void clickViewStaffList(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/StaffList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickStaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+    }
     
     @FXML
-    private void clickPCorporateMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Create a New Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/AddStaffAccount.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void clickPCorporateMemberList(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/AddStaffAccount.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickStaffController.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+    }
     /**
      * Initializes the controller class.
      */
@@ -82,7 +84,7 @@ public class ClickStaffController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickStaffController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -99,7 +101,7 @@ public class ClickStaffController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickStaffController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

@@ -23,84 +23,87 @@
 <?import javafx.scene.text.Text?>
 
 <FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.AddStaffAccountController">
-    <children>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0">
-            <children>
-                <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
-                    <image>
-                        <Image url="@Image/background3.jpg" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
-                    <image>
-                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
-                    </image>
-                    <effect>
-                        <Glow level="0.67" />
-                    </effect>
-                </ImageView>
-                <Text fill="WHITE" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="125.99998474121094">
-                    <font>
-                        <Font name="Tahoma" size="36.0" />
-                    </font>
-                    <effect>
-                        <Glow level="1.0" />
-                    </effect>
-                </Text>
-                <Text layoutX="503.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Staff Account" textAlignment="CENTER" wrappingWidth="360.0">
-                    <font>
-                        <Font size="28.0" />
-                    </font>
-                </Text>
-                <Text layoutX="286.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Text layoutX="286.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Text layoutX="643.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Text layoutX="286.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <TextField fx:id="firstName" layoutX="286.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
-                <TextField fx:id="lastName" layoutX="642.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
-                <TextField fx:id="username" layoutX="286.0" layoutY="365.0" prefHeight="50.0" prefWidth="660.0" />
-                <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateStaff" onMouseClicked="#CancelCreateStaff" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                </Button>
-                <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="19.0" />
-                    </font>
-                </Button>
-                <Label fx:id="errorMessage" layoutX="390.0" layoutY="150.0" prefHeight="32.0" prefWidth="428.0" style="-fx-text-fill: #FF0000;">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <PasswordField fx:id="password" layoutX="286.0" layoutY="462.0" prefHeight="50.0" prefWidth="660.0" />
-                <Text layoutX="286.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <PasswordField fx:id="password2" layoutX="286.0" layoutY="550.0" prefHeight="50.0" prefWidth="660.0" />
-                <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
-                <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="126.0" text="Log Out" />
-                <Line endX="280.0" layoutX="593.0" layoutY="180.0" startX="-100.0" />
-            </children>
-        </AnchorPane>
-    </children>
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Image/background3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="556.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Sugar%20Cubes%20Filled-100.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="44.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Staff Account" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="286.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="286.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="643.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="286.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="firstName" layoutX="286.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
+            <TextField fx:id="lastName" layoutX="642.0" layoutY="276.0" prefHeight="50.0" prefWidth="300.0" />
+            <TextField fx:id="username" layoutX="286.0" layoutY="365.0" prefHeight="50.0" prefWidth="660.0" />
+            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateStaff" onMouseClicked="#CancelCreateStaff" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
+            <MenuButton layoutX="1170.0" layoutY="43.0" mnemonicParsing="false" text="My Account">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="My Profile" />
+                  <MenuItem mnemonicParsing="false" text="Log Out" />
+               </items>
+            </MenuButton>
+            <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
+               <font>
+                  <Font name="Tahoma" size="58.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+             <Label fx:id="errorMessage" layoutX="390.0" layoutY="150.0" prefHeight="32.0" prefWidth="428.0" style="-fx-text-fill: #FF0000;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="286.0" layoutY="462.0" prefHeight="50.0" prefWidth="660.0" />
+            <Text layoutX="286.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password2" layoutX="286.0" layoutY="550.0" prefHeight="50.0" prefWidth="660.0" />
+         </children>
+      </AnchorPane>
+   </children>
 </FlowPane>

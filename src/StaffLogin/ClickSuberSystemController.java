@@ -28,54 +28,60 @@ import memberLogin2.memberLogin;
  * @author sunyifei
  */
 public class ClickSuberSystemController implements Initializable {
+    
+    @FXML
+    private void clickViewSeek(ActionEvent event){
+        try {
+            Pane root;
 
-    private void clickBackToWorkDesk(ActionEvent event) throws IOException {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewSeek.fxml"));
 
-        System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickSuberSystemController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     ;
     
     @FXML
-    private void clickViewSeek(ActionEvent event) throws IOException {
+    private void clickViewOffer(ActionEvent event){
+        try {
+            Pane root;
 
-        System.out.println("going to View Seek");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewSeek.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickSuberSystemController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     ;
     
     @FXML
-    private void clickViewOffer(ActionEvent event) throws IOException {
+    private void clickViewAgreement(ActionEvent event){
+        try {
+            Pane root;
 
-        System.out.println("going to View Offer");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
-    }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewAgreement.fxml"));
 
-    ;
-    
-    @FXML
-    private void clickViewAgreement(ActionEvent event) throws IOException {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
 
-        System.out.println("going to View Agreement");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ViewAgreement.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage();
-        stage.setScene(scene);
-        stage.show();
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickSuberSystemController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     ;
@@ -98,7 +104,7 @@ public class ClickSuberSystemController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickSuberSystemController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -115,7 +121,7 @@ public class ClickSuberSystemController implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickSuberSystemController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

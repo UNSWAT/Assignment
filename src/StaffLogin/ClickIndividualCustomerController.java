@@ -28,39 +28,40 @@ import memberLogin2.memberLogin;
  * @author sunyifei
  */
 public class ClickIndividualCustomerController implements Initializable {
+    
+    @FXML
+    private void clickMemberList(ActionEvent event){
+        try {
+            Pane root;
 
-    @FXML
-    private void clickBackToWorkDesk(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Work Desk");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/MemberList.fxml"));
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+          
+            stage.show(); 
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickIndividualCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
-    private void clickMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Member List");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/MemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
-    
-    @FXML
-    private void clickPMemberList(ActionEvent event)throws IOException{
-        
-        System.out.println("going to PMember List");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/PMemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void clickPMemberList(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PMemberList.fxml"));
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+          
+            stage.show(); 
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickIndividualCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Initializes the controller class.
      */
@@ -84,7 +85,7 @@ public class ClickIndividualCustomerController implements Initializable {
             stage.show(); 
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickIndividualCustomerController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -101,7 +102,7 @@ public class ClickIndividualCustomerController implements Initializable {
             stage.show(); 
 
         } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClickIndividualCustomerController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

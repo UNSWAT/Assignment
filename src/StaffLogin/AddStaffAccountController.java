@@ -147,22 +147,11 @@ public class AddStaffAccountController implements Initializable {
             
     
     @FXML
-    private void CancelCreateStaff(ActionEvent event)throws IOException{
-        
-        System.out.println("Cancel Create a Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/StaffList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-    }
-    
-    @FXML
-    private void Home(ActionEvent event) {
+    private void CancelCreateStaff(ActionEvent event){
         try {
             Pane root;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/StaffList.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene((Pane) loader.load()));
@@ -173,22 +162,4 @@ public class AddStaffAccountController implements Initializable {
             Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    @FXML
-    private void logOut(ActionEvent event) {
-        try {
-            Pane root;
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/StaffLoginFXML.fxml"));
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane) loader.load()));
-
-            stage.show();
-
-        } catch (IOException ex) {
-            Logger.getLogger(AddStaffAccountController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }    
 }

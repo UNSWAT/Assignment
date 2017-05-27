@@ -19,7 +19,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import memberLogin2.memberLogin;
 
 /**
  * FXML Controller class
@@ -31,55 +30,26 @@ public class AddMemberAccountController implements Initializable {
     
     @FXML
     private void CancelCreateIndividualMember(ActionEvent event)throws IOException{
-        
-        System.out.println("Cancel Create a individualMember");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/MemberList.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/MemberList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
-    @FXML
-    private void Home(ActionEvent event) {
-        try {
-            Pane root;
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane) loader.load()));
-
-            stage.show();
-
-        } catch (IOException ex) {
-            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @FXML
-    private void logOut(ActionEvent event) {
-        try {
-            Pane root;
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/StaffLoginFXML.fxml"));
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane) loader.load()));
-
-            stage.show();
-
-        } catch (IOException ex) {
-            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }        
+    }    
     
 }
