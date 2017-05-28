@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<FlowPane prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.MemberListController">
+<FlowPane prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.MemberListController">
     <children>
         <AnchorPane>
             <children>
@@ -63,7 +54,7 @@
                     <Glow level="1.0" />
                 </effect>
             </Text>
-            <Button layoutX="1041.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickNewinMemberList" onMouseClicked="#clickNewinMemberList" prefWidth="110.0" text="New" />
+            <Button layoutX="1041.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickNewinMemberList" prefWidth="110.0" text="New" />
             <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#Back" onMouseClicked="#Back" prefHeight="41.0" prefWidth="126.0" text="Back " textFill="WHITE">
             </Button>
             <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />

@@ -46,10 +46,6 @@ public class MemberListController implements Initializable {
     @FXML
     private TableView<Member> members;
     @FXML
-    private TableColumn<Member, String> memberusername;
-    @FXML
-    private TableColumn<Member, String> password;
-    @FXML
     private TableColumn<Member, String> fname;
     @FXML
     private TableColumn<Member, String> lname;
@@ -66,30 +62,10 @@ public class MemberListController implements Initializable {
     @FXML
     private TableColumn<Member, String> hstate;
     @FXML
-    private TableColumn<Member, String> waddress;
-    @FXML
-    private TableColumn<Member, String> wsuburb;
-    @FXML
-    private TableColumn<Member, String> wpostcode;
-    @FXML
-    private TableColumn<Member, String> wstate;
-    @FXML
-    private TableColumn<Member, String> ccnumber;
-    @FXML
-    private TableColumn<Member, String> ccexpirymonth;
-    @FXML
-    private TableColumn<Member, String> ccexpiryyear;
-    @FXML
-    private TableColumn<Member, String> corporatemember;
-    @FXML
-    private TableColumn<Member, String> companyname;
-    @FXML
     private TableColumn<Member, String> membertype;
     
     private ObservableList<Member> data;
     private PreparedStatement getMembers;
-    @FXML
-    private Label username;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -195,9 +171,6 @@ public class MemberListController implements Initializable {
 
     }       
 
-    @FXML
-    private void clickNewinMemberList(MouseEvent event) {
-    }
 
     @FXML
     private void Back(MouseEvent event) {

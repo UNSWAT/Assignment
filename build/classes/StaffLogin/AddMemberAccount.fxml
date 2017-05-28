@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.AddMemberAccountController">
+<FlowPane stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StaffLogin.AddMemberAccountController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0">
          <children>
@@ -41,14 +32,9 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button layoutX="880.0" layoutY="639.0" mnemonicParsing="false" onAction="#CancelCreateIndividualMember" onMouseClicked="#CancelCreateIndividualMember" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
+            <Button layoutX="866.0" layoutY="642.0" mnemonicParsing="false" onAction="#CancelCreateIndividualMember" prefHeight="50.0" prefWidth="150.0" text="CANCEL" textFill="#4ac0be">
                <font>
                   <Font size="19.0" />
-               </font>
-            </Button>
-            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="19.0" />
                </font>
             </Button>
             <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
@@ -114,6 +100,11 @@
             </Label>
             <Text layoutX="760.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Type" wrappingWidth="420.0000242218375" />
             <ComboBox fx:id="memberType" layoutX="760.0" layoutY="234.0" prefHeight="35.0" prefWidth="120.0" />
+            <Button layoutX="1034.0" layoutY="642.0" mnemonicParsing="false" onAction="#CreateMember" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="#4ac0be">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

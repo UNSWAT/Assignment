@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import memberLogin2.memberLogin;
@@ -104,6 +105,24 @@ public class ClickCorporateCustomerController implements Initializable {
             Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    
+    @FXML
+    private void clickBackToWorkDesk(ActionEvent event) {
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/PageAfterStaffLoginFXML.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClickCorporateCustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

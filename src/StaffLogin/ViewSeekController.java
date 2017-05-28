@@ -111,22 +111,8 @@ public class ViewSeekController implements Initializable {
             
             while(rs.next()){
                 data.add(new Offer(rs.getString("MEMBER_USERNAME"),rs.getString("TIME_FROM"),rs.getString("TIME_TO"),rs.getString("CARTYPE"),rs.getInt("POSTCODE_FROM"),rs.getInt("POSTCODE_TO"),rs.getInt("QUOTA"),rs.getInt("OFFER_ID")));
-            }
-            
-//            ResultSet result = getOffers.executeQuery();
-//            while(result.next()){
-//                String userName = result.getString("MEMBER_USERNAME");
-//                String timeFrom = result.getString("TIME_FROM");
-//                String timeTo = result.getString("TIME_TO");
-//                String carType = result.getString("Cartype");
-//                int postcodeFrom = result.getInt("POSTCODE_FROM");
-//                int postcodeTo =result.getInt("POSTCODE_TO");
-//                int Quota = result.getInt("QUOTA");
-//                Offer offer = new Offer(userName, timeFrom, timeTo,carType,postcodeFrom,postcodeTo,Quota);
-//                System.out.println(offer.getMemberUsername());
-//                System.out.println(offer.getTimefrom());
-//                data.add(offer);
-           //}
+            }            
+//           
 
             TimeFrom.setCellValueFactory(new PropertyValueFactory<>("timefrom"));
             TimeTo.setCellValueFactory(new PropertyValueFactory<>("timeto"));

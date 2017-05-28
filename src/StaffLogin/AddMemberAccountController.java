@@ -32,6 +32,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import Database.Database;
 import static Database.Database.con;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -42,9 +43,7 @@ public class AddMemberAccountController implements Initializable {
 
    ObservableList<String> states = FXCollections.observableArrayList("NSW","QLD","SA","WA","NT","VIC","ACT");
    ObservableList<String> CompanyConsultancy = FXCollections.observableArrayList("Yes","No");
-   ObservableList<String> ExpiryMonth = FXCollections.observableArrayList("01","02","03","04","05","06","07","08","09","10","11","12");
-   ObservableList<String> ExpiryYear = FXCollections.observableArrayList("17","18","19","20","21","22","23","24");
-   ObservableList<String> memType = FXCollections.observableArrayList("Rider","Sharer","Both");
+      ObservableList<String> memType = FXCollections.observableArrayList("Rider","Sharer","Both");
     
     @FXML
     private TextField firstName;
@@ -105,7 +104,30 @@ public class AddMemberAccountController implements Initializable {
         
     }    
 
-    private void createMemberAccount(ActionEvent event){
+    
+
+    
+    @FXML
+    private void CancelCreateIndividualMember(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/MemberList.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }       
+
+   
+
+    @FXML
+    private void CreateMember(ActionEvent event) {
         try {     
             boolean check = false;
             PreparedStatement insertMember = null;
@@ -256,36 +278,5 @@ public class AddMemberAccountController implements Initializable {
            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
            System.out.println("SQL error");
        } 
-        
-       
-                
-        
     }
-
-    @FXML
-    private void goBack(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/memberLogin2/Login.fxml"));
-         Scene scene = new Scene(root);
-         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-         stage.setScene(scene);
-         stage.show();
-               
-    }
-    
-    @FXML
-    private void CancelCreateIndividualMember(ActionEvent event){
-        try {
-            Pane root;
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/MemberList.fxml"));
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane) loader.load()));
-
-            stage.show();
-
-        } catch (IOException ex) {
-            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }    
 }

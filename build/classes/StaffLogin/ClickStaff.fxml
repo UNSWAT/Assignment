@@ -33,14 +33,11 @@
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
-                    <image>
-                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
-                    </image>
-                    <effect>
-                        <Glow level="0.67" />
-                    </effect>
-                </ImageView>
+                <Button layoutX="680.0" layoutY="450.0" mnemonicParsing="false" onAction="#clickPCorporateMemberList" onMouseClicked="#clickPCorporateMemberList" prefHeight="50.0" prefWidth="400.0" text="Add Staff Account" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
                 <Text fill="WHITE" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="125.99998474121094">
                     <font>
                         <Font name="Tahoma" size="36.0" />
@@ -49,13 +46,16 @@
                         <Glow level="1.0" />
                     </effect>
                 </Text>
-                <Button layoutX="680.0" layoutY="450.0" mnemonicParsing="false" onAction="#clickPCorporateMemberList" onMouseClicked="#clickPCorporateMemberList" prefHeight="50.0" prefWidth="400.0" text="Add Staff Account" textFill="WHITE">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Button>
                 <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
                 <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="126.0" text="Log Out" />
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="7.0">
+                    <image>
+                        <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+                    </image>
+                    <effect>
+                        <Glow level="0.67" />
+                    </effect>
+                </ImageView>
             </children>
         </AnchorPane>
     </children>
