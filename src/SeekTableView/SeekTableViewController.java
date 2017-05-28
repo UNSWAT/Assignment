@@ -102,11 +102,9 @@ public class SeekTableViewController implements Initializable {
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE, OFFER_ID from OFFER WHERE STATUS = 'Pending' ");
-//            getOffers.setInt(1,OtherStaticVariables.getQuota() );
-//            getOffers.setString(2, username.getText());
-//            getOffers.setInt(3, OtherStaticVariables.getPostcodefrom());
-//            getOffers.setString(4, OtherStaticVariables.getTimefrom());
+            getOffers = con.prepareStatement("select MEMBER_USERNAME,POSTCODE_FROM,POSTCODE_TO, TIME_FROM, TIME_TO, QUOTA, CARTYPE, OFFER_ID from OFFER WHERE STATUS = 'Pending' AND MEMBER_USERNAME = ? ");
+//            
+            getOffers.setString(1,User.getUsername());
            
             ResultSet rs = getOffers.executeQuery();
             

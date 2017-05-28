@@ -47,14 +47,19 @@ import memberLogin2.User;
  */
 public class SeekPostingController implements Initializable {
 
+    @FXML
     private TextField startPC;
 
+    @FXML
     private ComboBox timeFrom;
 
+    @FXML
     private ComboBox timeto;
 
+    @FXML
     private TextField endPC;
 
+    @FXML
     private ComboBox quota;
 
     private Label errorMessage;
@@ -63,7 +68,6 @@ public class SeekPostingController implements Initializable {
     ObservableList<String> noOfPassenger = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
     @FXML
     private Label username;
-    @FXML
     
 
     /**
@@ -83,6 +87,7 @@ public class SeekPostingController implements Initializable {
 
     
 
+    @FXML
     private void createPost(ActionEvent event) throws SQLException {
         try {
             boolean check = false;
@@ -266,7 +271,4 @@ public class SeekPostingController implements Initializable {
         }        
     }
 
-    @FXML
-    private void seekVehicle(ActionEvent event) {
-    }
 }
