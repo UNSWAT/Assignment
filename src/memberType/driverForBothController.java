@@ -92,9 +92,6 @@ public class driverForBothController implements Initializable {
         
     }
 
-    @FXML
-    private void ManageOffers(ActionEvent event) {
-    }
 
     @FXML
     private void Home(ActionEvent event) {

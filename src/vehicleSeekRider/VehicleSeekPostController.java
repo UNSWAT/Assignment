@@ -74,20 +74,44 @@ public class VehicleSeekPostController implements Initializable {
 
     @FXML
     private void back(ActionEvent event) {
+       
         try {
-                Pane root;
+            Database.openConnection();
+            PreparedStatement ps;
+            ps=con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ?");
+            ps.setString(1, User.getUsername());
+            ResultSet member = ps.executeQuery();
+            if (member.next()){
+                String membertype = member.getString(1);
+                if (membertype.toUpperCase().equals("RIDER")){
+                    Pane root;
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
 
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene((Pane)loader.load()));
-
-                stage.show(); 
-
-                } catch (IOException ex) {
-                    Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(new Scene((Pane)loader.load()));
+                    
+                    stage.show();
+                    
+                    
                 }
+                else if (membertype.toUpperCase().equals("BOTH")){
+                    Pane root;
 
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/riderForBoth.fxml"));
+
+                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(new Scene((Pane)loader.load()));
+                    
+                    stage.show(); 
+                }
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleSeekPostController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(VehicleSeekPostController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
     }
 
     @FXML

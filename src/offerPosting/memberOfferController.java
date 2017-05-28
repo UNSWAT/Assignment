@@ -285,17 +285,40 @@ public class memberOfferController implements Initializable {
     @FXML
     private void back(ActionEvent event) {
         try {
-            Pane root;
+            Database.openConnection();
+            PreparedStatement ps;
+            ps=con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ?");
+            ps.setString(1, User.getUsername());
+            ResultSet member = ps.executeQuery();
+            if (member.next()){
+                String membertype = member.getString(1);
+                if (membertype.toUpperCase().equals("SHARER")){
+                    Pane root;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
 
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-          
-            stage.show(); 
+                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(new Scene((Pane)loader.load()));
+                    
+                    stage.show();
+                    
+                    
+                }
+                else if (membertype.toUpperCase().equals("BOTH")){
+                    Pane root;
 
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/driverForBoth.fxml"));
+
+                    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setScene(new Scene((Pane)loader.load()));
+                    
+                    stage.show(); 
+                }
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleSeekPostController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VehicleSeekPostController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

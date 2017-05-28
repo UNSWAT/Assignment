@@ -33,18 +33,12 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="346.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="528.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="759.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/current.PNG" />
-         </image>
-      </ImageView>
-      <Button layoutX="382.0" layoutY="463.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
-      <Button layoutX="781.0" layoutY="463.0" mnemonicParsing="false" onAction="#ManageOffers" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
+      <Button layoutX="572.0" layoutY="459.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
       <Text layoutX="389.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready to driver others? Start Now!">
          <font>
             <Font name="Tahoma" size="37.0" />
@@ -61,7 +55,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="587.0" layoutY="575.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="149.0" text="Back" />
+      <Button layoutX="566.0" layoutY="574.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="149.0" text="Back" />
       <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
       <Button layoutX="140.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
       <Button layoutX="266.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
