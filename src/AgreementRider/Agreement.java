@@ -62,7 +62,7 @@ public class Agreement {
        return offerid.get();
    }
    
-   public int getPostCodeTo(){
+   public int getPostCodeFrom(){
        return postcodefrom.get();
    }
    
@@ -86,7 +86,7 @@ public class Agreement {
        offerid.set(value);
    }
    
-   public void setPostCodeTo(int value){
+   public void setPostCodeFrom(int value){
        postcodefrom.set(value);
    }
    
@@ -110,7 +110,7 @@ public class Agreement {
        return offerid;
    } 
    
-    public IntegerProperty postcodeto(){
+    public IntegerProperty postcodefromProperty(){
         return postcodefrom;
     }
     

@@ -80,9 +80,8 @@ public class MemberBothController implements Initializable {
             System.out.println("Page Error");
         }
     }
-        
-        private void clickMyProfile(ActionEvent event){
-        
+    @FXML
+    private void myProfile(ActionEvent event) {
         try {
             Pane root;
             
@@ -99,71 +98,12 @@ public class MemberBothController implements Initializable {
             System.out.println("Page Error");
         }
     }
-        
-
-    @FXML
-    private void Home(ActionEvent event) {
-        try {
-            Pane root;
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberBoth.fxml"));
-            
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-            
-            
-             
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Page Error");
-        }
-    }
-
-    @FXML
-    private void myProfile(ActionEvent event) {
-    }
-
-    @FXML
-    private void MyAgreements(ActionEvent event) {
-        try {
-            Pane root;
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AgreementRider/AgreementRider.fxml"));
-            
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-            
-            
-             
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Page Error");
-        }
-    }
 
     @FXML
     private void logOut(ActionEvent event) {
-         try {
-            Pane root;
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberLogin2/Login.fxml"));
-            
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-            
-            
-             
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Page Error");
-        }
     }
 
-    @FXML
-    private void myOffers(ActionEvent event) {
-    }
+    
+
     
 }
