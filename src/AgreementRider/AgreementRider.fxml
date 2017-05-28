@@ -48,8 +48,7 @@
       <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" onAction="#Home" prefHeight="41.0" prefWidth="126.0" text="Home" />
       <Button layoutX="140.0" layoutY="70.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="41.0" prefWidth="126.0" text="My Profile" />
       <Button layoutX="266.0" layoutY="70.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="41.0" prefWidth="142.0" text="My Agreements" />
-      <Button layoutX="528.0" layoutY="70.0" mnemonicParsing="false" onAction="#logOut" prefHeight="41.0" prefWidth="120.0" text="Log Out" />
-      <Button layoutX="408.0" layoutY="70.0" mnemonicParsing="false" onAction="#myOffers" prefHeight="41.0" prefWidth="120.0" text="My Offers" />
+      <Button layoutX="409.0" layoutY="70.0" mnemonicParsing="false" onAction="#logOut" prefHeight="41.0" prefWidth="120.0" text="Log Out" />
       <Text fill="WHITE" layoutX="1141.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
             <Font size="18.0" />

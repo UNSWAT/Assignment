@@ -19,11 +19,13 @@ import Database.Database;
 import static Database.Database.con;
 import java.io.IOException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -31,6 +33,7 @@ import javafx.stage.Stage;
 import memberPayment.MemberPaymentController;
 import signup.RegisterPageController;
 import memberLogin2.User;
+import vehicleSeekRider.VehicleSeekPostController;
 
 /**
  * FXML Controller class
@@ -140,20 +143,69 @@ public class memberOfferController implements Initializable {
 
     @FXML
     private void Home(ActionEvent event) {
-            try {
-            Pane root;
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
-            
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene((Pane)loader.load()));
-            
-            
-             
-            stage.show();
-        } catch (IOException ex) {
+        try {
+            Database.openConnection();
+            PreparedStatement ps;
+            ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ?");
+            ps.setString(1, User.getUsername());
+            ResultSet member =ps.executeQuery();
+            if (member.next()){
+                String membertype = member.getString(1);
+                if (membertype.toUpperCase().equals("RIDER")){
+                    try {
+                            
+                                                    
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene((Pane)loader.load()));
+
+
+
+                            stage.show(); 
+                        } catch (IOException ex) {
+                            System.out.println(ex);
+                        }   
+                }
+                
+                else if (membertype.toUpperCase().equals("SHARER")){
+                  try{
+
+                           
+
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
+
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene((Pane)loader.load()));
+
+
+
+                            stage.show(); 
+                        } catch (IOException ex) {
+                            System.out.println(ex);
+                            }  
+                }
+                
+                else if (membertype.toUpperCase().equals("BOTH")){
+                    try {
+                                Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
+                                Scene scene = new Scene(root);
+                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                stage.setScene(scene);
+                                stage.show();
+                            } catch (IOException ex) {
+                                System.out.println("Page Error");
+                               
+                            }
+
+                }
+                
+                
+                
+                
+            }
+        } catch (SQLException ex) {
             Logger.getLogger(memberOfferController.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Page Error");
         }
     }
 
@@ -169,7 +221,7 @@ public class memberOfferController implements Initializable {
       
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(SeekPostingController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(memberOfferController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Page Error");
         } 
     }
