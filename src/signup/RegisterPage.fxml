@@ -34,9 +34,9 @@
             <TextField fx:id="homeSuburb" layoutX="124.0" layoutY="630.0" prefHeight="35.0" prefWidth="120.0" />
             <TextField fx:id="homePostCode" layoutX="274.0" layoutY="630.0" prefHeight="35.0" prefWidth="120.0" />
             <TextField fx:id="companyName" layoutX="759.0" layoutY="282.0" prefHeight="35.0" prefWidth="200.0" />
-            <TextField fx:id="workAddress" layoutX="764.0" layoutY="415.0" prefHeight="35.0" prefWidth="410.0" />
-            <TextField fx:id="workSuburb" layoutX="764.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
-            <TextField fx:id="workPostcode" layoutX="908.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
+            <TextField fx:id="workAddress" layoutX="759.0" layoutY="415.0" prefHeight="35.0" prefWidth="410.0" />
+            <TextField fx:id="workSuburb" layoutX="759.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
+            <TextField fx:id="workPostcode" layoutX="900.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
             <Text layoutX="126.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
             <Text layoutX="345.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
             <Text layoutX="125.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" />
@@ -58,40 +58,40 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="765.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-            <ComboBox fx:id="consultancy" layoutX="1019.0" layoutY="326.0" prefHeight="35.0" prefWidth="120.0" />
-            <Text layoutX="762.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" />
-            <Text layoutX="908.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code" />
-            <Text layoutX="1058.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
-            <Text layoutX="126.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="57.076180547475815" />
-            <Text layoutX="758.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you representing a company?" wrappingWidth="291.17254638671875">
+            <Text layoutX="759.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+            <ComboBox fx:id="consultancy" layoutX="1030.0" layoutY="326.0" prefHeight="35.0" prefWidth="120.0" />
+            <Text layoutX="759.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suburb" />
+            <Text layoutX="900.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post Code" />
+            <Text layoutX="1050.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
+            <Text layoutX="126.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="81.35790386284401" />
+            <Text layoutX="759.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you representing a company?" wrappingWidth="375.24566650390625">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="764.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work Details (Optional)" wrappingWidth="239.99999737739563">
+            <Text layoutX="759.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work Details (Optional)" wrappingWidth="239.99999737739563">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="764.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" wrappingWidth="95.66013205051422" />
-            <Text layoutX="758.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultancy requirements? (extra $300 )" wrappingWidth="271.1725247949362">
+            <Text layoutX="759.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" wrappingWidth="134.25107443332672" />
+            <Text layoutX="758.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultancy requirements? (extra $300)" wrappingWidth="271.1725247949362">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <ComboBox fx:id="workState" layoutX="1053.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
+            <ComboBox fx:id="workState" layoutX="1050.0" layoutY="474.0" prefHeight="35.0" prefWidth="120.0" />
             <Label fx:id="errorMessage" layoutX="301.0" layoutY="134.0" prefHeight="32.0" prefWidth="428.0" style="-fx-text-fill: #FF0000;">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Text layoutX="758.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to be a rider or a sharer?" wrappingWidth="420.0000242218375">
+            <Text layoutX="759.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to be a rider or a sharer?" wrappingWidth="420.0000242218375">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <ComboBox fx:id="memberType" layoutX="758.0" layoutY="190.0" prefHeight="35.0" prefWidth="120.0" />
+            <ComboBox fx:id="memberType" layoutX="759.0" layoutY="190.0" prefHeight="35.0" prefWidth="120.0" />
             <Button layoutX="739.0" layoutY="665.0" mnemonicParsing="false" onAction="#goBack" prefHeight="45.0" prefWidth="240.0" text="Go Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
