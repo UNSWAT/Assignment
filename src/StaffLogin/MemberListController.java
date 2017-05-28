@@ -77,10 +77,9 @@ public class MemberListController implements Initializable {
             ResultSet rs = getMembers.executeQuery();
             
             while(rs.next()){
-                data.add(new Member(
-                        rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
+                data.add(new Member(rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
                         rs.getString("MOBILE_NO"),rs.getString("HOME_ADDRESS"),rs.getString("HOME_SUBURB"),
-                        rs.getInt("HOME_POSTCODE"),rs.getString("HOME_STATE")));
+                        rs.getInt("HOME_POSTCODE"),rs.getString("HOME_STATE"), rs.getString("MEMBER_TYPE")));
             }
 
             fname.setCellValueFactory(new PropertyValueFactory<>("fname"));

@@ -17,7 +17,7 @@ import javafx.beans.property.StringProperty;
 public class Member {
 
     private SimpleStringProperty memberusername, password, fname, lname, email, mobile,
-            haddress, hsuburb, hstate, waddress, wsuburb, wstate;
+            haddress, hsuburb, hstate, waddress, wsuburb, wstate, membertype;
     private SimpleIntegerProperty hpostcode, wpostcode ;
 
     public Member(String memberusername, String password, String fname, String lname, String email, String mobile,
@@ -39,7 +39,7 @@ public class Member {
 
     }
     public Member(String fname, String lname, String email, String mobile,
-            String haddress, String hsuburb,int hpostcode,String hstate) {
+            String haddress, String hsuburb,int hpostcode,String hstate, String membertype) {
         this.fname = new SimpleStringProperty(fname);
         this.lname = new SimpleStringProperty(lname);
         this.email = new SimpleStringProperty(email);
@@ -48,6 +48,16 @@ public class Member {
         this.hsuburb = new SimpleStringProperty(hsuburb);
         this.hpostcode = new SimpleIntegerProperty(hpostcode);
         this.hstate = new SimpleStringProperty(hstate);
+        this.membertype = new SimpleStringProperty(membertype);
+        
+    }
+    
+    public String getMembertype(){
+        return membertype.get();
+    }
+    
+    public void setMembertype(String value){
+        membertype.setValue(value);
     }
     
     public int getHpostcode() {
@@ -216,6 +226,10 @@ public class Member {
     
     public IntegerProperty hpostcode() {
         return hpostcode;
+    }
+    
+    public StringProperty membertype(){
+        return membertype;
     }
 
 }
