@@ -50,5 +50,15 @@ public final class OtherStaticVariables {
     
     public static String timefrom;
 
+    public static String getVehicle() {
+        return vehicle;
+    }
+
+    public static void setVehicle(String vehicle) {
+        OtherStaticVariables.vehicle = vehicle;
+    }
+    
+    public static String vehicle;
+
      
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" stylesheets="@../CSSfile.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vehicleSeekRider.VehicleSeekPostController">
+   <children>
+      <Pane layoutX="384.0" layoutY="215.0" prefHeight="478.0" prefWidth="540.0" style="-fx-background-color: #ecebe8;" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="356.0">
+         <children>
+            <Text layoutX="116.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Type:" wrappingWidth="150.0000035762787">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="vehicleType" layoutX="274.0" layoutY="174.0" prefWidth="150.0" />
+            <Button layoutX="347.0" layoutY="371.0" mnemonicParsing="false" onAction="#seekVehicle" prefHeight="41.0" prefWidth="120.0" text="Seek Vehicle" />
+            <Button layoutX="71.0" layoutY="371.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="120.0" text="Back" />
+         </children>
+      </Pane>
+      <Line endX="200.0" layoutX="654.0" layoutY="183.0" opacity="0.85" startX="-200.0" stroke="#726f6f" />
+      <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@../signup/Image/background3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="12.0">
+         <image>
+            <Image url="@../signup/Image/Sugar%20Cubes%20Filled-100.png" />
+         </image>
+         <effect>
+            <Glow level="0.67" />
+         </effect>
+      </ImageView>
+      <Text fill="WHITE" layoutX="73.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber" wrappingWidth="81.03564453125">
+         <font>
+            <Font name="Tahoma" size="31.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+      <Text layoutX="582.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Seek" wrappingWidth="287.86328125">
+         <font>
+            <Font name="Tahoma" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="username" layoutX="1131.0" layoutY="54.0" prefHeight="27.0" prefWidth="126.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
+      <Button layoutX="140.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
+      <Button layoutX="266.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
+      <Button layoutX="528.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
+      <Button layoutX="408.0" layoutY="68.0" mnemonicParsing="false" onAction="#myOffers" prefHeight="40.0" prefWidth="120.0" text="My Offers" />
+   </children>
+</AnchorPane>
