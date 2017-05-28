@@ -163,7 +163,7 @@ public class SeekPostingController implements Initializable {
         try {
                 Pane root;
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/riderForBoth.fxml"));
 
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene((Pane)loader.load()));

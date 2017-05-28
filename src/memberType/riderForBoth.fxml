@@ -32,17 +32,12 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="160.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="327.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="548.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/current.PNG" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="178.0" fitWidth="247.0" layoutX="920.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="178.0" fitWidth="247.0" layoutX="694.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/car.PNG" />
          </image>
@@ -52,9 +47,8 @@
             <Font name="Tahoma" size="37.0" />
          </font>
       </Text>
-      <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
-      <Button layoutX="563.0" layoutY="463.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Posting" />
-      <Button layoutX="961.0" layoutY="463.0" mnemonicParsing="false" onAction="#vehicleSeek" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
+      <Button layoutX="351.0" layoutY="467.0" mnemonicParsing="false" onAction="#createSeek" stylesheets="@../CSSfile.css" text="Create New Seek Posting" />
+      <Button layoutX="735.0" layoutY="463.0" mnemonicParsing="false" onAction="#vehicleSeek" stylesheets="@../CSSfile.css" text="Perform Vehicle Seek" />
       <Text fill="WHITE" layoutX="1131.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
             <Font size="18.0" />
@@ -74,6 +68,6 @@
       <Button layoutX="142.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
       <Button layoutX="268.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
       <Button layoutX="409.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
-      <Button layoutX="562.0" layoutY="564.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="174.0" stylesheets="@../CSSfile.css" text="Back" />
+      <Button layoutX="543.0" layoutY="569.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="174.0" stylesheets="@../CSSfile.css" text="Back" />
    </children>
 </AnchorPane>
