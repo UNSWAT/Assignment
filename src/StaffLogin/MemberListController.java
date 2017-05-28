@@ -170,9 +170,5 @@ public class MemberListController implements Initializable {
 
     }       
 
-
-    @FXML
-    private void Back(MouseEvent event) {
-    }
     
 }
