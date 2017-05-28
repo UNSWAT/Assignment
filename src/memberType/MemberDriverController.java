@@ -111,6 +111,28 @@ public class MemberDriverController implements Initializable {
     @FXML
     private void myOffers(ActionEvent event) {
     }
+
+    @FXML
+    private void createOffer(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/offerPosting/memberOffer.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+           
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(riderForBothController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void manageOffer(ActionEvent event) {
+    }
     
     
 }

@@ -240,6 +240,19 @@ public class VehicleSeekPostController implements Initializable {
                     OtherStaticVariables.setVehicle(vehicle);
                     
                     //push to new vehicle page.
+                    try {
+                        Pane root;
+
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/VehicleSeekTable/VehicleSeekTable.fxml"));
+
+                        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene((Pane)loader.load()));
+                      
+                        stage.show(); 
+
+                        } catch (IOException ex) {
+                            Logger.getLogger(RegisterPageController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     
                     
                 

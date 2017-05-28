@@ -42,8 +42,8 @@
             <Image url="@Image/current.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="390.0" layoutY="462.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Create New Offer" />
-      <Button layoutX="785.0" layoutY="462.0" mnemonicParsing="false" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
+      <Button layoutX="390.0" layoutY="462.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
+      <Button layoutX="785.0" layoutY="462.0" mnemonicParsing="false" onAction="#manageOffer" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
       <Text layoutX="360.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready to ride? Select an option below.">
          <font>
             <Font name="Tahoma" size="37.0" />
