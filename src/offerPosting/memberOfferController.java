@@ -33,6 +33,7 @@ import javafx.stage.Stage;
 import memberPayment.MemberPaymentController;
 import signup.RegisterPageController;
 import memberLogin2.User;
+import memberType.MemberBothController;
 import vehicleSeekRider.VehicleSeekPostController;
 
 /**
@@ -265,10 +266,9 @@ public class memberOfferController implements Initializable {
 
     @FXML
     private void myOffers(ActionEvent event) {
-                try {
-            Pane root;
+              try {
             
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/myOffersDriverTable/myOffersDriver.fxml"));
             
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene((Pane)loader.load()));
@@ -277,9 +277,9 @@ public class memberOfferController implements Initializable {
              
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(memberOfferController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Page Error");
-        }  
+        } 
     }
 
     @FXML

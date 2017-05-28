@@ -32,18 +32,12 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="346.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="186.0" fitWidth="245.0" layoutX="536.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/seeking.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="193.0" fitWidth="204.0" layoutX="759.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/current.PNG" />
-         </image>
-      </ImageView>
-      <Button layoutX="390.0" layoutY="462.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
-      <Button layoutX="785.0" layoutY="462.0" mnemonicParsing="false" onAction="#manageOffer" stylesheets="@../CSSfile.css" text="Manage Current Offer" />
+      <Button layoutX="572.0" layoutY="461.0" mnemonicParsing="false" onAction="#createOffer" stylesheets="@../CSSfile.css" text="Create New Offer" />
       <Text layoutX="360.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready to ride? Select an option below.">
          <font>
             <Font name="Tahoma" size="37.0" />
