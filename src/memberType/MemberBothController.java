@@ -80,12 +80,13 @@ public class MemberBothController implements Initializable {
             System.out.println("Page Error");
         }
     }
+        
     @FXML
     private void myProfile(ActionEvent event) {
         try {
             Pane root;
             
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberProfile/memberProfile2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberProfile/memberProfile.fxml"));
             
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene((Pane)loader.load()));
@@ -101,6 +102,21 @@ public class MemberBothController implements Initializable {
 
     @FXML
     private void logOut(ActionEvent event) {
+
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberLogin2/Login.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }
+
     }
 
     
