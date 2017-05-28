@@ -105,12 +105,12 @@ public class MemberListController implements Initializable {
             ResultSet rs = getMembers.executeQuery();
             
             while(rs.next()){
-                data.add(new Member(rs.getString("MEMBER_USERNAME"),rs.getString("MEMBER_PASSWORD"),
-                        rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
-                        rs.getString("MOBILE_NO"),rs.getString("HOME_ADDRESS"),rs.getString("HOME_SUBURB"),
-                        rs.getString("HOME_POSTCODE"),rs.getString("HOME_STATE"),rs.getString("WORK_ADDRESS"),rs.getString("WORK_SUBURB"),
-                rs.getString("WORK_POSTCODE"),rs.getString("WORK_STATE"),rs.getString("CC_NUMBER"),rs.getString("CCEXPRIRY_MONTH"),
-                rs.getString("CCEXPIRY_YEAR"),rs.getString("CORPORATE_MEMBER"),rs.getString("COMPANY_NAME"),rs.getString("MEMBER_TYPE")));
+//                data.add(new Member(rs.getString("MEMBER_USERNAME"),rs.getString("MEMBER_PASSWORD"),
+//                        rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
+//                        rs.getString("MOBILE_NO"),rs.getString("HOME_ADDRESS"),rs.getString("HOME_SUBURB"),
+//                        rs.getString("HOME_POSTCODE"),rs.getString("HOME_STATE"),rs.getString("WORK_ADDRESS"),rs.getString("WORK_SUBURB"),
+//                rs.getString("WORK_POSTCODE"),rs.getString("WORK_STATE"),rs.getString("CC_NUMBER"),rs.getString("CCEXPRIRY_MONTH"),
+//                rs.getString("CCEXPIRY_YEAR"),rs.getString("CORPORATE_MEMBER"),rs.getString("COMPANY_NAME"),rs.getString("MEMBER_TYPE")));
             }
 
             memberusername.setCellValueFactory(new PropertyValueFactory<>("MEMBER_USERNAME"));

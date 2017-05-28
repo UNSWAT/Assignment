@@ -83,7 +83,7 @@ public class memberProfileController implements Initializable {
             data = FXCollections.observableArrayList();
             getMembers = con.prepareStatement("SELECT MEMBER_USERNAME,MEMBER_PASSWORD, "
                     + "FIRST_NAME, LAST_NAME, EMAIL_ADDRESS,MOBILE_NO, HOME_ADDRESS, HOME_SUBURB, "
-                    + "HOME_POSTCODE, HOME_STATE, WORK_ADDRESS, WORK_SUBURB,WORK_POSTCODE,WORK_STATE FROM MEMBERS ");
+                    + "HOME_POSTCODE, HOME_STATE, WORK_ADDRESS, WORK_SUBURB,WORK_POSTCODE,WORK_STATE FROM MEMBERS WHERE MEMBER_USERNAME = ?; ");
             getMembers.setString(1, user);
             getMembers.executeQuery();
 //            getOffers.setInt(1,OtherStaticVariables.getQuota() );
@@ -115,20 +115,20 @@ public class memberProfileController implements Initializable {
 //                System.out.println(offer.getTimefrom());
 //                data.add(offer);
             //}
-            memberusername.setCellValueFactory(new PropertyValueFactory<>("MEMBER_USERNAME"));
-            password.setCellValueFactory(new PropertyValueFactory<>("MEMBER_PASSWORD"));
-            fname.setCellValueFactory(new PropertyValueFactory<>("FIRST_NAME"));
-            lname.setCellValueFactory(new PropertyValueFactory<>("LAST_NAME"));
-            email.setCellValueFactory(new PropertyValueFactory<>("EMAIL_ADDRESS"));
-            mobile.setCellValueFactory(new PropertyValueFactory<>("MOBILE_NO"));
-            haddress.setCellValueFactory(new PropertyValueFactory<>("HOME_ADDRESS"));
-            hsuburb.setCellValueFactory(new PropertyValueFactory<>("HOME_SUBURB"));
-            //hpostcode.setCellValueFactory(new PropertyValueFactory<>("HOME_POSTCODE"));
-            hstate.setCellValueFactory(new PropertyValueFactory<>("HOME_STATE"));
-            waddress.setCellValueFactory(new PropertyValueFactory<>("WORK_ADDRESS"));
-            wsuburb.setCellValueFactory(new PropertyValueFactory<>("WORK_SUBURB"));
-            //wpostcode.setCellValueFactory(new PropertyValueFactory<>("WORK_POSTCODE"));
-            wstate.setCellValueFactory(new PropertyValueFactory<>("WORK_STATE"));
+            memberusername.setCellValueFactory(new PropertyValueFactory<>("memberusername"));
+            password.setCellValueFactory(new PropertyValueFactory<>("password"));
+            fname.setCellValueFactory(new PropertyValueFactory<>("fname"));
+            lname.setCellValueFactory(new PropertyValueFactory<>("lname"));
+            email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            mobile.setCellValueFactory(new PropertyValueFactory<>("mobile"));
+            haddress.setCellValueFactory(new PropertyValueFactory<>("haddress"));
+            hsuburb.setCellValueFactory(new PropertyValueFactory<>("hsuburb"));
+            hpostcode.setCellValueFactory(new PropertyValueFactory<>("hpostcode"));
+            hstate.setCellValueFactory(new PropertyValueFactory<>("hstate"));
+            waddress.setCellValueFactory(new PropertyValueFactory<>("waddress"));
+            wsuburb.setCellValueFactory(new PropertyValueFactory<>("wsuburb"));
+            wpostcode.setCellValueFactory(new PropertyValueFactory<>("wpostcode"));
+            wstate.setCellValueFactory(new PropertyValueFactory<>("wstate"));
 
             members.setItems(null);
             members.setItems(data);
