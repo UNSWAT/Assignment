@@ -26,10 +26,9 @@
          <children>
             <TableView fx:id="staff" layoutX="57.0" layoutY="189.0" prefHeight="523.0" prefWidth="785.0">
                 <columns>
-                    <TableColumn fx:id="FirstName" prefWidth="195.4710693359375" text="First Name" />
-                    <TableColumn fx:id="LastName" prefWidth="203.478759765625" text="Last Name" />
-                    <TableColumn fx:id="username" prefWidth="198.5288963317871" text="Username" />
-                    <TableColumn fx:id="password" prefWidth="189.52130126953125" text="Password" />
+                    <TableColumn fx:id="FirstName" prefWidth="258.0" text="First Name" />
+                    <TableColumn fx:id="LastName" prefWidth="284.0" text="Last Name" />
+                    <TableColumn fx:id="username" prefWidth="242.0" text="Username" />
                 </columns>
             </TableView>
             <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">

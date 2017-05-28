@@ -38,7 +38,18 @@ public class Member {
         this.wstate = new SimpleStringProperty(wstate);
 
     }
-
+    public Member(String fname, String lname, String email, String mobile,
+            String haddress, String hsuburb,int hpostcode,String hstate) {
+        this.fname = new SimpleStringProperty(fname);
+        this.lname = new SimpleStringProperty(lname);
+        this.email = new SimpleStringProperty(email);
+        this.mobile = new SimpleStringProperty(mobile);
+        this.haddress = new SimpleStringProperty(haddress);
+        this.hsuburb = new SimpleStringProperty(hsuburb);
+        this.hpostcode = new SimpleIntegerProperty(hpostcode);
+        this.hstate = new SimpleStringProperty(hstate);
+    }
+    
     public int getHpostcode() {
         return hpostcode.get();
     }

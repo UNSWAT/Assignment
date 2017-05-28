@@ -74,15 +74,6 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <MenuButton layoutX="1170.0" layoutY="43.0" mnemonicParsing="false" text="My Account">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" text="My Profile" />
-                  <MenuItem mnemonicParsing="false" text="Log Out" />
-               </items>
-            </MenuButton>
             <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
                <font>
                   <Font name="Tahoma" size="58.0" />

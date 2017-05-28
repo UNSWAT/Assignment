@@ -36,9 +36,10 @@ import javafx.scene.input.MouseEvent;
 import Database.Database;
 import static Database.Database.con;
 import Suber.Models.Staff;
+import javafx.beans.property.IntegerProperty;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
-import memberLogin2.memberLogin;
+import javax.swing.JOptionPane;
 /**
  * FXML Controller class
  *
@@ -73,15 +74,14 @@ public class StaffListController implements Initializable {
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            getStaff = con.prepareStatement("select USERNAME,PASSWORD,FIRST_NAME,LAST_NAME from STAFF" );
+            getStaff = con.prepareStatement("select FIRST_NAME,LAST_NAME,USERNAME,PASSWORD from STAFF" );
             ResultSet rs = getStaff.executeQuery();
             while(rs.next()){
-                data.add(new Staff(rs.getString("USERNAME"),rs.getString("PASSWORD"),rs.getString("FIRST_NAME"),rs.getString("LAST_NAME")));
+                data.add(new Staff(rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("USERNAME"),rs.getString("PASSWORD")));
             }
             FirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
             LastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
             username.setCellValueFactory(new PropertyValueFactory<>("username"));
-            password.setCellValueFactory(new PropertyValueFactory<>("password"));
             
             staff.setItems(null);
             staff.setItems(data);

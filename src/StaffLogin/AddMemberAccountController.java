@@ -105,7 +105,7 @@ public class AddMemberAccountController implements Initializable {
         
     }    
 
-    private void createAccount(ActionEvent event) throws SQLException {
+    private void createMemberAccount(ActionEvent event){
         try {     
             boolean check = false;
             PreparedStatement insertMember = null;
@@ -236,7 +236,7 @@ public class AddMemberAccountController implements Initializable {
                             insertMember.execute();
                             insertMember.close(); 
                             check =true;
-                             Database.closeConnection();
+                            Database.closeConnection();
                             try {
                                     Parent root;
                                     root = FXMLLoader.load(getClass().getResource("/StaffLogin/MemberList.fxml"));
@@ -249,16 +249,9 @@ public class AddMemberAccountController implements Initializable {
                                 Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
                             }
 
-                            
-                                  
-                          }
-                      
-                    
-              }
-                 
-         }
-        
-     
+                          }     
+              }       
+         }     
        } catch (SQLException ex) {
            Logger.getLogger(AddMemberAccountController.class.getName()).log(Level.SEVERE, null, ex);
            System.out.println("SQL error");
@@ -280,7 +273,7 @@ public class AddMemberAccountController implements Initializable {
     }
     
     @FXML
-    private void CancelCreateIndividualMember(ActionEvent event)throws IOException{
+    private void CancelCreateIndividualMember(ActionEvent event){
         try {
             Pane root;
 

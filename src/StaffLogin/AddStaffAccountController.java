@@ -60,7 +60,7 @@ public class AddStaffAccountController implements Initializable {
     }    
     
      @FXML
-    private void createAccount(ActionEvent event) throws SQLException {
+    private void createAccount(ActionEvent event) {
         try {     
             boolean check = false;
             PreparedStatement insertMember = null;

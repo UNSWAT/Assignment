@@ -96,44 +96,26 @@ public class MemberListController implements Initializable {
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            getMembers = con.prepareStatement("select MEMBER_USERNAME,MEMBER_PASSWORD, "
-                    + "FIRST_NAME, LAST_NAME, EMAIL_ADDRESS,MOBILE_NO, HOME_ADDRESS, HOME_SUBURB, "
-                    + "HOME_POSTCODE, HOME_STATE, WORK_ADDRESS, WORK_SUBURB,WORK_POSTCODE,WORK_STATE,"
-                    + "CC_NUMBER,CCEXPRIRY_MONTH, CCEXPIRY_YEAR, CORPORATE_MEMBER, "
-                    + "COMPANY_NAME,MEMBER_TYPE from MEMBERS ");
+            getMembers = con.prepareStatement("select FIRST_NAME, LAST_NAME, EMAIL_ADDRESS,MOBILE_NO, HOME_ADDRESS, HOME_SUBURB,HOME_POSTCODE, HOME_STATE, WORK_ADDRESS, WORK_SUBURB,WORK_POSTCODE,WORK_STATE,MEMBER_TYPE from MEMBERS ");
            
             ResultSet rs = getMembers.executeQuery();
             
             while(rs.next()){
-//                data.add(new Member(rs.getString("MEMBER_USERNAME"),rs.getString("MEMBER_PASSWORD"),
-//                        rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
-//                        rs.getString("MOBILE_NO"),rs.getString("HOME_ADDRESS"),rs.getString("HOME_SUBURB"),
-//                        rs.getString("HOME_POSTCODE"),rs.getString("HOME_STATE"),rs.getString("WORK_ADDRESS"),rs.getString("WORK_SUBURB"),
-//                rs.getString("WORK_POSTCODE"),rs.getString("WORK_STATE"),rs.getString("CC_NUMBER"),rs.getString("CCEXPRIRY_MONTH"),
-//                rs.getString("CCEXPIRY_YEAR"),rs.getString("CORPORATE_MEMBER"),rs.getString("COMPANY_NAME"),rs.getString("MEMBER_TYPE")));
+                data.add(new Member(
+                        rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("EMAIL_ADDRESS"),
+                        rs.getString("MOBILE_NO"),rs.getString("HOME_ADDRESS"),rs.getString("HOME_SUBURB"),
+                        rs.getInt("HOME_POSTCODE"),rs.getString("HOME_STATE")));
             }
 
-            memberusername.setCellValueFactory(new PropertyValueFactory<>("MEMBER_USERNAME"));
-            password.setCellValueFactory(new PropertyValueFactory<>("MEMBER_PASSWORD"));
-            fname.setCellValueFactory(new PropertyValueFactory<>("FIRST_NAME"));
-            lname.setCellValueFactory(new PropertyValueFactory<>("LAST_NAME"));
-            email.setCellValueFactory(new PropertyValueFactory<>("EMAIL_ADDRESS"));
-            mobile.setCellValueFactory(new PropertyValueFactory<>("MOBILE_NO"));
-            haddress.setCellValueFactory(new PropertyValueFactory<>("HOME_ADDRESS"));
-            hsuburb.setCellValueFactory(new PropertyValueFactory<>("HOME_SUBURB"));
-            hpostcode.setCellValueFactory(new PropertyValueFactory<>("HOME_POSTCODE"));
-            hstate.setCellValueFactory(new PropertyValueFactory<>("HOME_STATE"));
-            waddress.setCellValueFactory(new PropertyValueFactory<>("WORK_ADDRESS"));
-            wsuburb.setCellValueFactory(new PropertyValueFactory<>("WORK_SUBURB"));
-            wpostcode.setCellValueFactory(new PropertyValueFactory<>("WORK_POSTCODE"));
-            wstate.setCellValueFactory(new PropertyValueFactory<>("WORK_STATE"));
-            ccnumber.setCellValueFactory(new PropertyValueFactory<>("CC_NUMBER"));
-            ccexpirymonth.setCellValueFactory(new PropertyValueFactory<>("CCEXPRIRY_MONTH"));
-            ccexpiryyear.setCellValueFactory(new PropertyValueFactory<>("CCEXPIRY_YEAR"));
-            corporatemember.setCellValueFactory(new PropertyValueFactory<>("CORPORATE_MEMBER"));
-            companyname.setCellValueFactory(new PropertyValueFactory<>("COMPANY_NAME"));
-            membertype.setCellValueFactory(new PropertyValueFactory<>("MEMBER_TYPE"));
-            
+            fname.setCellValueFactory(new PropertyValueFactory<>("fname"));
+            lname.setCellValueFactory(new PropertyValueFactory<>("lname"));
+            email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            mobile.setCellValueFactory(new PropertyValueFactory<>("mobile"));
+            haddress.setCellValueFactory(new PropertyValueFactory<>("haddress"));
+            hsuburb.setCellValueFactory(new PropertyValueFactory<>("hsuburb"));
+            hpostcode.setCellValueFactory(new PropertyValueFactory<>("hpostcode"));
+            hstate.setCellValueFactory(new PropertyValueFactory<>("hstate"));
+            membertype.setCellValueFactory(new PropertyValueFactory<>("membertype")); 
             
             members.setItems(null);
             members.setItems(data);

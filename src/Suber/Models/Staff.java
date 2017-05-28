@@ -19,21 +19,13 @@ public class Staff {
     private SimpleStringProperty username,firstName,lastName,password;
     
     
-    public Staff(String username, String password, String firstName, String lastName) {
+    public Staff(String firstName, String lastName, String username, String password) {
         this.username = new SimpleStringProperty(username);
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
         this.password = new SimpleStringProperty(password);
     }
     
-
-    public String getUsername() {
-        return username.get();
-    }
-
-    public String getPassword() {
-        return password.get();
-    }
 
     public String getFirstName() {
         return firstName.get();
@@ -42,13 +34,13 @@ public class Staff {
     public String getLastName() {
         return lastName.get();
     }
-
-    public void setUsername(String value) {
-        username.set(value);
+    
+    public String getUsername() {
+        return username.get();
     }
 
-    public void setPassword(String value) {
-        password.set(value);
+    public String getPassword() {
+        return password.get();
     }
 
     public void setFirstName(String value) {
@@ -58,13 +50,13 @@ public class Staff {
     public void setLastName(String value) {
         lastName.set(value);
     }
-
-    public StringProperty usernameProperty(){
-        return username;
-    }
     
-    public StringProperty passwordProperty(){
-        return password;
+    public void setUsername(String value) {
+        username.set(value);
+    }
+
+    public void setPassword(String value) {
+        password.set(value);
     }
     
     public StringProperty firstNameProperty(){
@@ -73,5 +65,13 @@ public class Staff {
     
     public StringProperty lastNameProperty(){
         return lastName;
+    }
+    
+    public StringProperty usernameProperty(){
+        return username;
+    }
+    
+    public StringProperty passwordProperty(){
+        return password;
     }
 }

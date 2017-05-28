@@ -24,17 +24,17 @@
     <children>
         <AnchorPane>
             <children>
-            <TableView fx:id="members" layoutX="39.0" layoutY="185.0" prefHeight="563.0" prefWidth="1002.0">
+            <TableView fx:id="members" layoutY="191.0" prefHeight="563.0" prefWidth="1280.0">
                 <columns>
                   <TableColumn fx:id="fname" prefWidth="100.0" text="First Name" />
                   <TableColumn fx:id="lname" prefWidth="100.0" text="Last Name" />
                     <TableColumn fx:id="email" prefWidth="150.0" text="Email" />
-                    <TableColumn fx:id="mobile" prefWidth="100.0" text="Mobile Number" />
-                    <TableColumn fx:id="haddress" prefWidth="222.0" text="Home Address" />
-                    <TableColumn fx:id="hsuburb" prefWidth="66.0" text="Suburb" />
-                    <TableColumn fx:id="hpostcode" prefWidth="67.0" text="PostCode" />
-                    <TableColumn fx:id="hstate" prefWidth="64.0" text="State" />
-                  <TableColumn fx:id="membertype" prefWidth="115.0" text="Member Type" />
+                    <TableColumn fx:id="mobile" prefWidth="124.0" text="Mobile Number" />
+                    <TableColumn fx:id="haddress" prefWidth="400.0" text="Home Address" />
+                    <TableColumn fx:id="hsuburb" prefWidth="96.0" text="Suburb" />
+                    <TableColumn fx:id="hpostcode" prefWidth="91.0" text="PostCode" />
+                    <TableColumn fx:id="hstate" prefWidth="106.0" text="State" />
+                  <TableColumn fx:id="membertype" prefWidth="112.103271484375" text="Member Type" />
                 </columns>
             </TableView>
                 <ImageView fitHeight="119.0" fitWidth="1280.0" pickOnBounds="true">
@@ -63,9 +63,7 @@
                     <Glow level="1.0" />
                 </effect>
             </Text>
-            <Button layoutX="1139.0" layoutY="126.0" mnemonicParsing="false" prefWidth="130.0" text="Delete" />
-            <Button layoutX="1029.0" layoutY="126.0" mnemonicParsing="false" prefWidth="110.0" text="Edit" />
-            <Button layoutX="919.0" layoutY="126.0" mnemonicParsing="false" onAction="#clickNewinMemberList" onMouseClicked="#clickNewinMemberList" prefWidth="110.0" text="New" />
+            <Button layoutX="1041.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickNewinMemberList" onMouseClicked="#clickNewinMemberList" prefWidth="110.0" text="New" />
             <Button layoutX="140.0" layoutY="69.0" mnemonicParsing="false" onAction="#Back" onMouseClicked="#Back" prefHeight="41.0" prefWidth="126.0" text="Back " textFill="WHITE">
             </Button>
             <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />

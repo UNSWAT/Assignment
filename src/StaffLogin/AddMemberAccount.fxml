@@ -46,11 +46,6 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button layoutX="1060.0" layoutY="639.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
             <Text fill="WHITE" layoutX="640.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sUber">
                <font>
                   <Font name="Tahoma" size="58.0" />
@@ -114,6 +109,11 @@
             </Label>
             <Text layoutX="760.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Type" wrappingWidth="420.0000242218375" />
             <ComboBox fx:id="memberType" layoutX="760.0" layoutY="234.0" prefHeight="35.0" prefWidth="120.0" />
+            <Button layoutX="1059.0" layoutY="639.0" mnemonicParsing="false" onAction="#goBack" onMouseClicked="#CancelCreateIndividualMember" prefHeight="50.0" prefWidth="150.0" text="CREATE" textFill="#4ac0be">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
