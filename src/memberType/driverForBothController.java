@@ -71,7 +71,7 @@ public class driverForBothController implements Initializable {
     @FXML
     private void createOffer(ActionEvent event) {
         try {
-            Pane root;
+            
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/offerPosting/memberOffer.fxml"));
             
@@ -102,7 +102,6 @@ public class driverForBothController implements Initializable {
     @FXML
     private void MyAgreements(ActionEvent event) {
         try {
-            Pane root;
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Agreementdriver/AgreementDriver.fxml"));
             
@@ -121,7 +120,6 @@ public class driverForBothController implements Initializable {
     @FXML
     private void logOut(ActionEvent event) {
         try {
-            Pane root;
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberLogin2/Login.fxml"));
             
@@ -139,7 +137,23 @@ public class driverForBothController implements Initializable {
 
     @FXML
     private void myOffers(ActionEvent event) {
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/myOffersDriverTable/myOffersDriver.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+             
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }
     }
+
+    
 
     
 }

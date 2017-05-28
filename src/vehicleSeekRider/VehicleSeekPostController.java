@@ -238,6 +238,9 @@ public class VehicleSeekPostController implements Initializable {
             private void seekVehicle(ActionEvent event) {
                     String vehicle = vehicleType.getSelectionModel().getSelectedItem().toString();
                     OtherStaticVariables.setVehicle(vehicle);
+//                    Database.openConnection();
+//                    PreparedStatement ps;
+//                    
                     
                     //push to new vehicle page.
                     try {
