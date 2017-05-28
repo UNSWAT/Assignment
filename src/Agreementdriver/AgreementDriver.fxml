@@ -17,7 +17,7 @@
         <columns>
             <TableColumn fx:id="AgreementId" prefWidth="183.0" text="Agreement_ID" />
             <TableColumn fx:id="Offerid" prefWidth="167.0" text="Offer_ID" />
-            <TableColumn fx:id="MemberDriver" prefWidth="162.0" text="Your Driver" />
+            <TableColumn fx:id="MemberDriver" prefWidth="162.0" text="Who you will drive" />
             <TableColumn fx:id="AgreementDate" prefWidth="135.0" text="Agreement Date" />
             <TableColumn fx:id="CarType" prefWidth="168.0" text="Car Type" />
             <TableColumn fx:id="PickupTime" prefWidth="153.0" text="Pick Up Time" />

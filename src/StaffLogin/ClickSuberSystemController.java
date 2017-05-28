@@ -53,7 +53,7 @@ public class ClickSuberSystemController implements Initializable {
         try {
             Pane root;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/supportviewoffer/supportviewoffer.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene((Pane) loader.load()));
