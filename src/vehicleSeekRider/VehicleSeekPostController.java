@@ -214,7 +214,7 @@ public class VehicleSeekPostController implements Initializable {
         }
             
             
-            
+        /*   rider doesn't need offers 
             @FXML
             private void myOffers(ActionEvent event) {
             try {
@@ -233,6 +233,7 @@ public class VehicleSeekPostController implements Initializable {
                 System.out.println("Page Error");
             }
         }
+*/
             
             @FXML
             private void seekVehicle(ActionEvent event) {
