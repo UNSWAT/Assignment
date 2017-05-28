@@ -196,6 +196,19 @@ public class SeekPostingController implements Initializable {
 
     @FXML
     private void myProfile(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberProfile/memberProfile.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+      
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SeekPostingController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        } 
     }
 
     @FXML
@@ -240,5 +253,20 @@ public class SeekPostingController implements Initializable {
 
     @FXML
     private void myOffers(ActionEvent event) {
+        try {
+            Pane root;
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
+            
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane)loader.load()));
+            
+            
+             
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Page Error");
+        }        
     }
 }
