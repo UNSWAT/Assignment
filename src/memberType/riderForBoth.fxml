@@ -73,8 +73,7 @@
       <Button layoutX="16.0" layoutY="68.0" mnemonicParsing="false" onAction="#Home" prefHeight="40.0" prefWidth="126.0" text="Home" />
       <Button layoutX="142.0" layoutY="68.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="40.0" prefWidth="126.0" text="My Profile" />
       <Button layoutX="268.0" layoutY="68.0" mnemonicParsing="false" onAction="#MyAgreements" prefHeight="40.0" prefWidth="142.0" text="My Agreements" />
-      <Button layoutX="530.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
-      <Button layoutX="410.0" layoutY="68.0" mnemonicParsing="false" onAction="#myOffers" prefHeight="40.0" prefWidth="120.0" text="My Offers" />
+      <Button layoutX="409.0" layoutY="68.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" text="Log Out" />
       <Button layoutX="562.0" layoutY="564.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="174.0" stylesheets="@../CSSfile.css" text="Back" />
    </children>
 </AnchorPane>

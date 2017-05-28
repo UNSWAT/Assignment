@@ -17,6 +17,7 @@ import offerPosting.Offer;
 import Database.Database;
 import static Database.Database.con;
 import Database.OtherStaticVariables;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,9 +27,16 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import memberLogin2.User;
+import memberType.MemberBothController;
 
 /**
  * FXML Controller class
@@ -141,22 +149,144 @@ public class VehicleSeekTableController implements Initializable {
 
     @FXML
     private void Home(ActionEvent event) {
+try {
+            Database.openConnection();
+            PreparedStatement ps;
+            ps = con.prepareStatement("SELECT MEMBER_TYPE FROM MEMBERS WHERE MEMBER_USERNAME = ?");
+            ps.setString(1, User.getUsername());
+            ResultSet member =ps.executeQuery();
+            if (member.next()){
+                String membertype = member.getString(1);
+                if (membertype.toUpperCase().equals("RIDER")){
+                    try {
+                            
+                                                    
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberRider.fxml"));
+
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene((Pane)loader.load()));
+
+
+
+                            stage.show(); 
+                        } catch (IOException ex) {
+                            System.out.println(ex);
+                        }   
+                }
+                
+                else if (membertype.toUpperCase().equals("SHARER")){
+                  try{
+
+                           
+
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberType/memberDriver.fxml"));
+
+                            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene((Pane)loader.load()));
+
+
+
+                            stage.show(); 
+                        } catch (IOException ex) {
+                            System.out.println(ex);
+                            }  
+                }
+                
+                else if (membertype.toUpperCase().equals("BOTH")){
+                    try {
+                                Parent root = FXMLLoader.load(getClass().getResource("/memberType/memberBoth.fxml"));
+                                Scene scene = new Scene(root);
+                                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                stage.setScene(scene);
+                                stage.show();
+                            } catch (IOException ex) {
+                                System.out.println("Page Error");
+                               
+                            }
+
+                }
+                
+                
+                
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleSeekTableController.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @FXML
     private void myProfile(ActionEvent event) {
+            try {
+                Pane root;
+                
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberProfile/memberProfile.fxml"));
+                
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene((Pane)loader.load()));
+                
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(VehicleSeekTableController.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Page Error");
+            }        
     }
 
     @FXML
     private void MyAgreements(ActionEvent event) {
+            try {
+                Pane root;
+                
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AgreementRider/AgreementRider.fxml"));
+                
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene((Pane)loader.load()));
+                
+                
+                
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Page Error");
+            }        
     }
 
     @FXML
     private void logOut(ActionEvent event) {
+            try {
+                Pane root;
+                
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/memberLogin2/Login.fxml"));
+                
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene((Pane)loader.load()));
+                
+                
+                
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Page Error");
+            }        
     }
 
     @FXML
     private void myOffers(ActionEvent event) {
+            try {
+                Pane root;
+                
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ViewOffer.fxml"));
+                
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene((Pane)loader.load()));
+                
+                
+                
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(MemberBothController.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Page Error");
+            }        
     }
 
     @FXML
