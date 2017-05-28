@@ -1,9 +1,11 @@
+package StaffLogin;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package StaffLogin;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,6 +53,10 @@ public class StaffListController implements Initializable {
     @FXML
     private TableColumn<Staff,String> LastName;
     @FXML
+    private TableColumn<Staff,String> username;
+    @FXML
+    private TableColumn<Staff,String> password;
+    @FXML
     private Label firstNameLabel;
     @FXML
     private Label lastNameLabel;
@@ -67,12 +73,15 @@ public class StaffListController implements Initializable {
         try{
             Database.openConnection();
             data=FXCollections.observableArrayList();
-            ResultSet rs = con.createStatement().executeQuery("select FIRST_NAME,LAST_NAME from STAFF" );
+            getStaff = con.prepareStatement("select FIRST_NAME,LAST_NAME,USERNAME,PASSWORD from STAFF" );
+            ResultSet rs = getStaff.executeQuery();
             while(rs.next()){
-                data.add(new Staff(rs.getString("FIRST_NAME"),rs.getString("LAST_NAME")));
+                data.add(new Staff(rs.getString("FIRST_NAME"),rs.getString("LAST_NAME"),rs.getString("USERNAME"),rs.getString("PASSWORD")));
             }
-            FirstName.setCellValueFactory(new PropertyValueFactory<>("FIRST_NAME"));
-            LastName.setCellValueFactory(new PropertyValueFactory<>("LAST_NAME"));
+            FirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+            LastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+            username.setCellValueFactory(new PropertyValueFactory<>("username"));
+            password.setCellValueFactory(new PropertyValueFactory<>("password"));
             
             staff.setItems(null);
             staff.setItems(data);
@@ -84,26 +93,39 @@ public class StaffListController implements Initializable {
     
 
     @FXML
-    private void Back(ActionEvent event)throws IOException{
-        
-        System.out.println("going to Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
+    private void Back(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/ClickStaff.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(StaffListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
-    private void clickNewinStaffList(ActionEvent event)throws IOException{
+    private void clickNewinStaffList(ActionEvent event){
+        try {
+            Pane root;
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/StaffLogin/AddStaffAccount.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene((Pane) loader.load()));
+
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(StaffListController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
         
-        System.out.println("going to Create a Staff");
-        Parent root = FXMLLoader.load(getClass().getResource("/StaffLogin/AddStaffAccount.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = memberLogin.getStage(); 
-        stage.setScene(scene);
-        stage.show();
-        };
 
     @FXML
     private void Home(ActionEvent event) {

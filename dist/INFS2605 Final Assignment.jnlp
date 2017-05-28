@@ -8,8 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="INFS2605_Final_Assignment.jar" size="20478075" download="eager" />
-    <jar href="lib\h2-1.4.195.jar" size="1820369" download="eager" />
+    <jar href="INFS2605_Final_Assignment.jar" size="20482230" download="eager" />
+    <jar href="lib/h2-1.4.195.jar" size="1820369" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="INFS2605 Final Assignment" >
     <param name="requiredFXVersion" value="8.0+"/>
